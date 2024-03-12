@@ -109,24 +109,18 @@
                         <div class="h10_banner-content mb-60 mb-lg-0">
                             <div class="banner-content">
                                 <div class="section-area">
-                                    <span class="section-subtitle" style="font-size: 20px;">Kalasin Special Education Center.</span>
+                                    <span class="section-subtitle" style="font-size: 20px;">Kalasin Special Education Center</span>
                                     <h1 class="h10_banner-content-title" style="text-shadow: black 0.1em 0.1em 0.2em;">
                                         ศูนย์การศึกษาพิเศษ ประจำจังหวัด<span>กาฬสินธุ์ <img
                                                     src="{{url("template/user-panel/assets/img/banner/1/line.png")}}"
                                                     alt=""></span></h1>
-                                    <p class="h10_banner-content-text"
-                                       style="text-shadow: black 0.1em 0.1em 0.2em; font-size: 26px;">
+                                    <p class="h6_banner-content-subtitle"
+                                       style="font-size: 26px; text-shadow: black 0.1em 0.1em 0.2em;">
                                         สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน
                                         กระทรวงศึกษาธิการ <br></p>
-                                    <div class="h4_about-button">
-                                        <span class="theme-btn h4_about-btn theme-btn-4"
-                                              style="text-transform: lowercase;"><i class="fa fa-globe"></i>&nbsp; {{env('SOCIAL_CONTACT_WEBSITE')}}</span>
-                                        <span class="theme-btn h4_about-btn theme-btn-4"><i class="fa fa-phone"></i>&nbsp; {{env('CONTACT_PHONE_NUMBER')}}</span>
-                                        {{--                                        <a href="tel:+002455456978" class="h4_about-button-call"><i class="fa-solid fa-phone"></i>(00) 245 545 6978</a>--}}
-                                    </div>
-                                    {{--                                    <p class="h10_banner-content-text">Discover a world of interactive lessons, exciting--}}
-                                    {{--                                        games, and captivating <br> stories, all carefully crafted to make learning an--}}
-                                    {{--                                        enjoyable.</p>--}}
+
+                                    <p class="h6_banner-content-text" data-animation="fadeInUp" data-delay="0.7s" style="font-style: italic; font-size: 20px;">“สถานศึกษาแกนนำ
+                                        ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ“</p>
                                 </div>
                             </div>
 
@@ -162,9 +156,9 @@
     <!-- event area start -->
     <section class="event-area">
         <img src="{{url("template/user-panel/assets/img/event/1/bg.jpg")}}" alt="" class="event-bg-img">
-        <div class="event-wrap pt-120 pb-40">
+        <div class="event-wrap pt-60 pb-60">
             <div class="container">
-                <div class="row align-items-center mb-30">
+                <div class="row align-items-center mb-3">
                     <div class="col-xl-8 col-lg-8 col-md-8">
                         <div class="event-section-area mb-20">
                             <div class="section-area">
@@ -182,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="event-active swiper pb-80">
+                <div class="event-active swiper pb-20">
                     <div class="swiper-wrapper">
                         @foreach($new_post as $new)
                             <div class="swiper-slide">
@@ -200,9 +194,9 @@
                                         <h5 class="event-content-title"><a
                                                     href='{{url("article/$new->post_slug")}}'>{{$new->post_title}}</a>
                                         </h5>
-                                        <label class="h2_course-content-text">
-                                            {{$new->post_detail}}
-                                        </label>
+{{--                                        <label class="h2_course-content-text">--}}
+{{--                                            {{$new->post_detail}}--}}
+{{--                                        </label>--}}
                                         <a href='{{url("article/$new->post_slug")}}'
                                            class="t-theme-btn theme-btn event-btn">เพิ่มเติม</a>
                                     </div>

@@ -41,8 +41,8 @@
         <div class="row align-items-center">
             <div class="col-xl-6 col-8">
                 <div class="sidebar-logo">
-                    <a href="index.html"><img src="{{asset("template/user-panel/assets/img/logo/logo-white.png")}}"
-                                              alt="logo-img"></a>
+                    <a href="{{url('/')}}"><img src="{{asset("images/home/logo.png")}}"
+                                              alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
                 </div>
             </div>
             <div class="col-xl-6 col-4">

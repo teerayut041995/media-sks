@@ -4,7 +4,7 @@
             <div class="col-xl-3 col-lg-7 col-md-7 col-sm-12">
                 <div class="footer-widget mb-40">
                     <div class="footer-logo">
-                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        <a href="{{url('/')}}"><img src="{{asset("images/home/logo.png")}}" alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
                     </div>
                     <p class="footer-widget-text mb-35">
                         ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน กระทรวงศึกษาธิการ
@@ -67,7 +67,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="copyright-text">
-                    <p>Copyright © 2023 All Rights Reserved by Eduan</p>
+                    <p>Copyright © 2024 ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</p>
                 </div>
             </div>
         </div>

@@ -40,12 +40,12 @@
                 <div class="col-12">
                     <div class="breadcrumb-content" style="color: white;">
                         <h2 class="breadcrumb-title" style="color: white;">{{$post->post_title}}</h2>
-                        <div class="breadcrumb-list">
-                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>
-                            <a href='{{url("หมวดหมู่/$post->category_slug")}}' style="color: white;">{{$post->category_name}}</a>
-                            <a href='{{url("หมวดหมู่/$post->category_slug/$post->sub_category_slug")}}' style="color: white;">{{$post->sub_category_name}}</a>
-                            <span style="color: white;">{{$post->post_title}}</span>
-                        </div>
+{{--                        <div class="breadcrumb-list">--}}
+{{--                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>--}}
+{{--                            <a href='{{url("หมวดหมู่/$post->category_slug")}}' style="color: white;">{{$post->category_name}}</a>--}}
+{{--                            <a href='{{url("หมวดหมู่/$post->category_slug/$post->sub_category_slug")}}' style="color: white;">{{$post->sub_category_name}}</a>--}}
+{{--                            <span style="color: white;">{{$post->post_title}}</span>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
