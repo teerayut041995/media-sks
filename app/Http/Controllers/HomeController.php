@@ -68,7 +68,7 @@ class HomeController extends Controller
             $active['name'] = $request->name;
         }
 
-        $new_post = $new_post->paginate(6)->appends(request()->except('page'));
+        $new_post = $new_post->paginate(12)->appends(request()->except('page'));
         return view('frontend.home.index', compact('category_menu', 'new_post', 'popular_post', 'active'));
 
 //        return view('frontend.index', compact('events', 'media_list', 'popular_post', 'new_post'));
@@ -76,9 +76,9 @@ class HomeController extends Controller
 
     public function index1()
     {
-        $category_menu = $this->helperCore->getCategoryMenu();
+//        $category_menu = $this->helperCore->getCategoryMenu();
 //        return $category_menu;
-        return view('frontend.home.index', compact('category_menu'));
+//        return view('frontend.home.index', compact('category_menu'));
         $events = Event::where('publishing_status', '1')
             ->orderBy('created_at', 'DESC')
             ->with('user')

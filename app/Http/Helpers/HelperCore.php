@@ -80,7 +80,7 @@ class HelperCore
     {
         return Post::where('post_status', '1')
             ->select([
-                'posts.id', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_detail','posts.post_status',
+                'posts.id', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_detail','posts.post_status', 'posts.created_at'
             ])
             ->orderBy('created_at', 'DESC')
 //            ->orderByViews()

@@ -39,7 +39,7 @@
                                 alt="{{$popular->post_title}}"></a>
                 </div>
                 <div class="blog_details-course-info">
-                    <h6><a href="#">{{$popular->post_title}}</a></h6>
+                    <h6><a href='{{url("article/$popular->post_slug")}}'>{{$popular->post_title}}</a></h6>
                     <a href='{{url("article/$popular->post_slug")}}'
                        class="inner-course-rate">การดู {{$popular->views_count}} ครั้ง</a>
                 </div>
