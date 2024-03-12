@@ -7,6 +7,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset("images/home/favicon.ico")}}">
     <!-- Place favicon.ico in the root directory -->
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TWHYK5CB5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1TWHYK5CB5');
+    </script>
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/animate.min.css")}}">
