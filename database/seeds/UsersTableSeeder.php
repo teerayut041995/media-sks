@@ -12,12 +12,12 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-        	'name' => 'Warayut Shukmark',
-        	'email' => 'warayut@hotmail.com',
+        	'name' => 'Teerayut Khunsuk',
+        	'email' => 'teerayut.jobs@gmail.com',
         	'password' => Hash::make('123456'),
         	'remember_token' => str_random(10),
-        	'position' => 'สมาชิกทั่วไป',
-        	'role' => 'guest',
+        	'position' => 'ผู้ดูแลระบบ',
+        	'role' => 'admin',
         ]);
     }
 }

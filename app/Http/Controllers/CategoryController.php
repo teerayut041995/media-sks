@@ -47,6 +47,7 @@ class CategoryController extends Controller
             $category_ranking = 0;
         }
         $category = new Category([
+            "uid" => generateId(),
             "category_name" => $request->input('category_name'),
             "category_ranking" => $category_ranking,
         ]);

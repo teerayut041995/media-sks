@@ -25,7 +25,7 @@ class Event extends Model implements ViewableContract
         ];
     }
     protected $fillable = [
-        'event_name', 'event_slug', 'event_image','event_date','event_location','event_description','publishing_status','user_id'
+        'uid', 'event_name', 'event_slug', 'event_image','event_date','event_location','event_description','publishing_status','user_id'
     ];
 
     public function user()

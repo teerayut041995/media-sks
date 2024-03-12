@@ -21,6 +21,6 @@ class Category extends Model
         ];
     }
     protected $fillable = [
-        'category_name', 'category_slug', 'category_ranking','category_status'
+        'uid', 'category_name', 'category_slug', 'category_ranking','category_status'
     ];
 }

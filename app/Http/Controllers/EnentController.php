@@ -55,6 +55,7 @@ class EnentController extends Controller
         $date = str_replace("-", "", $request->input('event_date'));
         $event_date = Carbon::parse($date)->format('Y-m-d');
         $event = new Event([
+            "uid" => generateId(),
             "event_name" => $request->input('event_name'),
             "event_image" => $event_image,
             "event_date" => $event_date,
@@ -179,6 +180,7 @@ class EnentController extends Controller
             $image_name = "";
         }
         $image = new EventImage([
+            "uid" => generateId(),
             "image_name" =>$image_name,
             "event_id" =>$id
         ]);

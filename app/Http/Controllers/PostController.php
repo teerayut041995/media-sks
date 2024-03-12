@@ -89,6 +89,7 @@ class PostController extends Controller
             
         }
         $post = new Post([
+            "uid" => generateId(),
             "user_id" => Auth::user()->id,
             "category_id" => $request->input('category_id'),
             "sub_category_id" => $request->input('sub_category_id'),

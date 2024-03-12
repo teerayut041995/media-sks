@@ -55,6 +55,7 @@ class SubCategoryController extends Controller
             $sub_category_ranking = 0;
         }
         $sub_category = new SubCategory([
+            "uid" => generateId(),
             "category_id" => $request->input("category_id"),
             "sub_category_name" => $request->input("sub_category_name"),
             "sub_category_ranking" => $sub_category_ranking

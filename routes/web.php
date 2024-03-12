@@ -22,6 +22,11 @@ Route::get('/watch/{id}', 'LiveController@watch');
 Route::get('/กิจกรรม', 'HomeController@event');
 Route::get('/กิจกรรม/{slug}', 'HomeController@event_detail');
 Route::get('/about', 'HomeController@about');
+Route::get('/about/history', 'AboutController@history');
+Route::get('/about/executive', 'AboutController@executive');
+Route::get('/contact', 'AboutController@contact');
+Route::get('/events', 'EventController@index');
+Route::get('/events/{slug}', 'EventController@show');
 
 Route::get('/หมวดหมู่/{slug}', 'ArticleController@category');
 Route::get('/หมวดหมู่/{cate_slug}/{sub_slug}', 'ArticleController@sub_category');

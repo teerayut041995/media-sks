@@ -20,11 +20,12 @@ class Post extends Model implements ViewableContract
     {
         return [
             'post_slug' => [
-                'source' => 'post_title'
+                'source' => 'post_title',
+                'onUpdate' => true,
             ]
         ];
     }
     protected $fillable = [
-        'user_id', 'category_id', 'sub_category_id','post_title','post_slug','post_image','post_detail','post_content','post_status'
+       'uid', 'user_id', 'category_id', 'sub_category_id','post_title','post_slug','post_image','post_detail','post_content','post_status'
     ];
 }

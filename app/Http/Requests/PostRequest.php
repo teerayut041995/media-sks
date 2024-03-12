@@ -25,7 +25,7 @@ class PostRequest extends FormRequest
     {
         return [
             'post_title' => 'required',
-            'post_image' => 'required|image|mimes:jpeg,png,jpg,gif',
+//            'post_image' => 'required|image|mimes:jpeg,png,jpg,gif,jpg',
             'category_id' => 'required',
             'post_detail' => 'required',
             'summernoteInput' => 'required',

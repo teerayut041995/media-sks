@@ -21,6 +21,6 @@ class SubCategory extends Model
         ];
     }
     protected $fillable = [
-        'sub_category_name', 'sub_category_slug', 'sub_category_ranking','sub_category_status','category_id'
+        'uid', 'sub_category_name', 'sub_category_slug', 'sub_category_ranking','sub_category_status','category_id'
     ];
 }

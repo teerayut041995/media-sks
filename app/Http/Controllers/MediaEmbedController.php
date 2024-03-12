@@ -53,6 +53,7 @@ class MediaEmbedController extends Controller
             $description = '';
         }
         $media = new Media([
+            "uid" => generateId(),
             "project_name" => $request->input('project_name'),
             "topics" => $request->input('topics'),
             "lecturer" => $request->input('lecturer'),

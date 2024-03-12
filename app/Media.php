@@ -11,6 +11,6 @@ class Media extends Model implements ViewableContract
 	use Viewable;
 
     protected $fillable = [
-        'project_name', 'topics', 'lecturer','description','embed_video','live_status','publishing_status','user_id'
+        'uid', 'project_name', 'topics', 'lecturer','description','embed_video','live_status','publishing_status','user_id'
     ];
 }

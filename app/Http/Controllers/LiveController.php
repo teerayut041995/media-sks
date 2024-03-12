@@ -13,7 +13,7 @@ class LiveController extends Controller
     		->where('live_status' , '1')
     		->orderBy('created_at' , 'DESC')
     		->first();
-    	if (count($check) > 0) {
+    	if ($check) {
     		$first_media = Media::where('publishing_status' , '1')
     		->where('live_status' , '1')
     		->orderBy('created_at' , 'DESC')

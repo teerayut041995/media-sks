@@ -53,7 +53,7 @@
 									<img class="img-fluid" src="<?php echo url("images/image_post/$post->post_image"); ?>" alt="{{$post->post_title}}" style="width: 100%;height: 170px;">
 								</div>
 								<div class="meta d-flex justify-content-between">
-									<p><span class="lnr lnr-eye"></span> {{$post->getViews()}}
+									<p><span class="lnr lnr-eye"></span>
 								</div>									
 							</div>
 							<div class="details">

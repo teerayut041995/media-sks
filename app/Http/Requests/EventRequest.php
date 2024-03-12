@@ -25,7 +25,7 @@ class EventRequest extends FormRequest
     {
         return [
             'event_name' => 'required',
-            'event_image' => 'required|image|mimes:jpeg,png,jpg,gif',
+//            'event_image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'event_date' => 'required|date_format:"m/d/Y"',
             'event_location' => 'required',
             'event_description' => 'required',

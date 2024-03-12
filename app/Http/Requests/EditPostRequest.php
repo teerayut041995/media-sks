@@ -25,7 +25,7 @@ class EditPostRequest extends FormRequest
     {
         return [
             'post_title' => 'required',
-            'post_image_update' => 'image|mimes:jpeg,png,jpg,gif',
+//            'post_image_update' => 'image|mimes:jpeg,png,jpg,gif',
             'category_id' => 'required',
             'post_detail' => 'required',
             'summernoteInput' => 'required',
