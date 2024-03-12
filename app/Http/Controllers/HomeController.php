@@ -23,7 +23,7 @@ class HomeController extends Controller
         $this->helperCore = new HelperCore();
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $category_menu = $this->helperCore->getCategoryMenu();
 //        $events = Event::where('publishing_status', '1')
@@ -40,22 +40,36 @@ class HomeController extends Controller
 //            ->limit(3)
 //            ->get();
 
+        $active = array('name' => '');
         $popular_post = Post::leftJoin('users', 'posts.user_id', 'users.id')
-            ->select('posts.*', 'users.name')
+            ->select([
+                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_status', 'posts.created_at',
+                'users.name'
+            ])
             ->where('post_status', '1')
             ->orderByViews()
             ->limit(8)
             ->get();
 
         $new_post = Post::leftJoin('users', 'posts.user_id', 'users.id')
-            ->select('posts.*', 'users.name')
+            ->join('categories', 'categories.id', 'posts.category_id')
+            ->select([
+                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_status', 'posts.created_at',
+                'users.name',
+                'categories.category_name'
+            ])
             ->where('post_status', '1')
-            ->orderBy('created_at', 'DESC')
-//            ->orderByViews()
-            ->limit(8)
-            ->get();
+            ->orderBy('created_at', 'DESC');
+        if (!empty($request->name)) {
+            $new_post = $new_post->where(function ($query) use ($request) {
+                $query->where("posts.post_title", "LIKE", "%{$request->name}%")
+                    ->orWhere("posts.post_detail", "LIKE", "%{$request->name}%");
+            });
+            $active['name'] = $request->name;
+        }
 
-        return view('frontend.home.index', compact('category_menu', 'new_post', 'popular_post'));
+        $new_post = $new_post->paginate(6)->appends(request()->except('page'));
+        return view('frontend.home.index', compact('category_menu', 'new_post', 'popular_post', 'active'));
 
 //        return view('frontend.index', compact('events', 'media_list', 'popular_post', 'new_post'));
     }

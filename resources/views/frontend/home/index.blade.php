@@ -30,6 +30,9 @@
     <link rel="canonical" href="{{url('')}}"/>
 @endsection
 
+@section('style')
+
+@endsection
 
 @section('content')
 
@@ -119,15 +122,18 @@
                                         สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน
                                         กระทรวงศึกษาธิการ <br></p>
 
-                                    <p class="h6_banner-content-text" data-animation="fadeInUp" data-delay="0.7s" style="font-style: italic; font-size: 20px;">“สถานศึกษาแกนนำ
+                                    <p class="h6_banner-content-text" data-animation="fadeInUp" data-delay="0.7s"
+                                       style="font-style: italic; font-size: 20px;">“สถานศึกษาแกนนำ
                                         ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ“</p>
                                 </div>
                             </div>
 
                             <div class="h10_banner-content-btn mb-60">
-                                <a href="{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}" target="_blank" class="theme-btn theme-btn-10 theme-btn-10-white">FACEBOOK<i
+                                <a href="{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}" target="_blank"
+                                   class="theme-btn theme-btn-10 theme-btn-10-white">FACEBOOK<i
                                             class="fa-light fa-arrow-right"></i></a>
-                                <a href="{{url(env('SOCIAL_CONTACT_YOUTUBE'))}}" target="_blank" class="theme-btn theme-btn-10 theme-btn-10-transparent">YOUTUBE<i
+                                <a href="{{url(env('SOCIAL_CONTACT_YOUTUBE'))}}" target="_blank"
+                                   class="theme-btn theme-btn-10 theme-btn-10-transparent">YOUTUBE<i
                                             class="fa-light fa-arrow-right"></i></a>
                             </div>
                         </div>
@@ -153,73 +159,163 @@
     </section>
     <!-- banner area end -->
 
-    <!-- event area start -->
-    <section class="event-area">
-        <img src="{{url("template/user-panel/assets/img/event/1/bg.jpg")}}" alt="" class="event-bg-img">
-        <div class="event-wrap pt-60 pb-60">
-            <div class="container">
-                <div class="row align-items-center mb-3">
-                    <div class="col-xl-8 col-lg-8 col-md-8">
-                        <div class="event-section-area mb-20">
-                            <div class="section-area">
-                                <span class="section-subtitle">ติดตามข้อมูลข่าวสาร</span>
-                                <h2 class="section-title mb-0">อัพเดตล่าสุด</h2>
-                            </div>
+    <!-- category area start -->
+    <section class="category-area pt-60 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3">
+                    <div class="category-left pb-60">
+                        <div class="section-area">
+                            <span class="section-subtitle">ติดตามข้อมูลข่าวสาร</span>
+                            <h2 class="section-title mb-20">เนื้อหา<br>ยอดนิยม</h2>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4">
-                        <div class="event-navigation mb-30">
-                            <div class="event-prev"><i class="fa-thin fa-arrow-left"></i>
+                        <div class="category-navigation">
+                            <div class="category-prev"><i class="fa-thin fa-arrow-left"></i>
                             </div>
-                            <div class="event-next"><i class="fa-light fa-arrow-right"></i>
+                            <div class="category-next"><i class="fa-light fa-arrow-right"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="event-active swiper pb-20">
-                    <div class="swiper-wrapper">
-                        @foreach($new_post as $new)
-                            <div class="swiper-slide">
-                                <div class="event-item">
-                                    <div class="event-img">
-                                        <a href='{{url("article/$new->post_slug")}}'><img
-                                                    src='{{url("images/image_post/$new->post_image")}}'
-                                                    alt="{{$new->post_title}}"></a>
-                                    </div>
-                                    <div class="event-content">
-                                        <div class="event-content-meta">
-                                            {{--                                        <span><i class="fa-thin fa-location-dot"></i>{{ $new->views_count }}</span>--}}
-                                            <span><i class="fa-thin fa-clock"></i>{{Carbon\Carbon::parse($new->created_at)->diffForHumans()}}</span>
+                <div class="col-xl-9 col-lg-9">
+                    <div class="category-wrap">
+                        <div class="category-shape">
+                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-1.png")}}" alt=""
+                                 class="category-shape-1">
+                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-2.png")}}" alt=""
+                                 class="category-shape-2">
+                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-3.png")}}" alt=""
+                                 class="category-shape-3">
+                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-1.png")}}" alt=""
+                                 class="category-shape-4">
+                        </div>
+                        <div class="category-active swiper pb-60">
+                            <div class="swiper-wrapper">
+                                @foreach($popular_post as $popular)
+                                    <div class="swiper-slide">
+                                        <div class="category-item">
+                                            <div class="category-img">
+                                                <img src='{{url("images/image_post/$popular->post_image")}}'
+                                                     alt="{{$popular->post_title}}">
+                                            </div>
+                                            <div class="category-content cut-line">
+                                                <h6 class="text-line"><a href='{{url("article/$popular->post_slug")}}'>{{$popular->post_title}}</a>
+                                                </h6>
+                                                {{--                                            <p>--}}
+                                                {{--                                                <a href="course.html">26 Items--}}
+                                                {{--                                                    <i class="fa-light fa-arrow-right"></i>--}}
+                                                {{--                                                    <i class="fa-light fa-arrow-right"></i>--}}
+                                                {{--                                                </a>--}}
+                                                {{--                                            </p>--}}
+                                            </div>
                                         </div>
-                                        <h5 class="event-content-title"><a
-                                                    href='{{url("article/$new->post_slug")}}'>{{$new->post_title}}</a>
-                                        </h5>
-{{--                                        <label class="h2_course-content-text">--}}
-{{--                                            {{$new->post_detail}}--}}
-{{--                                        </label>--}}
-                                        <a href='{{url("article/$new->post_slug")}}'
-                                           class="t-theme-btn theme-btn event-btn">เพิ่มเติม</a>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
-                        @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- event area end -->
+    <!-- category area end -->
+
+
+    <!-- course area start -->
+    <section class="course-area">
+        <div class="container-fluid container-custom-1 p-0">
+            <div class="course-wrap pt-60 pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <div class="course-section-area">
+                                <div class="section-area section-area-top">
+{{--                                    <span class="section-subtitle">SKS NEWS</span>--}}
+                                    <h2 class="section-title mb-20">ข่าวประชาสัมพันธ์</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="h9_header-search d-none d-lg-block">
+{{--                                <h2 class="section-title mb-20">ข่าวประชาสัมพันธ์</h2>--}}
+                                <form action="" method="get">
+                                    <input type="text" placeholder="ค้นหาบทความที่สนใจ" value="{{$active['name']}}" name="name">
+                                    <button type="submit" class="header-search-btn">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.22222 13.4444C10.6587 13.4444 13.4444 10.6587 13.4444 7.22222C13.4444 3.78578 10.6587 1 7.22222 1C3.78578 1 1 3.78578 1 7.22222C1 10.6587 3.78578 13.4444 7.22222 13.4444Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M14.9995 15L11.6162 11.6167" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-inner">
+                        <div class="row">
+                            @foreach($new_post as $new)
+                                <div class="col-xxl-3 col-lg-4 col-md-6">
+                                    <div class="course-item mb-30">
+                                        <div class="course-img">
+                                            <img src='{{url("images/image_post/$new->post_image")}}'
+                                                 alt="{{$new->post_title}}">
+                                        </div>
+                                        <div class="course-content">
+                                            <div class="course-content-top">
+{{--                                                <div class="course-top-icon"><img--}}
+                                                {{--                                                            src="assets/img/course/1/v1.png" alt=""></div>--}}
+                                                <div class="course-top-title">
+                                                    <h6>{{$new->category_name}}</h6>
+                                                </div>
+
+                                            </div>
+                                            <h5 class="course-content-title"><a
+                                                        href='{{url("article/$new->post_slug")}}'>{{$new->post_title}}</a>
+                                            </h5>
+                                            <div class="course-content-bottom">
+                                                <div class="course-bottom-info">
+                                                    <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new->created_at)}}</span>
+                                                </div>
+                                                <div class="course-bottom-price">
+                                                    <a href='{{url("article/$new->post_slug")}}'
+                                                       class="t-theme-btn theme-btn event-btn">เพิ่มเติม</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            @endforeach
+                            {{$new_post->links()}}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- blog area start -->
-    <section class="blog-area pt-20 pb-20">
+    <section class="blog-area pt-120 pb-20">
         <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+
+                    <div class="testimonial-section-area">
+                        <div class="section-area mb-55 section-area-top">
+                            <span class="section-subtitle">Information</span>
+                            <h2 class="section-title mb-20">เกี่ยวกับสถานศึกษา</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
                     <div class="blog-wrap">
                         <div class="blog-item blog-item-h mb-30">
                             <div class="blog-img">
                                 <img src="{{url("images/home/present/sks-present-7.JPG")}}"
-                                                                 alt="วิสัยทัศน์ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
+                                     alt="วิสัยทัศน์ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
                             </div>
                             <div class="blog-content">
 
@@ -237,7 +333,8 @@
                                      alt="เอกลักษณ์ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
                             </div>
                             <div class="blog-content">
-                                <p style="font-size: 20px; font-style: italic; color: #1E1E1E; margin-bottom: 15px;">“สถานศึกษาแกนนำ
+                                <p style="font-size: 20px; font-style: italic; color: #1E1E1E; margin-bottom: 15px;">
+                                    “สถานศึกษาแกนนำ
                                     ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ“</p>
                             </div>
                         </div>
@@ -250,7 +347,8 @@
                                  alt="อัตลักษณ์ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
                         </div>
                         <div class="blog-content">
-                            <p style="font-size: 20px; font-style: italic; color: #1E1E1E; margin-bottom: 15px;">“นักเรียนศูนย์การศึกษาพิเศษประจำจังหวัดกาฬสินธุ์ มีความสุข สนุก ร่งเริง“</p>
+                            <p style="font-size: 20px; font-style: italic; color: #1E1E1E; margin-bottom: 15px;">
+                                “นักเรียนศูนย์การศึกษาพิเศษประจำจังหวัดกาฬสินธุ์ มีความสุข สนุก ร่งเริง“</p>
                         </div>
                     </div>
                 </div>
@@ -265,7 +363,8 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="h6_about-img w_img">
-                        <img src="{{url("images/home/present/sks-present-5.JPG")}}" alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
+                        <img src="{{url("images/home/present/sks-present-5.JPG")}}"
+                             alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
                         <div class="h6_about-img-content">
                             <h2>2543</h2>
                             <span>ก่อตั้งเมื่อปี</span>
@@ -275,7 +374,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="about-content">
                         <div class="section-area">
-                            <span class="section-subtitle">เกี่ยวกับสถานศึกษา</span>
+                            {{--                            <span class="section-subtitle">เกี่ยวกับสถานศึกษา</span>--}}
                             <h2 class="section-title mb-15">ศูนย์การศึกษาพิเศษ <br>ประจำจังหวัดกาฬสินธุ์</h2>
                             <p class="section-text">
                                 สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน
@@ -302,4 +401,30 @@
         </div>
     </section>
     <!-- about area end -->
+
+    <!-- cta area start -->
+    <div class="cta-area">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="cta-content mb-30 mb-lg-0">
+                            <span class="cta-subtitle">Social Media</span>
+                            <h2 class="cta-title">ติดตามข่าวสารผ่านช่องทางออนไลน์ได้ที่</h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="cta-button">
+                            <a href='{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}' target="_blank" class="cta-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cta area end -->
+@endsection
+
+@section('script')
+
 @endsection

@@ -83,7 +83,7 @@
                     <div class="col-md-2">
                         <div class="h9_teacher-item mb-30">
                             <div class="h9_teacher-img">
-                                <img src="{{url("template/user-panel/assets/img/teacher/2/4.jpg")}}" alt="">
+                                <img src="{{url("images/home/executive/director-1.png")}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="h2_teacher-item mb-30">
                         <div class="h2_teacher-img">
-                            <img src="{{url("template/user-panel/assets/img/teacher/2/3.jpg")}}" alt="">
+                            <img src="{{url("images/home/executive/team-lead-1.jpg")}}" alt="">
                         </div>
                         <div class="h9_teacher-content" style="text-align: center;">
                             <h5 class="h2_teacher-content-titlee">
@@ -172,40 +172,58 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="h2_teacher-item mb-30">
                         <div class="h2_teacher-img">
-                            <img src="{{url("template/user-panel/assets/img/teacher/2/4.jpg")}}" alt="">
+                            <img src="{{url("images/home/executive/team-lead-2.jpg")}}" alt="">
                         </div>
-                        <div class="h2_teacher-content">
-                            <h5 class="h2_teacher-content-title">
+                        <div class="h9_teacher-content" style="text-align: center;">
+                            <h5 class="h2_teacher-content-titlee">
                                 นางสาวศรัญญา ขานหยู
                             </h5>
                             <span>หัวหน้ากลุ่มบริหารงานแผนงานและงบประมาณ</span>
                         </div>
+{{--                        <div class="h2_teacher-content">--}}
+{{--                            <h5 class="h2_teacher-content-title">--}}
+{{--                                นางสาวศรัญญา ขานหยู--}}
+{{--                            </h5>--}}
+{{--                            <span>หัวหน้ากลุ่มบริหารงานแผนงานและงบประมาณ</span>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="h2_teacher-item mb-30">
                         <div class="h2_teacher-img">
-                            <img src="{{url("template/user-panel/assets/img/teacher/2/5.jpg")}}" alt="">
+                            <img src="{{url("images/home/executive/team-lead-3.jpg")}}" alt="">
                         </div>
-                        <div class="h2_teacher-content">
-                            <h5 class="h2_teacher-content-title">
+                        <div class="h9_teacher-content" style="text-align: center;">
+                            <h6 class="h2_teacher-content-titlee">
                                 นางปนัดดา อามาตย์สมบัติ
-                            </h5>
+                            </h6>
                             <span>หัวหน้ากลุ่มบริหารงานบุคคล</span>
                         </div>
+{{--                        <div class="h2_teacher-content">--}}
+{{--                            <h5 class="h2_teacher-content-title">--}}
+{{--                                นางปนัดดา อามาตย์สมบัติ--}}
+{{--                            </h5>--}}
+{{--                            <span>หัวหน้ากลุ่มบริหารงานบุคคล</span>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="h2_teacher-item mb-30">
                         <div class="h2_teacher-img">
-                            <img src="{{url("template/user-panel/assets/img/teacher/2/6.jpg")}}" alt="">
+                            <img src="{{url("images/home/executive/team-lead-4.jpg")}}" alt="">
                         </div>
-                        <div class="h2_teacher-content">
-                            <h5 class="h2_teacher-content-title">
-                               นายบัญชา ขัณฑ์ชลา
+                        <div class="h9_teacher-content" style="text-align: center;">
+                            <h5 class="h2_teacher-content-titlee">
+                                นายบัญชา ขัณฑ์ชลา
                             </h5>
                             <span>หัวหน้ากลุ่มบริหารงานทั่วไป</span>
                         </div>
+{{--                        <div class="h2_teacher-content">--}}
+{{--                            <h5 class="h2_teacher-content-title">--}}
+{{--                               นายบัญชา ขัณฑ์ชลา--}}
+{{--                            </h5>--}}
+{{--                            <span>หัวหน้ากลุ่มบริหารงานทั่วไป</span>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
 

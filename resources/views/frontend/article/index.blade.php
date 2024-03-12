@@ -25,7 +25,7 @@
     <meta property="og:title" content="{{$category->category_name}}"/>
     <meta property="og:description" content="{{$category->category_name}} ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
     <meta property="og:image" content='{{url("images/kalasin1.png")}}'/>
-    <link rel="canonical" href="{{url('')}}" />
+    <link rel="canonical" href="{{url('')}}"/>
 @endsection
 
 
@@ -53,9 +53,9 @@
     <!-- blog details area start -->
     <section class="blog_details-area pt-120 pb-80">
         <div class="container">
-{{--            <div class="blog_details-img">--}}
-{{--                <img src="{{url("template/user-panel/assets/img/blog/details/1.jpg")}}" alt="">--}}
-{{--            </div>--}}
+            {{--            <div class="blog_details-img">--}}
+            {{--                <img src="{{url("template/user-panel/assets/img/blog/details/1.jpg")}}" alt="">--}}
+            {{--            </div>--}}
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
                     @if (count($posts) > 0)
@@ -74,11 +74,13 @@
                                                 <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($post->created_at)}}, {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span>
                                             </div>
                                             <h5 class="h2_blog-content-title"><a
-                                                        href='{{url("article/$post->post_slug")}}'>{{$post->post_title}}</a></h5>
+                                                        href='{{url("article/$post->post_slug")}}'>{{$post->post_title}}</a>
+                                            </h5>
                                             <p class="h2_course-content-text">
                                                 {{$post->post_detail}}
                                             </p>
-                                            <a href='{{url("article/$post->post_slug")}}'class="theme-btn blog-btn t-theme-btn">เพิ่มเติม</a>
+                                            <a href='{{url("article/$post->post_slug")}}'
+                                               class="theme-btn blog-btn t-theme-btn">เพิ่มเติม</a>
                                         </div>
                                     </div>
                                 </div>

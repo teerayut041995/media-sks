@@ -127,11 +127,11 @@
                             </div>
                             <div class="contact-info-item">
                                 <span><i class="fa-thin fa-mobile-notch"></i>เบอร์โทรศัพท์</span>
-                                <a href="tel:+123548645850">{{env('CONTACT_PHONE_NUMBER')}}</a>
+                                <a href="tel:{{env('CONTACT_PHONE_NUMBER')}}">{{env('CONTACT_PHONE_NUMBER')}}</a>
                             </div>
                             <div class="contact-info-item">
                                 <span><i class="fa-thin fa-envelope"></i>อีเมล</span>
-                                <a href="mailto:example@gmail.com">{{env('CONTACT_EMAIL')}}</a>
+                                <a href="mailto:{{env('CONTACT_EMAIL')}}">{{env('CONTACT_EMAIL')}}</a>
                             </div>
                             <div class="contact-social">
                                 <span>Social Media</span>

@@ -40,11 +40,11 @@
                 <div class="col-12">
                     <div class="breadcrumb-content" style="color: white;">
                         <h2 class="breadcrumb-title" style="color: white;">{{$event->event_name}}</h2>
-                        <div class="breadcrumb-list">
-                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>
-                            <a href='{{url("events")}}' style="color: white;">กิจกรรม</a>
-                            <span style="color: white;">{{$event->event_name}}</span>
-                        </div>
+{{--                        <div class="breadcrumb-list">--}}
+{{--                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>--}}
+{{--                            <a href='{{url("events")}}' style="color: white;">กิจกรรม</a>--}}
+{{--                            <span style="color: white;">{{$event->event_name}}</span>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

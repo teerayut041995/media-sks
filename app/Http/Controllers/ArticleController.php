@@ -30,7 +30,10 @@ class ArticleController extends Controller
             ->firstOrFail();
         $active = array('name' => '');
         $posts = Post::leftJoin('users', 'posts.user_id', 'users.id')
-            ->select('posts.*', 'users.name')
+            ->select([
+                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_status', 'posts.created_at',
+                'users.name'
+            ])
             ->where('post_status', '1')
             ->where('category_id', $category->id)
             ->orderBy('created_at', 'DESC');
@@ -62,7 +65,10 @@ class ArticleController extends Controller
             ->first();
 
         $posts = Post::leftJoin('users', 'posts.user_id', 'users.id')
-            ->select('posts.*', 'users.name')
+            ->select([
+                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_status', 'posts.created_at',
+                'users.name'
+            ])
             ->where('post_status', '1')
             ->where('sub_category_id', $category->id)
             ->orderBy('created_at', 'DESC');

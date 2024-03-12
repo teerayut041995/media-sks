@@ -37,8 +37,8 @@
                     <div class="footer-widget-list" style="color: white;">
                         <ul>
                             <li>เว็บไซต์ : <a href="{{url('/')}}">www.sks.go.th</a></li>
-                            <li>เบอร์โทร : <a href="#">043-891405</a></li>
-                            <li>อีเมล : <a href="#">sks@gmail.com</a></li>
+                            <li>เบอร์โทร : <a href="#">{{env('CONTACT_PHONE_NUMBER')}}</a></li>
+                            <li>อีเมล : <a href="#">{{env('CONTACT_EMAIL')}}</a></li>
 {{--                            <li><a href="#">Finance & Accounting</a></li>--}}
 {{--                            <li><a href="#">IT & Software</a></li>--}}
 {{--                            <li><a href="#">Sales Marketing</a></li>--}}

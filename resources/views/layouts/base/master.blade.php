@@ -11,7 +11,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TWHYK5CB5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-1TWHYK5CB5');
@@ -32,15 +36,18 @@
         .my-font {
             font-family: 'Mitr', sans-serif;
         }
+
         .cut-title {
-            font-size:1em;
-            line-height:1em;
-            height:2em;
+            font-size: 1em;
+            line-height: 1em;
+            height: 2em;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
     </style>
+
+    @yield('style')
 </head>
 
 <body>
@@ -51,7 +58,7 @@
             <div class="col-xl-6 col-8">
                 <div class="sidebar-logo">
                     <a href="{{url('/')}}"><img src="{{asset("images/home/logo.png")}}"
-                                              alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
+                                                alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
                 </div>
             </div>
             <div class="col-xl-6 col-4">
@@ -98,6 +105,6 @@
 <script src="{{asset("template/user-panel/assets/js/appear.min.js")}}"></script>
 <script src="{{asset("template/user-panel/assets/js/jquery.bxslider.min.js")}}"></script>
 <script src="{{asset("template/user-panel/assets/js/main.js")}}"></script>
-
+@yield('script')
 </body>
 </html>
