@@ -26,7 +26,7 @@
     <meta property="og:title" content="ผู้บริหารศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
     <meta property="og:description"
           content="เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content='{{url("images/kalasin1.png")}}'/>
+    <meta property="og:image" content='{{url("images/kalasin-og.jpg")}}'/>
     <link rel="canonical" href="{{url('')}}"/>
 @endsection
 

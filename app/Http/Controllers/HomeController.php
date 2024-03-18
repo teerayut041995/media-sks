@@ -53,7 +53,7 @@ class HomeController extends Controller
         $new_post = Post::leftJoin('users', 'posts.user_id', 'users.id')
             ->join('categories', 'categories.id', 'posts.category_id')
             ->select([
-                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id', 'posts.post_title', 'posts.post_detail', 'posts.post_slug', 'posts.post_image', 'posts.post_status', 'posts.created_at',
+                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'post_youtube_embed', 'post_youtube_link', 'posts.sub_category_id', 'posts.post_title', 'posts.post_detail', 'posts.post_slug', 'posts.post_image', 'posts.post_status', 'posts.created_at',
                 'users.name',
                 'categories.category_name'
             ])

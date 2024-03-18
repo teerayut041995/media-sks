@@ -20,7 +20,8 @@ class Event extends Model implements ViewableContract
     {
         return [
             'event_slug' => [
-                'source' => 'event_name'
+                'source' => 'event_name',
+                'onUpdate' => true,
             ]
         ];
     }

@@ -72,7 +72,7 @@
 						}
 						?>
 							<tr>
-								<td>{{$post->post_title}}</td>
+								<td>{{$post->post_title}}<br><small>{{formatDateThat($post->created_at)}}</small></td>
 								<td>{{$post->category_name}}</td>
 								<td>{{$post->sub_category_name}}</td>
 								<td>
@@ -111,7 +111,11 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	$('#data-posts-all').DataTable();
+	$('#data-posts-all').DataTable({
+		info: false,
+		ordering: false,
+		paging: true
+	});
 });
 </script>
 

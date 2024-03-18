@@ -24,7 +24,7 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{$category->category_name}}"/>
     <meta property="og:description" content="{{$category->category_name}} ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content='{{url("images/kalasin1.png")}}'/>
+    <meta property="og:image" content='{{url("images/kalasin-og.jpg")}}'/>
     <link rel="canonical" href="{{url('')}}"/>
 @endsection
 

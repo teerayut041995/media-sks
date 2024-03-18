@@ -6,7 +6,7 @@
           content="เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
-          content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, ศูนย์การศึกษาพิเศษ, สำนักบริหารงานการศึกษาพิเศษ, บริการช่วยเหลือระยะแรกเริ่ม, การศึกษาพิเศษ">
+          content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ, บริการช่วยเหลือระยะแรกเริ่ม, การศึกษาพิเศษ">
     <meta name="author" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
     <meta name="robots" content="index, archive">
     <link rel="icon" href="{{asset('images/home/favicon.ico')}}" type="image/x-icon">
@@ -54,14 +54,12 @@
                 height: 80px;
             }
         }
-
         @media only screen and (min-width: 576px) and (max-width: 767px) {
             .h7_about-img-video a svg {
                 width: 100px;
                 height: 100px;
             }
         }
-
         .h7_about-img-video a i {
             position: absolute;
             left: 50%;
@@ -70,7 +68,6 @@
             font-size: 22px;
             color: var(--clr-theme-primary-6);
         }
-
         .h7_about-img-video a:hover svg {
             transform: rotate(180deg);
         }
@@ -143,11 +140,11 @@
     <!-- banner area start -->
     <section class="h10_banner-area">
         <div class="h10_single-banner bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">
-            <img src="{{url("template/user-panel/assets/img/banner/10/shape-1.png")}}"
+            <img src="{{url("template/user-panel/assets/img/banner/10/shape-1.png")}}" alt="Not Found"
                  class="h10_banner-shape-1 d-none d-xxl-block">
-            <img src="{{url("template/user-panel/assets/img/banner/10/shape-2.png")}}"
+            <img src="{{url("template/user-panel/assets/img/banner/10/shape-2.png")}}" alt="Not Found"
                  class="h10_banner-shape-2 d-none d-xl-block">
-            <img src="{{url("template/user-panel/assets/img/banner/10/shape-3.png")}}"
+            <img src="{{url("template/user-panel/assets/img/banner/10/shape-3.png")}}" alt="Not Found"
                  class="h10_banner-shape-3 d-none d-xl-block">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
@@ -202,62 +199,6 @@
     </section>
     <!-- banner area end -->
 
-    @if($new_post)
-        <!-- about area start -->
-        @php
-            $new_date = date_create($new_post->created_at);
-            $month = date_format($new_date, 'm');
-            $day = date_format($new_date, 'd');
-            $year = date_format($new_date, 'Y');
-        @endphp
-        <section class="h6_about-area pt-120 pb-80 fix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="h6_about-img w_img h7_about-img-video">
-                            <img src='{{url("images/image_post/$new_post->post_image")}}'
-                                 alt="{{$new_post->post_title}}">
-                            @if($new_post->post_youtube_link)
-                                <a href="{{$new_post->post_youtube_link}}" class="popup-video"
-                                   style="position: absolute;left: 50%; top: 50%; transform: translate(-50%, -50%);">
-                                    <svg width="131" height="132" viewBox="0 0 131 132" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="65" cy="66" r="64" stroke="white" stroke-opacity="0.14"
-                                                stroke-width="2"/>
-                                        <path d="M65 131C100.899 131 130 101.899 130 66C130 30.1015 100.899 1 65 1"
-                                              stroke="#B1040E" stroke-width="2"/>
-                                    </svg>
-                                    <i class="fa-solid fa-play"></i>
-                                </a>
-                            @endif
-                            <div class="h6_about-img-content">
-                                <h2>{{$day}}.{{$month}}</h2>
-                                <span style="font-size: 30px;">{{$year + 543}}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="h6_about-content ml-30 mb-30 mb-md-0 pb-30">
-                            {{--                            <h2 class="h10_class-content-title"><span--}}
-                            {{--                                        style="display: inline-block; padding: 5px 15px; position: relative; z-index: 1; color: #000; font-size: 24px; font-weight: 700; border: 1px solid #000; line-height: 1; border-radius: 4px; padding-left: 40px; margin-left: 5px;">{{$new_post->category_name}}</span>--}}
-                            {{--                            </h2>--}}
-                            <h3 class="h6_about-content-title"><a href='{{url("article/$new_post->post_slug")}}'>{{$new_post->post_title}}</a></h3>
-                            <p>{{$new_post->post_detail}}</p>
-                            <div class="event-content-meta">
-                                <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new_post->created_at)}}, {{Carbon\Carbon::parse($new_post->created_at)->diffForHumans()}}</span>
-                            </div>
-                            <a href='{{url("article/$new_post->post_slug")}}'
-                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูรายละเอียด<i
-                                        class="fa-light fa-arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about area end -->
-    @endif
-
-
     @foreach($events as $event)
         <!-- about area start -->
         @php
@@ -266,22 +207,9 @@
             $day = date_format($new_date, 'd');
             $year = date_format($new_date, 'Y');
         @endphp
-        <section class="h6_about-area pt-20 pb-20 fix">
+        <section class="h6_about-area pt-120 pb-80 fix">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="h6_about-content ml-30 mb-30 mb-md-0 pb-30">
-
-                            <h3 class="h6_about-content-title"><a href='{{url("events/$event->event_slug")}}'>{{$event->event_name}}</a></h3>
-                            <p>{{$event->event_description}}</p>
-                            <a href='{{url("events/$event->event_slug")}}'
-                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูกิจกรรม<i
-                                        class="fa-light fa-arrow-up-right"></i></a>
-                            <a href='{{url("events")}}'
-                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูกิจกรรมทั้งหมด<i
-                                        class="fa-light fa-arrow-up-right"></i></a>
-                        </div>
-                    </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="h6_about-img w_img">
                             <img src='{{url("images/image_event/$event->event_image")}}'
@@ -291,13 +219,136 @@
                                 <span style="font-size: 30px;">{{$year + 543}}</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="h6_about-content ml-30 mb-30 mb-md-0 pb-30">
 
+                            <h3 class="h6_about-content-title">{{$event->event_name}}</h3>
+                            <p>{{$event->event_description}}</p>
+                            <a href='{{url("events/$event->event_slug")}}'
+                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูกิจกรรม<i
+                                        class="fa-light fa-arrow-up-right"></i></a>
+                            <a href='{{url("events")}}'
+                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูกิจกรรมทั้งหมด<i
+                                        class="fa-light fa-arrow-up-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- about area end -->
     @endforeach
+
+
+
+    @if($new_post)
+        <!-- research area start -->
+        <section class="h6_research-area pt-20 pb-20 fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-6 col-lg-6">
+                        <div class="h6_research-wrap mb-50">
+                            <div class="h6_research-content">
+                                <h3 class="h6_about-content-title">{{$new_post->post_title}}</h3>
+
+                                <p>{{$new_post->post_detail}}</p>
+                                <div class="event-content-meta">
+                                    <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new_post->created_at)}}, {{Carbon\Carbon::parse($new_post->created_at)->diffForHumans()}}</span>
+                                </div>
+                                <a href='{{url("article/$new_post->post_slug")}}'
+                                   class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูรายละเอียด<i
+                                            class="fa-light fa-arrow-up-right"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 col-xl-6 col-lg-6">
+                        <h2 class="h10_class-content-title"><span
+                                    style="display: inline-block; padding: 5px 15px; position: relative; z-index: 1; color: #000; font-size: 24px; font-weight: 700; border: 1px solid #000; line-height: 1; border-radius: 4px; padding-left: 40px; margin-left: 5px;">{{$new_post->category_name}}</span>
+                        </h2>
+                        <div class="h6_research-img h7_about-img-video w_img mb-50">
+                            {{--                            <img src='{{url("images/image_post/$new_post->post_image")}}'--}}
+                            {{--                                 alt="{{$new_post->post_title}}">--}}
+                            {{--                            <div class="h7_about-img w_img mb-50" >--}}
+                            <img src='{{url("images/image_post/$new_post->post_image")}}'
+                                 alt="{{$new_post->post_title}}">
+                            <a href="https://www.youtube.com/watch?v=ie-cJgRYAsY" class="popup-video"
+                               style="position: absolute;left: 50%; top: 50%; transform: translate(-50%, -50%);">
+                                <svg width="131" height="132" viewBox="0 0 131 132" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="65" cy="66" r="64" stroke="white" stroke-opacity="0.14"
+                                            stroke-width="2"/>
+                                    <path d="M65 131C100.899 131 130 101.899 130 66C130 30.1015 100.899 1 65 1"
+                                          stroke="#B1040E" stroke-width="2"/>
+                                </svg>
+                                <i class="fa-solid fa-play"></i>
+                            </a>
+                        </div>
+
+                        {{--                        </div>--}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- research area end -->
+    @endif
+
+
+    <!-- category area start -->
+    {{--    <section class="category-area pt-60 pb-20">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row">--}}
+    {{--                <div class="col-xl-3 col-lg-3">--}}
+    {{--                    <div class="category-left pb-60">--}}
+    {{--                        <div class="section-area">--}}
+    {{--                            <span class="section-subtitle">ติดตามข้อมูลข่าวสาร</span>--}}
+    {{--                            <h2 class="section-title mb-20">เนื้อหา<br>ยอดนิยม</h2>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="category-navigation">--}}
+    {{--                            <div class="category-prev"><i class="fa-thin fa-arrow-left"></i>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="category-next"><i class="fa-light fa-arrow-right"></i>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--                <div class="col-xl-9 col-lg-9">--}}
+    {{--                    <div class="category-wrap">--}}
+    {{--                        <div class="category-shape">--}}
+    {{--                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-1.png")}}" alt=""--}}
+    {{--                                 class="category-shape-1">--}}
+    {{--                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-2.png")}}" alt=""--}}
+    {{--                                 class="category-shape-2">--}}
+    {{--                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-3.png")}}" alt=""--}}
+    {{--                                 class="category-shape-3">--}}
+    {{--                            <img src="{{url("/template/user-panel/assets/img/category/1/shape-1.png")}}" alt=""--}}
+    {{--                                 class="category-shape-4">--}}
+    {{--                        </div>--}}
+    {{--                        <div class="category-active swiper pb-60">--}}
+    {{--                            <div class="swiper-wrapper">--}}
+    {{--                                @foreach($popular_post as $popular)--}}
+    {{--                                    <div class="swiper-slide">--}}
+    {{--                                        <div class="category-item">--}}
+    {{--                                            <div class="category-img">--}}
+    {{--                                                <img src='{{url("images/image_post/$popular->post_image")}}'--}}
+    {{--                                                     alt="{{$popular->post_title}}">--}}
+    {{--                                            </div>--}}
+    {{--                                            <div class="category-content cut-line">--}}
+    {{--                                                <h6 class="text-line"><a href='{{url("article/$popular->post_slug")}}'>{{$popular->post_title}}</a>--}}
+    {{--                                                </h6>--}}
+    {{--                                            </div>--}}
+    {{--                                        </div>--}}
+    {{--                                    </div>--}}
+    {{--                                @endforeach--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
+    <!-- category area end -->
+
 
     <!-- course area start -->
     <section class="course-area">

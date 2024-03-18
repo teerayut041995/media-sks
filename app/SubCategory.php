@@ -16,7 +16,8 @@ class SubCategory extends Model
     {
         return [
             'sub_category_slug' => [
-                'source' => 'sub_category_name'
+                'source' => 'sub_category_name',
+                'onUpdate' => true,
             ]
         ];
     }

@@ -5096,7 +5096,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   overflow: hidden;
   padding-top: 180px;
   padding-bottom: 180px;
-  background-color: var(--clr-theme-primary-10);
+  /*background-color: var(--clr-theme-primary-10);*/
 }
 @media (max-width: 767px) {
   .h10_single-banner {
