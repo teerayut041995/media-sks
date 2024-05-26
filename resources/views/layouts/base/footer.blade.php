@@ -67,7 +67,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="copyright-text">
-                    <p>Copyright © 2024 ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</p>
+                    <p>Copyright © CAPER ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ . All rights reserved</p>
                 </div>
             </div>
         </div>

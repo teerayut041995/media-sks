@@ -155,6 +155,7 @@
                         <div class="h10_banner-content mb-60 mb-lg-0">
                             <div class="banner-content">
                                 <div class="section-area">
+
                                     <span class="section-subtitle" style="font-size: 20px;">Kalasin Special Education Center</span>
                                     <h1 class="h10_banner-content-title" style="text-shadow: black 0.1em 0.1em 0.2em;">
                                         ศูนย์การศึกษาพิเศษ ประจำจังหวัด<span>กาฬสินธุ์ <img
@@ -165,20 +166,26 @@
                                         สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน
                                         กระทรวงศึกษาธิการ <br></p>
 
-                                    <p class="h6_banner-content-text" data-animation="fadeInUp" data-delay="0.7s"
+                                    <p class="h6_banner-content-text" data-animation="fadeInUp" size=""
+                                       data-delay="0.7s"
                                        style="font-style: italic; font-size: 20px;">“สถานศึกษาแกนนำ
                                         ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ“</p>
+
                                 </div>
+
+                            </div>
+                            <div class="h10_banner-content-btn mb-60" align="center">
+
                             </div>
 
-                            <div class="h10_banner-content-btn mb-60">
-                                <a href="{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}" target="_blank"
-                                   class="theme-btn theme-btn-10 theme-btn-10-white">FACEBOOK<i
-                                            class="fa-light fa-arrow-right"></i></a>
-                                <a href="{{url(env('SOCIAL_CONTACT_YOUTUBE'))}}" target="_blank"
-                                   class="theme-btn theme-btn-10 theme-btn-10-transparent">YOUTUBE<i
-                                            class="fa-light fa-arrow-right"></i></a>
-                            </div>
+                            {{--                            <div class="h10_banner-content-btn mb-60">--}}
+                            {{--                                <a href="{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}" target="_blank"--}}
+                            {{--                                   class="theme-btn theme-btn-10 theme-btn-10-white">FACEBOOK<i--}}
+                            {{--                                            class="fa-light fa-arrow-right"></i></a>--}}
+                            {{--                                <a href="{{url(env('SOCIAL_CONTACT_YOUTUBE'))}}" target="_blank"--}}
+                            {{--                                   class="theme-btn theme-btn-10 theme-btn-10-transparent">YOUTUBE<i--}}
+                            {{--                                            class="fa-light fa-arrow-right"></i></a>--}}
+                            {{--                            </div>--}}
                         </div>
 
                     </div>
@@ -200,6 +207,45 @@
             </div>
         </div>
     </section>
+
+    {{--    <section class="h10_banner-area">--}}
+    {{--        <div class="h10_single-banner bg-default" data-background="{{url("images/home/CHATMONGKOL.jpg")}}">--}}
+    {{--            <img src="{{url("template/user-panel/assets/img/banner/10/shape-1.png")}}"--}}
+    {{--                 class="h10_banner-shape-1 d-none d-xxl-block">--}}
+    {{--            <img src="{{url("template/user-panel/assets/img/banner/10/shape-2.png")}}"--}}
+    {{--                 class="h10_banner-shape-2 d-none d-xl-block">--}}
+    {{--            <img src="{{url("template/user-panel/assets/img/banner/10/shape-3.png")}}"--}}
+    {{--                 class="h10_banner-shape-3 d-none d-xl-block">--}}
+    {{--            <div class="container">--}}
+    {{--                <div class="row justify-content-between align-items-center">--}}
+    {{--                    <div class="col-xxl-12 col-xl-12 col-lg-12">--}}
+    {{--                        <div class="h10_banner-content mb-60 mb-lg-0">--}}
+    {{--                            <div class="banner-content" align="center">--}}
+    {{--                                <div class="section-area" align="center">--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <a href="http://forking.moi.go.th" target="_blank"--}}
+    {{--                                       class="theme-btn theme-btn-10 theme-btn-10-white">ลงนามถวายพระพร</a>--}}
+    {{--                                </div>--}}
+
+    {{--                            </div>--}}
+    {{--                            <div class="h10_banner-content-btn mb-60" align="center">--}}
+
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+
+    {{--                    </div>--}}
+    {{--                    <div class="col-xxl-6 col-xl-6 col-lg-6">--}}
+    {{--                        --}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
+
     <!-- banner area end -->
 
     @if($new_post)
@@ -241,7 +287,9 @@
                             {{--                            <h2 class="h10_class-content-title"><span--}}
                             {{--                                        style="display: inline-block; padding: 5px 15px; position: relative; z-index: 1; color: #000; font-size: 24px; font-weight: 700; border: 1px solid #000; line-height: 1; border-radius: 4px; padding-left: 40px; margin-left: 5px;">{{$new_post->category_name}}</span>--}}
                             {{--                            </h2>--}}
-                            <h3 class="h6_about-content-title"><a href='{{url("article/$new_post->post_slug")}}'>{{$new_post->post_title}}</a></h3>
+                            <h3 class="h6_about-content-title"><a
+                                        href='{{url("article/$new_post->post_slug")}}'>{{$new_post->post_title}}</a>
+                            </h3>
                             <p>{{$new_post->post_detail}}</p>
                             <div class="event-content-meta">
                                 <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new_post->created_at)}}, {{Carbon\Carbon::parse($new_post->created_at)->diffForHumans()}}</span>
@@ -272,7 +320,8 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="h6_about-content ml-30 mb-30 mb-md-0 pb-30">
 
-                            <h3 class="h6_about-content-title"><a href='{{url("events/$event->event_slug")}}'>{{$event->event_name}}</a></h3>
+                            <h3 class="h6_about-content-title"><a
+                                        href='{{url("events/$event->event_slug")}}'>{{$event->event_name}}</a></h3>
                             <p>{{$event->event_description}}</p>
                             <a href='{{url("events/$event->event_slug")}}'
                                class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูกิจกรรม<i
