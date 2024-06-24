@@ -83,7 +83,7 @@
                     <div class="col-md-2">
                         <div class="h9_teacher-item mb-30">
                             <div class="h9_teacher-img">
-                                <img src="{{url("images/home/executive/director-1.png")}}" alt="">
+                                <img src="{{url("images/home/executive/director-2.jpg")}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-area-9 text-center mb-40">
-                        <h3 class=" mb-0">นางกุลทวี พลขันธ์</h3>
+                        <h3 class=" mb-0">นายไพโรจน์ ไพรเขียว</h3>
                         <span class="section-subtitle">รองผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</span>
                     </div>
                 </div>
