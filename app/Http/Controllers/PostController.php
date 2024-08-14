@@ -32,6 +32,11 @@ class PostController extends Controller
             ->leftJoin('sub_categories', 'posts.sub_category_id', '=', 'sub_categories.id')
             ->select('posts.id', 'posts.post_title', 'posts.post_status', 'posts.created_at', 'categories.category_name', 'categories.category_ranking', 'sub_categories.sub_category_ranking', 'sub_categories.sub_category_name')
             ->orderBy('posts.created_at', 'DESC')
+            ->select([
+                'posts.uid', 'posts.id', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug', 'posts.post_status', 'posts.created_at', 'posts.updated_at',
+                'categories.category_name', 'categories.category_ranking',
+                'sub_categories.sub_category_name', 'sub_categories.sub_category_status',
+            ])
 //            ->orderBy('categories.category_ranking', 'asc')
 //            ->orderBy('sub_categories.sub_category_ranking', 'asc')
             ->get();

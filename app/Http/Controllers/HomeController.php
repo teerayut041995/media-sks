@@ -140,7 +140,7 @@ class HomeController extends Controller
             ->where('post_status', '1')
             ->where('post_slug', $slug)
             ->firstOrFail();
-        $expiresAt = now()->addHours(3);
+        $expiresAt = now()->addHours(24);
         views($post)
             ->delayInSession($expiresAt)
             ->record();
@@ -191,7 +191,7 @@ class HomeController extends Controller
             ->orderByViews()
             ->first();
 
-        $expiresAt = now()->addHours(3);
+        $expiresAt = now()->addHours(24);
         views($event)
             ->delayInSession($expiresAt)
             ->record();

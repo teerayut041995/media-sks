@@ -40,10 +40,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-content" style="color: white;">
-                        <h2 class="breadcrumb-title" style="color: white;">ผู้บริหาร</h2>
+                        <h2 class="breadcrumb-title" style="color: white;">ช่องทางการติดต่อ</h2>
                         <div class="breadcrumb-list">
                             <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>
-                            <span style="color: white;">ผู้บริหาร</span>
+                            <span style="color: white;">ช่องทางการติดต่อ</span>
                         </div>
                     </div>
                 </div>

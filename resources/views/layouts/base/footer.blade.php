@@ -23,15 +23,15 @@
                     <h5 class="footer-widget-title">การพัฒนาระบบ</h5>
                     <div class="footer-widget-list">
                         <ul>
-                            <li><a href="https://caper.sks.go.th">CAPER</a></li>
-                            <li><a href="https://report.sks.go.th">ระบบรายงาน</a></li>
-                            <li><a href="https://services.sks.go.th/certificate">เกียรติบัตรออนไลน์</a></li>
-                            <li><a href="https://sillapa.sks.go.th">ศิลปหัตถกรรมนักเรียน</a></li>
+                            <li><a href="https://caper.sks.go.th" target="_blank">CAPER</a></li>
+                            <li><a href="https://report.sks.go.th" target="_blank">ระบบรายงาน</a></li>
+                            <li><a href="https://services.sks.go.th/certificate" target="_blank">เกียรติบัตรออนไลน์</a></li>
+                            <li><a href="https://sillapa.sks.go.th" target="_blank">ศิลปหัตถกรรมนักเรียน</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-5 col-md-5 col-sm-6 d-flex justify-content-xl-center order-md-4 order-xl-3">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-xl-center order-md-4 order-xl-3">
                 <div class="footer-widget mb-40">
                     <h5 class="footer-widget-title">ช่องทางการติดต่อ</h5>
                     <div class="footer-widget-list" style="color: white;">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-7 col-md-7 col-sm-12 order-md-3 order-xl-4">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 order-md-3 order-xl-4">
                 <div class="footer-widget mb-40">
                     <h5 class="footer-widget-title">ที่อยู่</h5>
                     <div class="footer-widget-list" style="color: white;">
