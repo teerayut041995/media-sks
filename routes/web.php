@@ -63,3 +63,13 @@ Route::get('/administrator/event/active/{id}', 'EnentController@active');
 Route::get('/administrator/event/unactive/{id}', 'EnentController@unactive');
 Route::delete('/administrator/event/image/delete/{id}' , 'EnentController@delete_image');
 Route::patch('/administrator/event/upload-image/{id}' , 'EnentController@upload_image');
+
+Route::prefix('/administrator/banner')->group(function () {
+    Route::get('/', 'Banner\BannerController@index');
+//    Route::get('/load-data', [BannerController::class, 'loadData']);
+    Route::get('/create', 'Banner\BannerController@create');
+    Route::post('/store', 'Banner\BannerController@store');
+    Route::get('/{banner_uid}/edit', 'Banner\BannerController@edit');
+    Route::post('/{banner_uid}/update', 'Banner\BannerController@update');
+    Route::post('/{banner_uid}/delete', 'Banner\BannerController@delete');
+});

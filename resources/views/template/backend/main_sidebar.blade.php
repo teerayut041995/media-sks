@@ -47,6 +47,17 @@
           </ul>
         </li>
         <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>แบนเนอร์สไลด์</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{url('administrator/banner')}}">ข้อมูลแบนเนอร์สไลด์</a></li>
+            <li><a href="{{url('administrator/banner/create')}}">เพิ่มแบนเนอร์สไลด์</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>ประเภทบทความ</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>

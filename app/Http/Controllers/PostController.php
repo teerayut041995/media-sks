@@ -13,6 +13,7 @@ use App\Http\Requests\PostRequest;
 use App\Category;
 use App\SubCategory;
 use App\Post;
+use Image;
 
 class PostController extends Controller
 {
@@ -65,11 +66,14 @@ class PostController extends Controller
     {
         if ($request->file('post_image') != '') {
             $file_image = $request->file('post_image');
+            $file_thumbnail = $request->file('post_image');
+            $post_image_thumbnail_file_name = $this->uploadAndReSizeImage($file_thumbnail);
             $post_image = md5(rand() * time()) . '.' . $file_image->getClientOriginalExtension();
             $file_image->move(public_path('images/image_post'), $post_image);
         } else {
             $post_image = "";
         }
+
         $detail = $request->input('summernoteInput');
         $dom = new DomDocument();
         $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -103,6 +107,7 @@ class PostController extends Controller
             "sub_category_id" => $request->input('sub_category_id'),
             "post_title" => $request->input('post_title'),
             "post_image" => $post_image,
+            "post_image_thumbnail_file_name" => $post_image_thumbnail_file_name,
             "post_detail" => $request->input('post_detail'),
             "post_youtube_embed" => $request->input('post_youtube_embed'),
             "post_youtube_link" => $request->input('post_youtube_link'),
@@ -170,21 +175,29 @@ class PostController extends Controller
             }
         }
 
+        $post = Post::find($id);
+        $post_image_thumbnail_file_name = $post->post_image_thumbnail_file_name;
         if ($request->file('post_image_update') == '') {
             $image_name = $request->get('old_post_image');
         } else {
             $image_post = $request->file('post_image_update');
+            $file_thumbnail = $request->file('post_image_update');
+            $post_image_thumbnail_file_name = $this->uploadAndReSizeImage($file_thumbnail);
             $image_name = md5(rand() * time()) . '.' . $image_post->getClientOriginalExtension();
             $image_post->move(public_path('images/image_post'), $image_name);
             if ($request->get('old_post_image') != '') {
                 @unlink(public_path() . '/images/image_post/' . $request->get('old_post_image'));
+                @unlink(public_path() . '/images/image_post/thumbnail/' . $post->post_image_thumbnail_file_name);
             }
         }
+
+
         $post = Post::find($id);
         $post->category_id = $request->input('category_id');
         $post->sub_category_id = $request->input('sub_category_id');
         $post->post_title = $request->input('post_title');
         $post->post_image = $image_name;
+        $post->post_image_thumbnail_file_name = $post_image_thumbnail_file_name;
         $post->post_detail = $request->input('post_detail');
         $post->post_youtube_embed = $request->input('post_youtube_embed');
         $post->post_youtube_link = $request->input('post_youtube_link');
@@ -206,6 +219,7 @@ class PostController extends Controller
         $image = $post->post_image;
         if ($image != '') {
             @unlink(public_path() . '/images/image_post/' . $image);
+            @unlink(public_path() . '/images/image_post/thumbnail/' . $post->post_image_thumbnail_file_name);
         }
         $post->delete();
         return redirect('administrator/post')->with('success', 'ลบข้อมูลเรียบร้อยแล้ว');
@@ -251,4 +265,16 @@ class PostController extends Controller
 
         return $output;
     }
+
+    public function uploadAndReSizeImage($file) {
+        $name = md5(rand()*time()).'.'.$file->getClientOriginalExtension();
+        $destinationPath = public_path('images/image_post/thumbnail');
+        $img = Image::make($file->path());
+        $img->resize(410, 240, function ($constraint) {
+//            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$name);
+        return $name;
+    }
+
 }
+
