@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/nice-select.css")}}">
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/meanmenu.css")}}">
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/swiper-bundle.min.css")}}">
-    <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/main.css")}}">
+    <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/main-1.css")}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit|Mitr|Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -116,6 +116,33 @@
 
 <!-- header area start -->
 <header>
+    <div class="h7_header-top d-none d-md-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-9">
+                    <ul class="h7_header-top-list">
+                        <li><a href="tel:{{env('CONTACT_PHONE_NUMBER', '')}}"><i
+                                        class="fa-light fa-phone"></i>{{env('CONTACT_PHONE_NUMBER', '')}}</a></li>
+                        <li><a href="javascript:void(0)"><i
+                                        class="fa-light fa-envelope"></i>{{env('CONTACT_EMAIL', '')}}</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <div class="h7_header-top-social">
+                        <ul>
+                            {{--                            <li><a href="{{env('SOCIAL_CONTACT_WEBSITE', '')}}"><i class="fa-brands fa-globe"></i></a></li>--}}
+                            <li><a href="{{env('SOCIAL_CONTACT_FACEBOOK', '')}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li><a href="{{env('SOCIAL_CONTACT_WEBSITE', '')}}" target="_blank"><i
+                                            class="fa-brands fa fa-dribbble"></i></a></li>
+                            <li><a href="{{env('SOCIAL_CONTACT_YOUTUBE', '')}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @include('.layouts.base.header')
 </header>
 <!-- header area end -->

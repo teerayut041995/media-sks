@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,24 +32,12 @@ class HomeController extends Controller
             ->orderBy('event_date', 'DESC')
             ->limit(1)
             ->get();
-//
-//        $media_list = Media::where('publishing_status', '1')
-//            ->where('live_status', '!=', '0')
-//            ->orderBy('created_at', 'DESC')
-//            ->orderByViews()
-//            ->limit(3)
-//            ->get();
+
+        $banners = Banner::where('banners.banner_status', 'active')
+            ->orderBy('banners.banner_sequence', 'ASC')
+            ->get();
 
         $active = array('name' => '');
-//        $popular_post = Post::leftJoin('users', 'posts.user_id', 'users.id')
-//            ->select([
-//                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_status', 'posts.created_at',
-//                'users.name'
-//            ])
-//            ->where('post_status', '1')
-//            ->orderByViews()
-//            ->limit(8)
-//            ->get();
 
         $new_post = Post::leftJoin('users', 'posts.user_id', 'users.id')
             ->join('categories', 'categories.id', 'posts.category_id')
@@ -86,7 +75,7 @@ class HomeController extends Controller
         }
 
         $posts = $posts->paginate(12)->appends(request()->except('page'));
-        return view('frontend.home.index', compact('category_menu', 'new_post', 'posts', 'active', 'events'));
+        return view('frontend.home.index', compact('category_menu', 'new_post', 'posts', 'active', 'events', 'banners'));
 
 //        return view('frontend.index', compact('events', 'media_list', 'popular_post', 'new_post'));
     }

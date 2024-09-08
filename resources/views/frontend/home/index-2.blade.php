@@ -14,7 +14,7 @@
     <meta property="og:title" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
     <meta property="og:description"
           content="เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}"/>
+    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}" />
     <link rel="canonical" href="{{url('')}}"/>
 @endsection
 
@@ -68,59 +68,172 @@
 @section('content')
 
     <!-- banner area start -->
-    <section class="h6_banner-area">
-        <div class="swiper banner_6_active">
-            <div class="swiper-wrapper">
-                @foreach($banners as $banner)
-                    <div class="swiper-slide">
-                        {{--                    data-background="{{url('images/banner/f2ee6827c62694d0449ca518ea3ea2aa.jpg')}}"--}}
-                        <div class="h6_single-banner bg-default">
-                            <img src="{{url('images/banner', $banner->banner_file_name)}}"
-                                 style="width: 100%; position: relative; padding-top: 0px;"
-                                 alt="{{$banner->banner_name}}">
-                            <div class="container">
-                                <div class="row align-items-center">
-                                    <div class="col-xxl-7 col-xl-8">
-                                        <div class="h6_banner-content">
-                                            <h1 class="h6_banner-content-title" data-animation="fadeInUp"
-                                                data-delay="0.5s">
-                                                {{$banner->banner_title}}
-                                            </h1>
-                                            <p class="h6_banner-content-text" data-animation="fadeInUp"
-                                               data-delay="0.7s">
-                                                {{$banner->banner_description}}
-                                            </p>
-                                            <div class="h6_banner-content-btn" data-animation="fadeInUp"
-                                                 data-delay="0.7s">
-                                                @if($banner->banner_first_link)
-                                                    <a href="{{$banner->banner_first_link}}" target="_blank"
-                                                       class="header-btn theme-btn theme-btn-medium theme-btn-banner-6"
-                                                       data-animation="fadeInUp"
-                                                       data-delay="0.9s">{{$banner->banner_first_link_text}}<i
-                                                                class="fa-light fa-arrow-up-right"></i></a>
-                                                @endif
-                                                @if($banner->banner_second_link)
-                                                    <a href="{{$banner->banner_second_link}}" target="_blank"
-                                                       class="header-btn theme-btn theme-btn-medium theme-btn-banner-6"
-                                                       data-animation="fadeInUp"
-                                                       data-delay="0.9s">{{$banner->banner_second_link_text}}<i
-                                                                class="fa-light fa-arrow-up-right"></i></a>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
+    {{--    <section class="h6_banner-area">--}}
+    {{--        <div class="swiper banner_6_active">--}}
+    {{--            <div class="swiper-wrapper">--}}
+    {{--                <div class="swiper-slide">--}}
+    {{--                    <div class="h6_single-banner bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">--}}
+    {{--                        <div class="container">--}}
+    {{--                            <div class="row align-items-center">--}}
+    {{--                                <div class="col-xxl-7 col-xl-8">--}}
+    {{--                                    <div class="h6_banner-content">--}}
+    {{--                                        <span class="h6_banner-content-subtitle" data-animation="fadeInUp" data-delay="0.3s"><i class="fa-thin fa-graduation-cap"></i> New Journey on your varsity </span>--}}
+    {{--                                        <h1 class="h6_banner-content-title" data-animation="fadeInUp" data-delay="0.5s">Welcome to Our <span>University</span> Website</h1>--}}
+    {{--                                        <p class="h6_banner-content-text" data-animation="fadeInUp" data-delay="0.7s">The research paper investigates the impact of climate change on global biodiversity <br> Through a comprehensive analysis of species distribution data and climate..</p>--}}
+    {{--                                        <a href="#" class="header-btn theme-btn theme-btn-medium theme-btn-6" data-animation="fadeInUp" data-delay="0.9s">Learn More<i class="fa-light fa-arrow-up-right"></i></a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--                <div class="swiper-slide">--}}
+    {{--                    <div class="h6_single-banner bg-default" data-background="assets/img/banner/6/2.jpg">--}}
+    {{--                        <div class="container">--}}
+    {{--                            <div class="row align-items-center">--}}
+    {{--                                <div class="col-xxl-7 col-xl-8">--}}
+    {{--                                    <div class="h6_banner-content">--}}
+    {{--                                        <span class="h6_banner-content-subtitle" data-animation="fadeInUp" data-delay="0.3s"><i class="fa-thin fa-graduation-cap"></i> New Journey on your varsity </span>--}}
+    {{--                                        <h1 class="h6_banner-content-title" data-animation="fadeInUp" data-delay="0.5s">ยินดีต้อนรับ <span>University</span> Website</h1>--}}
+    {{--                                        <p class="h6_banner-content-text" data-animation="fadeInUp" data-delay="0.7s">The research paper investigates the impact of climate change on global biodiversity <br> Through a comprehensive analysis of species distribution data and climate..</p>--}}
+    {{--                                        <a href="#" class="header-btn theme-btn theme-btn-medium theme-btn-6" data-animation="fadeInUp" data-delay="0.9s">Learn More<i class="fa-light fa-arrow-up-right"></i></a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--                <div class="swiper-slide">--}}
+    {{--                    <div class="h6_single-banner bg-default" data-background="assets/img/banner/6/3.jpg">--}}
+    {{--                        <div class="container">--}}
+    {{--                            <div class="row align-items-center">--}}
+    {{--                                <div class="col-xxl-7 col-xl-8">--}}
+    {{--                                    <div class="h6_banner-content">--}}
+    {{--                                        <span class="h6_banner-content-subtitle" data-animation="fadeInUp" data-delay="0.3s"><i class="fa-thin fa-graduation-cap"></i> New Journey on your varsity </span>--}}
+    {{--                                        <h1 class="h6_banner-content-title" data-animation="fadeInUp" data-delay="0.5s">Welcome to Our <span>University</span> Website</h1>--}}
+    {{--                                        <p class="h6_banner-content-text" data-animation="fadeInUp" data-delay="0.7s">The research paper investigates the impact of climate change on global biodiversity <br> Through a comprehensive analysis of species distribution data and climate..</p>--}}
+    {{--                                        <a href="#" class="header-btn theme-btn theme-btn-medium theme-btn-6" data-animation="fadeInUp" data-delay="0.9s">Learn More<i class="fa-light fa-arrow-up-right"></i></a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--            <div class="h6_banner-navigation">--}}
+    {{--                <div class="banner_6-swiper-prev"><i class="fa-thin fa-angle-left"></i></div>--}}
+    {{--                <div class="banner_6-swiper-next"><i class="fa-thin fa-angle-right"></i></div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
+    <!-- banner area end -->
+
+    <!-- banner area start -->
+    <section class="h10_banner-area">
+        <div class="h10_single-banner bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">
+            <img src="{{url("template/user-panel/assets/img/banner/10/shape-1.png")}}"
+                 class="h10_banner-shape-1 d-none d-xxl-block">
+            <img src="{{url("template/user-panel/assets/img/banner/10/shape-2.png")}}"
+                 class="h10_banner-shape-2 d-none d-xl-block">
+            <img src="{{url("template/user-panel/assets/img/banner/10/shape-3.png")}}"
+                 class="h10_banner-shape-3 d-none d-xl-block">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-xxl-12 col-xl-12 col-lg-12">
+                        <div class="h10_banner-content mb-60 mb-lg-0">
+                            <div class="banner-content">
+                                <div class="section-area">
+
+                                    <span class="section-subtitle" style="font-size: 20px;">Kalasin Special Education Center</span>
+                                    <h1 class="h10_banner-content-title" style="text-shadow: black 0.1em 0.1em 0.2em;">
+                                        ศูนย์การศึกษาพิเศษ ประจำจังหวัด<span>กาฬสินธุ์ <img
+                                                    src="{{url("template/user-panel/assets/img/banner/1/line.png")}}"
+                                                    alt=""></span></h1>
+                                    <p class="h6_banner-content-subtitle"
+                                       style="font-size: 26px; text-shadow: black 0.1em 0.1em 0.2em;">
+                                        สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน
+                                        กระทรวงศึกษาธิการ <br></p>
+
+                                    <p class="h6_banner-content-text" data-animation="fadeInUp" size=""
+                                       data-delay="0.7s"
+                                       style="font-style: italic; font-size: 20px;">“สถานศึกษาแกนนำ
+                                        ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ“</p>
+
                                 </div>
+
                             </div>
+                            <div class="h10_banner-content-btn mb-60" align="center">
+
+                            </div>
+
+                            {{--                            <div class="h10_banner-content-btn mb-60">--}}
+                            {{--                                <a href="{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}" target="_blank"--}}
+                            {{--                                   class="theme-btn theme-btn-10 theme-btn-10-white">FACEBOOK<i--}}
+                            {{--                                            class="fa-light fa-arrow-right"></i></a>--}}
+                            {{--                                <a href="{{url(env('SOCIAL_CONTACT_YOUTUBE'))}}" target="_blank"--}}
+                            {{--                                   class="theme-btn theme-btn-10 theme-btn-10-transparent">YOUTUBE<i--}}
+                            {{--                                            class="fa-light fa-arrow-right"></i></a>--}}
+                            {{--                            </div>--}}
                         </div>
+
                     </div>
-                @endforeach
-            </div>
-            <div class="h6_banner-navigation">
-                <div class="banner_6-swiper-prev"><i class="fa-thin fa-angle-left"></i></div>
-                <div class="banner_6-swiper-next"><i class="fa-thin fa-angle-right"></i></div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6">
+
+                        {{--                        <div class="h10_banner-right pl-110">--}}
+                        {{--                            <img src="{{url("template/user-panel/assets/img/banner/10/shape-4.png")}}" alt="Not Found"--}}
+                        {{--                                 class="h10_banner-shape-4 d-none d-md-block">--}}
+                        {{--                            <img src="{{url("template/user-panel/assets/img/banner/10/shape-5.png")}}" alt="Not Found"--}}
+                        {{--                                 class="h10_banner-shape-5 d-none d-md-block">--}}
+                        {{--                            <img src="{{url("template/user-panel/assets/img/banner/10/shape-6.png")}}" alt="Not Found"--}}
+                        {{--                                 class="h10_banner-shape-6 d-none d-md-block">--}}
+                        {{--                            --}}{{--                            <div class="h10_banner-img">--}}
+                        {{--                            --}}{{--                                <img src="{{url("images/home/show-1.png")}}" alt="">--}}
+                        {{--                            --}}{{--                            </div>--}}
+                        {{--                        </div>--}}
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    {{--    <section class="h10_banner-area">--}}
+    {{--        <div class="h10_single-banner bg-default" data-background="{{url("images/home/CHATMONGKOL.jpg")}}">--}}
+    {{--            <img src="{{url("template/user-panel/assets/img/banner/10/shape-1.png")}}"--}}
+    {{--                 class="h10_banner-shape-1 d-none d-xxl-block">--}}
+    {{--            <img src="{{url("template/user-panel/assets/img/banner/10/shape-2.png")}}"--}}
+    {{--                 class="h10_banner-shape-2 d-none d-xl-block">--}}
+    {{--            <img src="{{url("template/user-panel/assets/img/banner/10/shape-3.png")}}"--}}
+    {{--                 class="h10_banner-shape-3 d-none d-xl-block">--}}
+    {{--            <div class="container">--}}
+    {{--                <div class="row justify-content-between align-items-center">--}}
+    {{--                    <div class="col-xxl-12 col-xl-12 col-lg-12">--}}
+    {{--                        <div class="h10_banner-content mb-60 mb-lg-0">--}}
+    {{--                            <div class="banner-content" align="center">--}}
+    {{--                                <div class="section-area" align="center">--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <p><br></p>--}}
+    {{--                                    <a href="http://forking.moi.go.th" target="_blank"--}}
+    {{--                                       class="theme-btn theme-btn-10 theme-btn-10-white">ลงนามถวายพระพร</a>--}}
+    {{--                                </div>--}}
+
+    {{--                            </div>--}}
+    {{--                            <div class="h10_banner-content-btn mb-60" align="center">--}}
+
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+
+    {{--                    </div>--}}
+    {{--                    <div class="col-xxl-6 col-xl-6 col-lg-6">--}}
+    {{--                        --}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
+
     <!-- banner area end -->
 
     @if($new_post)
