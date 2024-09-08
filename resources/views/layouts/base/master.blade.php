@@ -4,8 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     @yield('seo')
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset("images/home/favicon.ico")}}">
-    <!-- Place favicon.ico in the root directory -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{url('images/logo/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{url('images/logo/favicon.ico')}}" type="image/x-icon">
+    <meta name="author" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
+    <meta name="robots" content="index, archive">
+
+    <meta name="msapplication-TileImage" content="{{asset('images/logo/apple-touch-icon-new-152.png')}}">
+    <link rel="apple-touch-icon" href="{{asset('images/logo/apple-touch-icon-new-152.png')}}">
+    <link rel="apple-touch-startup-image" href="{{asset('images/logo/apple-touch-icon-new-152.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('images/logo/apple-touch-icon-new-152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/logo/apple-touch-icon-new-180.png')}}">
+    <link rel="apple-touch-icon" sizes="167x167" href="{{asset('images/logo/apple-touch-icon-new-167.png')}}">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TWHYK5CB5"></script>
@@ -32,6 +44,8 @@
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/main.css")}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit|Mitr|Prompt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
     <style type="text/css">
         .my-font {
             font-family: 'Mitr', sans-serif;
@@ -45,6 +59,31 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
+        .h2_blog-content-title-manual {
+            font-size: 18px;
+            font-family: 'Chakra Petch';
+            font-weight: normal;
+            color: #1E1E1E;
+            text-align: left;
+            line-height: 1.5;
+        }
+        .h2_blog-content-meta-manual {
+            font-family: 'Chakra Petch';
+            font-weight: normal;
+            text-align: left;
+        }
+        .blog_details-course-text {
+            font-size: 14px;
+            font-family: 'Chakra Petch';
+            font-weight: normal;
+            text-align: left;
+        }
+
+        .set-font-thai {
+            font-family: 'Chakra Petch';
+        }
+
     </style>
 
     @yield('style')

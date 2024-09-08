@@ -31,6 +31,10 @@ Route::get('/events/{slug}', 'EventController@show');
 Route::get('/หมวดหมู่/{slug}', 'ArticleController@category');
 Route::get('/หมวดหมู่/{cate_slug}/{sub_slug}', 'ArticleController@sub_category');
 
+Route::get('/posts', 'ArticleController@index');
+Route::get('/posts/{post_uid}', 'ArticleController@show');
+
+
 // --------------------------------------- admin route ---------------------------------------//
 Route::get('/administrator', 'AdminController@index');
 Route::get('/administrator/login', 'AdminLoginController@index');

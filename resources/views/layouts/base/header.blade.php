@@ -14,11 +14,11 @@
                             </li>
                             @foreach($category_menu as $main_menu)
                                 <li class="menu-has-child">
-                                    <a href='{{url("หมวดหมู่/$main_menu->category_slug")}}'>{{$main_menu['category_name']}}</a>
+                                    <a href='{{url("posts?category=$main_menu->uid")}}'>{{$main_menu['category_name']}}</a>
                                     <ul class="submenu">
                                         @foreach($main_menu['sub_categories'] as $sub_menu)
                                             <li>
-                                                <a href='{{url("หมวดหมู่/$main_menu->category_slug/$sub_menu->sub_category_slug")}}'>{{$sub_menu->sub_category_name}}</a>
+                                                <a href='{{url("posts?category=$main_menu->uid&sub_category=$sub_menu->uid")}}'>{{$sub_menu->sub_category_name}}</a>
                                             </li>
                                         @endforeach
                                     </ul>

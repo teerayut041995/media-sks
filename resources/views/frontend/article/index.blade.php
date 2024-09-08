@@ -1,33 +1,64 @@
 @extends('layouts.base.master')
 
 @section('seo')
-    <title>{{$category->category_name}}</title>
-    <meta name="description" content="{{$category->category_name}} ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-          content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ, {{$category->category_name}}">
-    <meta name="author" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-    <meta name="robots" content="index, archive">
-    <link rel="icon" href="{{asset('images/home/favicon.ico')}}" type="image/x-icon">
-    <link rel="shortcut icon" href='{{asset('images/home/favicon.ico')}}' type="image/x-icon">
+    <title>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ | {{$category->category_name}}</title>
+    <meta name="description"
+          content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ {{$category->category_name}} เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์">
 
-    <meta name="msapplication-TileImage" content="{{asset('template/assets/images/logo/logo.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="167x167" href="{{asset('images/home/sks-logo-1.png')}}">
+    <meta name="keywords"
+          content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, {{$category->category_name}}, ศูนย์การศึกษาพิเศษ, สำนักบริหารงานการศึกษาพิเศษ, บริการช่วยเหลือระยะแรกเริ่ม, การศึกษาพิเศษ">
 
     <meta property="og:url"
-          content='{{url("หมวดหมู่/$category->category_slug")}}'/>
+          content='{{url("")}}'/>
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="{{$category->category_name}}"/>
-    <meta property="og:description" content="{{$category->category_name}} ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content='{{url("images/kalasin-og.jpg")}}'/>
+    <meta property="og:title" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ | {{$category->category_name}}"/>
+    <meta property="og:description"
+          content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ {{$category->category_name}} เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์"/>
+    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}" />
     <link rel="canonical" href="{{url('')}}"/>
 @endsection
 
+@section('style')
+    <style>
+        .section-subtitle-manual {
+            font-size: 25px;
+            font-family: 'Chakra Petch';
+            color: #1E1E1E;
+            text-align: center;
+            line-height: 2.0;
+        }
+
+        @media (max-width: 767px) {
+            .section-subtitle-manual {
+                font-size: 20px;
+                font-family: 'Chakra Petch';
+                color: #1E1E1E;
+                text-align: center;
+                line-height: 1.7;
+            }
+        }
+
+        @media only screen and (min-width: 576px) and (max-width: 767px) {
+            .section-subtitle-manual {
+                font-size: 25px;
+                font-family: 'Chakra Petch';
+                color: #1E1E1E;
+                text-align: center;
+                line-height: 1.7;
+            }
+        }
+
+        .subtitle-manual {
+            font-size: 18px;
+            font-family: 'Chakra Petch';
+            /*font-weight: bold;*/
+            color: #1E1E1E;
+            text-align: left;
+            line-height: 2.0;
+        }
+
+    </style>
+@endsection
 
 @section('content')
     <!-- breadcrumb area start -->
@@ -38,10 +69,19 @@
                 <div class="col-12">
                     <div class="breadcrumb-content" style="color: white;">
                         <h2 class="breadcrumb-title" style="color: white;">{{$category->category_name}}</h2>
-                        <div class="breadcrumb-list">
-                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>
-                            <span style="color: white;">{{$category->category_name}}</span>
-                        </div>
+                        @if ($sub_category)
+                            <div class="breadcrumb-list">
+                                <a href='{{url("/")}}' style="color: white;">หน้าหลัก</a>
+                                <a href='{{url("posts?category=$category->uid")}}'
+                                   style="color: white;">{{$category->category_name}}</a>
+                                <span style="color: white;">{{$sub_category->sub_category_name}}</span>
+                            </div>
+                        @else
+                            <div class="breadcrumb-list">
+                                <a href='{{url("/")}}' style="color: white;">หน้าหลัก</a>
+                                <span style="color: white;">{{$category->category_name}}</span>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -64,23 +104,23 @@
                                 <div class="col-xl-4 col-lg-6 col-md-6">
                                     <div class="h2_blog-item mb-30">
                                         <div class="h2_blog-img">
-                                            <a href='{{url("article/$post->post_slug")}}'><img
+                                            <a href='{{url("posts/$post->uid")}}'><img
                                                         src='{{url("images/image_post/$post->post_image")}}'
                                                         alt="{{$post->post_title}}"></a>
                                         </div>
                                         <div class="h2_blog-content">
                                             <div class="h2_blog-content-meta">
                                                 {{--                                        <span><i class="fa-thin fa-user"></i>Admin</span>--}}
-                                                <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($post->created_at)}}, {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span>
+                                                <span class="set-font-thai"><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($post->created_at)}}, {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span>
                                             </div>
-                                            <h5 class="h2_blog-content-title"><a
-                                                        href='{{url("article/$post->post_slug")}}'>{{$post->post_title}}</a>
+                                            <h5 class="h2_blog-content-title h2_blog-content-meta-manual"><a
+                                                        href='{{url("posts/$post->uid")}}'>{{$post->post_title}}</a>
                                             </h5>
-                                            <p class="h2_course-content-text">
+                                            <p class="h2_course-content-text set-font-thai">
                                                 {{$post->post_detail}}
                                             </p>
-                                            <a href='{{url("article/$post->post_slug")}}'
-                                               class="theme-btn blog-btn t-theme-btn">เพิ่มเติม</a>
+                                            <a href='{{url("posts/$post->uid")}}'
+                                               class="theme-btn blog-btn t-theme-btn set-font-thai">เพิ่มเติม</a>
                                         </div>
                                     </div>
                                 </div>

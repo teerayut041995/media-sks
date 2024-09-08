@@ -24,4 +24,8 @@ class SubCategory extends Model
     protected $fillable = [
         'uid', 'sub_category_name', 'sub_category_slug', 'sub_category_ranking','sub_category_status','category_id'
     ];
+
+    protected $casts = [
+        'uid' => 'string'
+    ];
 }

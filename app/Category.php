@@ -24,4 +24,8 @@ class Category extends Model
     protected $fillable = [
         'uid', 'category_name', 'category_slug', 'category_ranking','category_status'
     ];
+
+    protected $casts = [
+        'uid' => 'string'
+    ];
 }

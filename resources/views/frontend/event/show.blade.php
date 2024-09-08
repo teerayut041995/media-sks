@@ -3,33 +3,15 @@
 @section('seo')
     <title>{{$event->event_name}}</title>
     <meta name="description" content="{{$event->event_description}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
           content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ, {{$event->event_name}}, CAPER, คูปองการศึกษา">
-    <meta name="author" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-    <meta name="robots" content="index, archive">
-    <link rel="icon" href="{{asset('images/home/favicon.ico')}}" type="image/x-icon">
-    <link rel="shortcut icon" href='{{asset('images/home/favicon.ico')}}' type="image/x-icon">
-
-    <meta name="msapplication-TileImage" content="{{asset('template/assets/images/logo/logo.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="167x167" href="{{asset('images/home/sks-logo-1.png')}}">
-
     <meta property="og:url"
           content='{{url("events/$event->event_slug")}}'/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{$event->event_name}}"/>
     <meta property="og:description" content="{{$event->event_description}}"/>
     <meta property="og:image" content='{{url("images/image_event/$event->event_image")}}'/>
-
-    <link rel="canonical" href="{{url('')}}"/>
-
 @endsection
-
 
 @section('content')
     <!-- breadcrumb area start -->

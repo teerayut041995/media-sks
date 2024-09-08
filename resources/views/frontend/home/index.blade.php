@@ -4,21 +4,9 @@
     <title>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</title>
     <meta name="description"
           content="เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="keywords"
           content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, ศูนย์การศึกษาพิเศษ, สำนักบริหารงานการศึกษาพิเศษ, บริการช่วยเหลือระยะแรกเริ่ม, การศึกษาพิเศษ">
-    <meta name="author" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-    <meta name="robots" content="index, archive">
-    <link rel="icon" href="{{asset('images/home/favicon.ico')}}" type="image/x-icon">
-    <link rel="shortcut icon" href='{{asset('images/home/favicon.ico')}}' type="image/x-icon">
-
-    <meta name="msapplication-TileImage" content="{{asset('template/assets/images/logo/logo.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="167x167" href="{{asset('images/home/sks-logo-1.png')}}">
 
     <meta property="og:url"
           content='{{url("")}}'/>
@@ -26,7 +14,7 @@
     <meta property="og:title" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
     <meta property="og:description"
           content="เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content='{{url("images/kalasin-og.jpg")}}'/>
+    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}" />
     <link rel="canonical" href="{{url('')}}"/>
 @endsection
 
@@ -287,15 +275,15 @@
                             {{--                            <h2 class="h10_class-content-title"><span--}}
                             {{--                                        style="display: inline-block; padding: 5px 15px; position: relative; z-index: 1; color: #000; font-size: 24px; font-weight: 700; border: 1px solid #000; line-height: 1; border-radius: 4px; padding-left: 40px; margin-left: 5px;">{{$new_post->category_name}}</span>--}}
                             {{--                            </h2>--}}
-                            <h3 class="h6_about-content-title"><a
-                                        href='{{url("article/$new_post->post_slug")}}'>{{$new_post->post_title}}</a>
+                            <h3 class="h6_about-content-title set-font-thai" style="font-weight: normal;"><a
+                                        href='{{url("posts/$new_post->uid")}}'>{{$new_post->post_title}}</a>
                             </h3>
-                            <p>{{$new_post->post_detail}}</p>
+                            <p class="set-font-thai">{{$new_post->post_detail}}</p>
                             <div class="event-content-meta">
-                                <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new_post->created_at)}}, {{Carbon\Carbon::parse($new_post->created_at)->diffForHumans()}}</span>
+                                <span class="set-font-thai"><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new_post->created_at)}}, {{Carbon\Carbon::parse($new_post->created_at)->diffForHumans()}}</span>
                             </div>
-                            <a href='{{url("article/$new_post->post_slug")}}'
-                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูรายละเอียด<i
+                            <a href='{{url("posts/$new_post->uid")}}'
+                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6 set-font-thai">ดูรายละเอียด<i
                                         class="fa-light fa-arrow-up-right"></i></a>
                         </div>
                     </div>
@@ -320,14 +308,14 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="h6_about-content ml-30 mb-30 mb-md-0 pb-30">
 
-                            <h3 class="h6_about-content-title"><a
+                            <h3 class="h6_about-content-title set-font-thai" style="font-weight: normal;"><a
                                         href='{{url("events/$event->event_slug")}}'>{{$event->event_name}}</a></h3>
-                            <p>{{$event->event_description}}</p>
+                            <p class="set-font-thai">{{$event->event_description}}</p>
                             <a href='{{url("events/$event->event_slug")}}'
-                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูกิจกรรม<i
+                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6 set-font-thai">ดูกิจกรรม<i
                                         class="fa-light fa-arrow-up-right"></i></a>
                             <a href='{{url("events")}}'
-                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6">ดูกิจกรรมทั้งหมด<i
+                               class="h6_about-btn theme-btn theme-btn-medium theme-btn-6 set-font-thai">ดูกิจกรรมทั้งหมด<i
                                         class="fa-light fa-arrow-up-right"></i></a>
                         </div>
                     </div>
@@ -388,27 +376,32 @@
                                 <div class="col-xxl-3 col-lg-4 col-md-6">
                                     <div class="course-item mb-30">
                                         <div class="course-img">
-                                            <img src='{{url("images/image_post/$new->post_image")}}'
-                                                 alt="{{$new->post_title}}">
+                                            @if ($new->post_image_thumbnail_file_name)
+                                                <img src='{{url("images/image_post/thumbnail/$new->post_image_thumbnail_file_name")}}'
+                                                     alt="{{$new_post->post_title}}">
+                                            @else
+                                                <img src='{{url("images/image_post/$new->post_image")}}'
+                                                     alt="{{$new->post_title}}">
+                                            @endif
                                         </div>
                                         <div class="course-content">
                                             <div class="course-content-top">
                                                 {{--                                                <div class="course-top-icon"><img--}}
                                                 {{--                                                            src="assets/img/course/1/v1.png" alt=""></div>--}}
                                                 <div class="course-top-title">
-                                                    <h6>{{$new->category_name}}</h6>
+                                                    <h6 class="set-font-thai">{{$new->category_name}}</h6>
                                                 </div>
 
                                             </div>
-                                            <h5 class="course-content-title"><a
-                                                        href='{{url("article/$new->post_slug")}}'>{{$new->post_title}}</a>
+                                            <h5 class="h2_blog-content-title-manual"><a
+                                                        href='{{url("posts/$new->uid")}}'>{{$new->post_title}}</a>
                                             </h5>
                                             <div class="course-content-bottom">
                                                 <div class="course-bottom-info">
-                                                    <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new->created_at)}}</span>
+                                                    <span class="set-font-thai"><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($new->created_at)}}</span>
                                                 </div>
-                                                <div class="course-bottom-price">
-                                                    <a href='{{url("article/$new->post_slug")}}'
+                                                <div class="course-bottom-price set-font-thai">
+                                                    <a href='{{url("posts/$new->uid")}}'
                                                        class="t-theme-btn theme-btn event-btn">เพิ่มเติม</a>
                                                 </div>
                                             </div>
@@ -508,18 +501,27 @@
                         <div class="section-area">
                             {{--                            <span class="section-subtitle">เกี่ยวกับสถานศึกษา</span>--}}
                             <h2 class="section-title mb-15">ศูนย์การศึกษาพิเศษ <br>ประจำจังหวัดกาฬสินธุ์</h2>
-                            <p class="section-text">
+                            <p class="section-text set-font-thai" style="font-size: 18px; line-height: 1.5">
                                 สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน
-                                <br>กระทรวงศึกษาธิการ ได้รับอนุมัติให้จัดตั้งเมื่อวันที่ 31 กรกฎาคม พ.ศ. 2543
-                                <br>ศูนย์การศึกษาพิเศษก่อตั้งครั้งแรกอาศัยตั้งสำนักงาน ณ โรงเรียนศึกษาพิเศษกาฬสินธุ์
-                                <br>ปัจจุบันเปลี่ยนเป็น โรงเรียนกาฬสินธุ์ปัญญานุกูล และได้ย้ายสำนักงานอาคาร
-                                <br>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ มาตั้งอยู่ เลขที่ 400 ถนนถีนานนท์
-                                <br>หมู่ที่ 1 ตำบลยางตลาด อำเภอยางตลาด จังหวัดกาฬสินธุ์ มีพื้นที่ จำนวน 7 ไร่ 3 งาน 80
+                                กระทรวงศึกษาธิการ ได้รับอนุมัติให้จัดตั้งเมื่อวันที่ 31 กรกฎาคม พ.ศ. 2543
+                            </p>
+                            <br>
+                            <p class="section-text set-font-thai" style="font-size: 18px; line-height: 1.5">
+                                ศูนย์การศึกษาพิเศษก่อตั้งครั้งแรกอาศัยตั้งสำนักงาน ณ โรงเรียนศึกษาพิเศษกาฬสินธุ์
+                                ปัจจุบันเปลี่ยนเป็น โรงเรียนกาฬสินธุ์ปัญญานุกูล
+                            </p>
+                            <br>
+                            <p class="section-text set-font-thai" style="font-size: 18px; line-height: 1.5">
+                                และได้ย้ายสำนักงานอาคาร
+                                ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ มาตั้งอยู่ เลขที่ 400 ถนนถีนานนท์
+                                หมู่ที่ 1 ตำบลยางตลาด อำเภอยางตลาด จังหวัดกาฬสินธุ์ มีพื้นที่ จำนวน 7 ไร่ 3 งาน 80
                                 ตารางวา
-                                <br>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการ
-                                <br>ในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อม
-                                <br>เพื่อส่งต่อเด็กพิการเข้าเรียนร่วม
-                                กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ <br>ทุกประเภทในจังหวัดกาฬสินธุ์
+                            </p><br>
+                            <p class="section-text set-font-thai" style="font-size: 18px; line-height: 1.5">
+                                ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการ
+                                ในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อม
+                                เพื่อส่งต่อเด็กพิการเข้าเรียนร่วม
+                                กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์
                             </p>
                         </div>
                     </div>

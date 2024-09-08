@@ -3,29 +3,16 @@
 @section('seo')
     <title>กิจกรรมศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</title>
     <meta name="description" content="กิจกรรมศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
           content="กิจกรรมศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ">
-    <meta name="author" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-    <meta name="robots" content="index, archive">
-    <link rel="icon" href="{{asset('images/home/favicon.ico')}}" type="image/x-icon">
-    <link rel="shortcut icon" href='{{asset('images/home/favicon.ico')}}' type="image/x-icon">
-
-    <meta name="msapplication-TileImage" content="{{asset('template/assets/images/logo/logo.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="167x167" href="{{asset('images/home/sks-logo-1.png')}}">
 
     <meta property="og:url"
-          content='{{url("event")}}'/>
+          content='{{url("")}}'/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="กิจกรรมศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
-    <meta property="og:description" content="กิจกรรมศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content='{{url("images/kalasin-og.jpg")}}'/>
-    <link rel="canonical" href="{{url('')}}" />
+    <meta property="og:description"
+          content="กิจกรรมศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
+    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}" />
 @endsection
 
 

@@ -54,6 +54,7 @@ class HomeController extends Controller
             ->join('categories', 'categories.id', 'posts.category_id')
             ->select([
                 'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'post_youtube_embed', 'post_youtube_link', 'posts.sub_category_id', 'posts.post_title', 'posts.post_detail', 'posts.post_slug', 'posts.post_image', 'posts.post_status', 'posts.created_at',
+                'post_image_thumbnail_file_name',
                 'users.name',
                 'categories.category_name'
             ])
@@ -65,6 +66,7 @@ class HomeController extends Controller
             ->join('categories', 'categories.id', 'posts.category_id')
             ->select([
                 'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id', 'posts.post_title', 'posts.post_slug', 'posts.post_image', 'posts.post_status', 'posts.created_at',
+                'post_image_thumbnail_file_name',
                 'users.name',
                 'categories.category_name'
             ])

@@ -3,30 +3,17 @@
 @section('seo')
     <title>{{$post->post_title}}</title>
     <meta name="description" content="{{$post->post_detail}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
           content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ, {{$post->post_title}}, CAPER, คูปองการศึกษา">
-    <meta name="author" content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-    <meta name="robots" content="index, archive">
-    <link rel="icon" href="{{asset('images/home/favicon.ico')}}" type="image/x-icon">
-    <link rel="shortcut icon" href='{{asset('images/home/favicon.ico')}}' type="image/x-icon">
-
-    <meta name="msapplication-TileImage" content="{{asset('template/assets/images/logo/logo.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/home/sks-logo-1.png')}}">
-    <link rel="apple-touch-icon" sizes="167x167" href="{{asset('images/home/sks-logo-1.png')}}">
-
-    <meta property="og:url"
-          content='{{url("article/$post->post_slug")}}'/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="{{$post->post_title}}"/>
-    <meta property="og:description" content="{{$post->post_detail}}"/>
-    <meta property="og:image" content='{{url("images/image_post/$post->post_image")}}'/>
-
-    <link rel="canonical" href="{{url('')}}"/>
+    <meta property="og:url" content="{{url("posts/$post->uid")}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{$post->post_title}}" />
+    <meta property="og:description" content="{{$post->post_detail}}" />
+    @if ($post->post_image_thumbnail_file_name)
+        <meta property="og:image" content="{{url('images/image_post/thumbnail', $post->post_image_thumbnail_file_name)}}" />
+    @else
+        <meta property="og:image" content="{{url('images/image_post', $post->post_image)}}" />
+    @endif
 
 @endsection
 

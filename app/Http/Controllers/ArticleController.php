@@ -116,4 +116,92 @@ class ArticleController extends Controller
             ->paginate(12);
         return view('frontend.sub_category', compact('category', 'posts'));
     }
+
+    public function index(Request $request)
+    {
+        $category_menu = $this->helperCore->getCategoryMenu();
+        $recent_posts = $this->helperCore->recentPosts(4);
+        $popular_posts = $this->helperCore->popularPosts(4);
+        $categories = $this->helperCore->getCategories();
+        $sub_categories = $this->helperCore->getSubCategories();
+
+        $active = array('name' => '');
+
+        if (empty($request->category)) {
+            return redirect('/');
+        }
+        $category_uid = NULL;
+        $sub_category_uid = NULL;
+        $category = Category::where('uid', $request->category)
+            ->select('id', 'uid', 'category_name')
+            ->firstOrFail();
+
+        $category_uid = $category->uid;
+
+        $sub_category = NULL;
+
+        $posts = Post::leftJoin('users', 'posts.user_id', 'users.id')
+            ->select([
+                'posts.id', 'posts.uid', 'posts.user_id', 'posts.category_id', 'posts.sub_category_id','posts.post_title','posts.post_slug','posts.post_image','posts.post_status', 'posts.created_at',
+                'users.name'
+            ])
+            ->where('post_status', '1')
+            ->where('category_id', $category->id)
+            ->orderBy('created_at', 'DESC');
+
+        if (!empty($request->sub_category)) {
+            $sub_category = SubCategory::where('uid', $request->sub_category)
+                ->select('id', 'uid', 'sub_category_name')
+                ->firstOrFail();
+            $posts = $posts->where('sub_category_id', $sub_category->id);
+            $sub_category_uid = $sub_category->uid;
+        }
+
+        if (!empty($request->name)) {
+            $posts = $posts->where(function ($query) use ($request) {
+                $query->where("posts.post_title", "LIKE", "%{$request->name}%")
+                    ->orWhere("posts.post_detail", "LIKE", "%{$request->name}%");
+            });
+            $active['name'] = $request->name;
+        }
+        $posts = $posts->paginate(12)->appends(request()->except('page'));
+        return view('frontend.article.index', compact('category_menu', 'category', 'sub_category', 'posts', 'active', 'recent_posts', 'categories', 'sub_categories', 'popular_posts'));
+
+//        return view('user-panel.post.index', compact('main_menu', 'category', 'sub_category', 'category_uid', 'sub_category_uid'));
+    }
+
+    public function show($post_uid)
+    {
+        $category_menu = $this->helperCore->getCategoryMenu();
+        $recent_posts = $this->helperCore->recentPosts(4);
+        $popular_posts = $this->helperCore->popularPosts(4);
+        $categories = $this->helperCore->getCategories();
+        $sub_categories = $this->helperCore->getSubCategories();
+        $active = array('name' => '');
+
+        $post = Post::join('categories', 'posts.category_id', 'categories.id')
+            ->leftJoin('sub_categories', 'posts.sub_category_id', 'sub_categories.id')
+            ->leftJoin('users', 'posts.user_id', 'users.id')
+            ->select('posts.*', 'categories.category_name', 'categories.category_slug', 'sub_categories.sub_category_name', 'sub_categories.sub_category_slug', 'users.name')
+            ->where('post_status', '1')
+            ->where('posts.uid', $post_uid)
+            ->firstOrFail();
+        $expiresAt = now()->addHours(24);
+        views($post)
+            ->delayInSession($expiresAt)
+            ->record();
+        $views = views($post)->count();
+
+        $post_related = Post::where('post_status', '1')
+            ->where('posts.sub_category_id', $post->sub_category_id)
+            ->where('posts.category_id', $post->category_id)
+            ->where('posts.id', '!=', $post->id)
+            ->select(['posts.post_title', 'posts.post_slug', 'posts.post_detail', 'posts.created_at', 'posts.post_image'])
+            ->inRandomOrder()
+            ->limit(2)
+            ->get();
+
+        return view('frontend.article.show', compact('category_menu', 'post', 'views', 'active', 'recent_posts', 'categories', 'sub_categories', 'popular_posts', 'post_related'));
+//        return view('frontend.article.show', compact('post', 'views'));
+    }
 }

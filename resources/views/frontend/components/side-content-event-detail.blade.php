@@ -30,13 +30,13 @@
         @foreach($recent_posts as $recent)
             <div class="blog_details-widget-post">
                 <div class="blog_details-post-img">
-                    <a href='{{url("article/$recent->post_slug")}}'><img
+                    <a href='{{url("posts/$recent->uid")}}'><img
                                 src='{{url("images/image_post/$recent->post_image")}}'
                                 alt="{{$recent->post_title}}"></a>
                 </div>
                 <div class="blog_details-post-info">
-                    <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($recent->created_at)}}, {{Carbon\Carbon::parse($recent->created_at)->diffForHumans()}}</span>
-                    <h6><a href='{{url("article/$recent->post_slug")}}'>{{$recent->post_title}}</a>
+                    <span class="set-font-thai"><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($recent->created_at)}}, {{Carbon\Carbon::parse($recent->created_at)->diffForHumans()}}</span>
+                    <h6 style="font-weight: normal;"><a href='{{url("posts/$recent->uid")}}' class="set-font-thai">{{$recent->post_title}}</a>
                     </h6>
                 </div>
             </div>
@@ -59,14 +59,14 @@
         @foreach($popular_posts as $popular)
             <div class="blog_details-widget-course">
                 <div class="blog_details-course-img">
-                    <a href='{{url("article/$popular->post_slug")}}'><img
+                    <a href='{{url("posts/$popular->uid")}}'><img
                                 src='{{url("images/image_post/$popular->post_image")}}'
                                 alt="{{$popular->post_title}}"></a>
                 </div>
                 <div class="blog_details-course-info">
-                    <h6><a href='{{url("article/$popular->post_slug")}}'>{{$popular->post_title}}</a></h6>
-                    <a href='{{url("article/$popular->post_slug")}}'
-                       class="inner-course-rate">การดู {{$popular->views_count}} ครั้ง</a>
+                    <h6 style="font-weight: normal;" class="set-font-thai"><a href='{{url("posts/$popular->uid")}}'>{{$popular->post_title}}</a></h6>
+                    <a href='{{url("posts/$popular->uid")}}'
+                       class="inner-course-rate set-font-thai">การดู {{$popular->views_count}} ครั้ง</a>
                 </div>
             </div>
         @endforeach
@@ -76,7 +76,7 @@
         <div class="blog_details-widget-tag">
             <ul>
                 @foreach($sub_categories as $sub_category)
-                    <li><a href='{{url("หมวดหมู่/$sub_category->category_slug/$sub_category->sub_category_slug")}}'>{{$sub_category->sub_category_name}}</a></li>
+                    <li><a href='{{url("posts?category=$sub_category->category_slug&sub_category=$sub_category->sub_category_slug")}}'>{{$sub_category->sub_category_name}}</a></li>
                 @endforeach
             </ul>
         </div>
