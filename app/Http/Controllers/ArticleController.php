@@ -119,11 +119,13 @@ class ArticleController extends Controller
 
     public function index(Request $request)
     {
+//        return 1;
         $category_menu = $this->helperCore->getCategoryMenu();
+//        return ['results' => $category_menu];
         $recent_posts = $this->helperCore->recentPosts(4);
         $popular_posts = $this->helperCore->popularPosts(4);
         $categories = $this->helperCore->getCategories();
-        $sub_categories = $this->helperCore->getSubCategories();
+//        $sub_categories = $this->helperCore->getSubCategories();
 
         $active = array('name' => '');
 
@@ -165,7 +167,7 @@ class ArticleController extends Controller
             $active['name'] = $request->name;
         }
         $posts = $posts->paginate(12)->appends(request()->except('page'));
-        return view('frontend.article.index', compact('category_menu', 'category', 'sub_category', 'posts', 'active', 'recent_posts', 'categories', 'sub_categories', 'popular_posts'));
+        return view('frontend.article.index', compact('category_menu', 'category', 'sub_category', 'posts', 'active', 'recent_posts', 'categories', 'popular_posts'));
 
 //        return view('user-panel.post.index', compact('main_menu', 'category', 'sub_category', 'category_uid', 'sub_category_uid'));
     }
@@ -176,7 +178,6 @@ class ArticleController extends Controller
         $recent_posts = $this->helperCore->recentPosts(4);
         $popular_posts = $this->helperCore->popularPosts(4);
         $categories = $this->helperCore->getCategories();
-        $sub_categories = $this->helperCore->getSubCategories();
         $active = array('name' => '');
 
         $post = Post::join('categories', 'posts.category_id', 'categories.id')
@@ -201,7 +202,7 @@ class ArticleController extends Controller
             ->limit(2)
             ->get();
 
-        return view('frontend.article.show', compact('category_menu', 'post', 'views', 'active', 'recent_posts', 'categories', 'sub_categories', 'popular_posts', 'post_related'));
+        return view('frontend.article.show', compact('category_menu', 'post', 'views', 'active', 'recent_posts', 'categories', 'popular_posts', 'post_related'));
 //        return view('frontend.article.show', compact('post', 'views'));
     }
 }

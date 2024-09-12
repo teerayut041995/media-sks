@@ -196,9 +196,9 @@
                         <div class="h6_about-content ml-30 mb-30 mb-md-0 pb-30">
 
                             <h3 class="h6_about-content-title set-font-thai" style="font-weight: normal;"><a
-                                        href='{{url("events/$event->event_slug")}}'>{{$event->event_name}}</a></h3>
+                                        href='{{url("events/$event->uid")}}'>{{$event->event_name}}</a></h3>
                             <p class="set-font-thai">{{$event->event_description}}</p>
-                            <a href='{{url("events/$event->event_slug")}}'
+                            <a href='{{url("events/$event->uid")}}'
                                class="h6_about-btn theme-btn theme-btn-medium theme-btn-6 set-font-thai">ดูกิจกรรม<i
                                         class="fa-light fa-arrow-up-right"></i></a>
                             <a href='{{url("events")}}'

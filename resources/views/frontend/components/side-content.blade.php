@@ -2,6 +2,12 @@
     <div class="blog_details-widget">
         <h4 class="blog_details-widget-title">ค้นหา</h4>
         <form method="get">
+            <input type="hidden" name="category"
+                   value="{{$category->uid}}">
+            @if ($sub_category)
+                <input type="hidden" name="sub_category"
+                       value="{{$sub_category->uid}}">
+            @endif
             <input type="text" name="name" placeholder="ค้นหารที่นี้..."
                    value="{{$active['name']}}">
             <button type="submit"><i class="fa-thin fa-magnifying-glass"></i></button>
@@ -19,7 +25,8 @@
                 </div>
                 <div class="blog_details-post-info">
                     <span class="set-font-thai"><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($recent->created_at)}}, {{Carbon\Carbon::parse($recent->created_at)->diffForHumans()}}</span>
-                    <h6 style="font-weight: normal;"><a href='{{url("posts/$recent->uid")}}' class="set-font-thai">{{$recent->post_title}}</a>
+                    <h6 style="font-weight: normal;"><a href='{{url("posts/$recent->uid")}}'
+                                                        class="set-font-thai">{{$recent->post_title}}</a>
                     </h6>
                 </div>
             </div>
@@ -47,7 +54,8 @@
                                 alt="{{$popular->post_title}}"></a>
                 </div>
                 <div class="blog_details-course-info">
-                    <h6 style="font-weight: normal;"><a href='{{url("posts/$popular->uid")}}' class="set-font-thai">{{$popular->post_title}}</a></h6>
+                    <h6 style="font-weight: normal;"><a href='{{url("posts/$popular->uid")}}'
+                                                        class="set-font-thai">{{$popular->post_title}}</a></h6>
                     <a href='{{url("posts/$popular->uid")}}'
                        class="inner-course-rate set-font-thai">การดู {{$popular->views_count}} ครั้ง</a>
                 </div>
@@ -58,8 +66,12 @@
         <h4 class="blog_details-widget-title">Tags</h4>
         <div class="blog_details-widget-tag">
             <ul>
-                @foreach($sub_categories as $sub_category)
-                    <li><a href='{{url("posts?category=$sub_category->category_slug&sub_category=$sub_category->sub_category_slug")}}'>{{$sub_category->sub_category_name}}</a></li>
+                @foreach($category_menu as $category)
+                    @foreach($category['sub_categories'] as $sub_category)
+                        <li>
+                            <a href='{{url("posts?category=$category->uid&sub_category=$sub_category->uid")}}'>{{$sub_category->sub_category_name}}</a>
+                        </li>
+                    @endforeach
                 @endforeach
             </ul>
         </div>

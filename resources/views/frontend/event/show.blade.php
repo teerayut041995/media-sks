@@ -6,7 +6,7 @@
     <meta name="keywords"
           content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ, {{$event->event_name}}, CAPER, คูปองการศึกษา">
     <meta property="og:url"
-          content='{{url("events/$event->event_slug")}}'/>
+          content='{{url("events/$event->uid")}}'/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{$event->event_name}}"/>
     <meta property="og:description" content="{{$event->event_description}}"/>

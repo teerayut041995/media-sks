@@ -26,7 +26,6 @@ class EventController extends Controller
         $recent_posts = $this->helperCore->recentPosts(4);
         $popular_posts = $this->helperCore->popularPosts(4);
         $categories = $this->helperCore->getCategories();
-        $sub_categories = $this->helperCore->getSubCategories();
 
         $active = array('name' => '');
         $events = Event::leftJoin('users', 'events.user_id', 'users.id')
@@ -43,21 +42,20 @@ class EventController extends Controller
             $active['name'] = $request->name;
         }
         $events = $events->paginate(12)->appends(request()->except('page'));
-        return view('frontend.event.index', compact('category_menu', 'active', 'events', 'recent_posts', 'categories', 'sub_categories', 'popular_posts'));
+        return view('frontend.event.index', compact('category_menu', 'active', 'events', 'recent_posts', 'categories', 'popular_posts'));
     }
 
-    public function show($slug)
+    public function show($event_uid)
     {
         $category_menu = $this->helperCore->getCategoryMenu();
         $recent_posts = $this->helperCore->recentPosts(4);
         $popular_posts = $this->helperCore->popularPosts(4);
         $categories = $this->helperCore->getCategories();
-        $sub_categories = $this->helperCore->getSubCategories();
         $active = array('name' => '');
 
         $event = Event::leftJoin('users', 'events.user_id', 'users.id')
             ->select('events.*', 'users.name')
-            ->where('events.event_slug', $slug)
+            ->where('events.uid', $event_uid)
             ->where('events.publishing_status', '1')
             ->firstOrFail();
 
@@ -69,7 +67,7 @@ class EventController extends Controller
         $views = views($event)->count();
         $images = EventImage::where('event_id', $event->id)->get();
 
-        return view('frontend.event.show', compact('category_menu', 'event', 'images', 'views', 'active', 'recent_posts', 'categories', 'sub_categories', 'popular_posts'));
+        return view('frontend.event.show', compact('category_menu', 'event', 'images', 'views', 'active', 'recent_posts', 'categories', 'popular_posts'));
 //        return view('frontend.article.show', compact('post', 'views'));
     }
 

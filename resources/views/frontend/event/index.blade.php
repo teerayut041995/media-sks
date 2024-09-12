@@ -51,7 +51,7 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <div class="h2_blog-item mb-30">
                                         <div class="h2_blog-img">
-                                            <a href='{{url("events/$event->event_slug")}}'><img
+                                            <a href='{{url("events/$event->uid")}}'><img
                                                         src='{{url("images/image_event/$event->event_image")}}'
                                                         alt="{{$event->event_name}}"></a>
                                         </div>
@@ -60,11 +60,11 @@
                                                 <span><i class="fa-thin fa-clock"></i>{{formatDateThaiBirthday($event->created_at)}}, {{Carbon\Carbon::parse($event->created_at)->diffForHumans()}}</span>
                                             </div>
                                             <h5 class="h2_blog-content-title"><a
-                                                        href='{{url("events/$event->event_slug")}}'>{{$event->event_name}}</a></h5>
+                                                        href='{{url("events/$event->uid")}}'>{{$event->event_name}}</a></h5>
 {{--                                            <p class="h2_course-content-text">--}}
 {{--                                                {{$event->event_description}}--}}
 {{--                                            </p>--}}
-                                            <a href='{{url("events/$event->event_slug")}}'class="theme-btn blog-btn t-theme-btn">เพิ่มเติม</a>
+                                            <a href='{{url("events/$event->uid")}}'class="theme-btn blog-btn t-theme-btn">เพิ่มเติม</a>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                     @endif
                 </div>
                 <div class="col-xl-4 col-lg-4">
-                    @include('frontend.components.side-content')
+                    @include('frontend.components.side-content-event')
                 </div>
             </div>
         </div>

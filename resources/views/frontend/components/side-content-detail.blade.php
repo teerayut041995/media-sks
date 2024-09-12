@@ -50,8 +50,12 @@
         <h4 class="blog_details-widget-title">Tags</h4>
         <div class="blog_details-widget-tag">
             <ul>
-                @foreach($sub_categories as $sub_category)
-                    <li><a href='{{url("posts?category=$sub_category->category_slug&sub_category=$sub_category->sub_category_slug")}}'>{{$sub_category->sub_category_name}}</a></li>
+                @foreach($category_menu as $category)
+                    @foreach($category['sub_categories'] as $sub_category)
+                        <li>
+                            <a href='{{url("posts?category=$category->uid&sub_category=$sub_category->uid")}}'>{{$sub_category->sub_category_name}}</a>
+                        </li>
+                    @endforeach
                 @endforeach
             </ul>
         </div>

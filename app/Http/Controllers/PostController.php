@@ -270,7 +270,7 @@ class PostController extends Controller
         $name = md5(rand()*time()).'.'.$file->getClientOriginalExtension();
         $destinationPath = public_path('images/image_post/thumbnail');
         $img = Image::make($file->path());
-        $img->resize(410, 240, function ($constraint) {
+        $img->resize(410, 231, function ($constraint) {
 //            $constraint->aspectRatio();
         })->save($destinationPath.'/'.$name);
         return $name;

@@ -67,6 +67,7 @@ class HelperCore
             ->select([
                 "sub_categories.id",
                 "sub_categories.category_id",
+                "sub_categories.uid as category_uid",
                 "sub_categories.sub_category_name",
                 "sub_categories.sub_category_slug",
                 'categories.category_slug'

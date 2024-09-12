@@ -26,7 +26,7 @@ Route::get('/about/history', 'AboutController@history');
 Route::get('/about/executive', 'AboutController@executive');
 Route::get('/contact', 'AboutController@contact');
 Route::get('/events', 'EventController@index');
-Route::get('/events/{slug}', 'EventController@show');
+Route::get('/events/{event_uid}', 'EventController@show');
 
 Route::get('/หมวดหมู่/{slug}', 'ArticleController@category');
 Route::get('/หมวดหมู่/{cate_slug}/{sub_slug}', 'ArticleController@sub_category');
