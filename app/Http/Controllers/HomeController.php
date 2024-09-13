@@ -51,6 +51,8 @@ class HomeController extends Controller
             ->orderBy('created_at', 'DESC')
             ->first(1);
 
+        $month = Carbon::now()->startOfMonth()->subMonth(2);
+
         $posts = Post::leftJoin('users', 'posts.user_id', 'users.id')
             ->join('categories', 'categories.id', 'posts.category_id')
             ->select([
@@ -59,6 +61,7 @@ class HomeController extends Controller
                 'users.name',
                 'categories.category_name'
             ])
+            ->where('posts.created_at', '>', $month)
             ->where('post_status', '1')
             ->orderBy('created_at', 'DESC');
 

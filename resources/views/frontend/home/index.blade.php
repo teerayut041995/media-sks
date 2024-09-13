@@ -297,8 +297,11 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{$posts->links()}}
+                            <div class="col-xxl-12 col-lg-12 col-md-12">
+                                {{$posts->links()}}
+                            </div>
                         </div>
+
 
                     </div>
 

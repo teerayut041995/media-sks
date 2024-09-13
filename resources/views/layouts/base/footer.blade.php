@@ -4,7 +4,7 @@
             <div class="col-xl-3 col-lg-7 col-md-7 col-sm-12">
                 <div class="footer-widget mb-40">
                     <div class="footer-logo">
-                        <a href="{{url('/')}}"><img src="{{asset("images/home/logo.png")}}" alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
+                        <a href="{{url('/')}}"><img style="height: 88px;" src="{{asset("images/logo/sks-logo.png")}}" alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
                     </div>
                     <p class="footer-widget-text mb-35">
                         ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน กระทรวงศึกษาธิการ
@@ -24,7 +24,9 @@
                     <div class="footer-widget-list">
                         <ul>
                             <li><a href="https://caper.sks.go.th" target="_blank">CAPER</a></li>
-                            <li><a href="https://report.sks.go.th" target="_blank">ระบบรายงาน</a></li>
+                            <li><a href="https://report.sks.go.th" target="_blank">ระบบรายงานปฏิบัติงาน</a></li>
+                            <li><a href="https://report.sks.go.th" target="_blank">ระบบลงเวลาออนไลน์</a></li>
+                            <li><a href="https://caper.sks.go.th/learning-online" target="_blank">Learning Online</a></li>
                             <li><a href="https://services.sks.go.th/certificate" target="_blank">เกียรติบัตรออนไลน์</a></li>
                             <li><a href="https://sillapa.sks.go.th" target="_blank">ศิลปหัตถกรรมนักเรียน</a></li>
                         </ul>
@@ -39,6 +41,7 @@
                             <li>เว็บไซต์ : <a href="{{url('/')}}">www.sks.go.th</a></li>
                             <li>เบอร์โทร : <a href="#">{{env('CONTACT_PHONE_NUMBER')}}</a></li>
                             <li>อีเมล : <a href="#">{{env('CONTACT_EMAIL')}}</a></li>
+                            <li>FACEBOOK : <a href="{{env('SOCIAL_CONTACT_FACEBOOK')}}" target="_blank">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</a></li>
 {{--                            <li><a href="#">Finance & Accounting</a></li>--}}
 {{--                            <li><a href="#">IT & Software</a></li>--}}
 {{--                            <li><a href="#">Sales Marketing</a></li>--}}

@@ -4,8 +4,14 @@
             <div class="col-xl-10 col-lg-10 col-md-10 col-10">
                 <div class="header-left">
                     <div class="header-logo">
-                        <a href="{{url('/')}}"><img src="{{asset("images/home/logo.png")}}"
-                                                    alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
+                        <a href="{{url('/')}}">
+                            <img style="height: 44px;" class="d-none d-xl-block" src="{{asset("images/logo/sks-logo.png")}}"
+                                                    alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
+{{--                            <img class="" src="{{asset("images/home/logo.png")}}"--}}
+{{--                                 alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">--}}
+                            <img style="height: 44px;" class="d-xl-none" src="{{asset("images/logo/sidebar-logo.png")}}"
+                                 alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
+                        </a>
                     </div>
                     <nav class="main-menu mobile-menu d-none d-xl-block" id="mobile-menu">
                         <ul>

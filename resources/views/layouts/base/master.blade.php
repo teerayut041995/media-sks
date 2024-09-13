@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/nice-select.css")}}">
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/meanmenu.css")}}">
     <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/swiper-bundle.min.css")}}">
-    <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/main-1.css")}}">
+    <link rel="stylesheet" href="{{asset("template/user-panel/assets/css/main.css")}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit|Mitr|Prompt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -96,7 +96,7 @@
         <div class="row align-items-center">
             <div class="col-xl-6 col-8">
                 <div class="sidebar-logo">
-                    <a href="{{url('/')}}"><img src="{{asset("images/home/logo.png")}}"
+                    <a href="{{url('/a')}}"><img src="{{asset("images/logo/sidebar-logo-light.png")}}"
                                                 alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"></a>
                 </div>
             </div>
