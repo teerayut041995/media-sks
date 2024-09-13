@@ -32,7 +32,7 @@
             <ul>
                 @foreach($categories as $category)
                     <li>
-                        <a href='{{url("หมวดหมู่/$category->category_slug")}}'>{{$category->category_name}}</a>
+                        <a href='{{url("posts?category=$category->uid")}}'>{{$category->category_name}}</a>
                     </li>
                 @endforeach
             </ul>

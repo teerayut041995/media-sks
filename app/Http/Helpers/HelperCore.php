@@ -50,6 +50,7 @@ class HelperCore
         $categories = Category::where('category_status', '1')->orderBy('category_ranking', 'asc')
             ->select([
                 "id",
+                "uid",
                 "category_name",
                 "category_slug",
                 "category_ranking",
