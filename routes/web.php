@@ -77,3 +77,22 @@ Route::prefix('/administrator/banner')->group(function () {
     Route::post('/{banner_uid}/update', 'Banner\BannerController@update');
     Route::post('/{banner_uid}/delete', 'Banner\BannerController@delete');
 });
+
+Route::prefix('/administrator/service')->group(function () {
+    Route::get('/', 'Service\ServiceController@index');
+//    Route::get('/load-data', [BannerController::class, 'loadData']);
+    Route::get('/create', 'Service\ServiceController@create');
+    Route::post('/store', 'Service\ServiceController@store');
+    Route::get('/{service_uid}/show', 'Service\ServiceController@show');
+    Route::get('/{service_uid}/edit', 'Service\ServiceController@edit');
+    Route::post('/{service_uid}/update', 'Service\ServiceController@update');
+    Route::post('/{service_uid}/delete', 'Service\ServiceController@delete');
+
+    Route::prefix('/{service_uid}/show/images')->group(function () {
+        Route::get('/create', 'Service\ServiceImageController@create');
+        Route::post('/store', 'Service\ServiceImageController@store');
+        Route::get('/{image_uid}/edit', 'Service\ServiceImageController@edit');
+        Route::post('/{image_uid}/update', 'Service\ServiceImageController@update');
+        Route::post('/{image_uid}/delete', 'Service\ServiceImageController@delete');
+    });
+});

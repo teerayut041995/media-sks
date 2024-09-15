@@ -106,4 +106,32 @@ function moreBytes($len)
     return substr($builder, 0, $len);
 }
 
+function findServiceType($type = NULL)
+{
+    $personnel_type = array(
+        'service_unit' => 'หน่วยบริการ',
+        'classroom' => 'ห้องเรียน',
+        'parallel_school' => 'โรงเรียนคู่ขนาน',
+        'hospital' => 'ศูนย์การเรียนสำหรับเด็กเจ็บป่วยเรื้อรัง'
+    );
+    if ($type) {
+        return $personnel_type[$type];
+    }
+    return $personnel_type;
+}
+
+function findServiceImageType($type = NULL)
+{
+    $types = array(
+        'banner' => 'รูปภาพแบนเนอร์ (1920 X 960)',
+        'preview_1' => 'รูปภาพพรีวิว (630 X 460)',
+        'preview_2' => 'รูปภาพพรีวิว 2 (630 X 460)',
+        'general' => 'รูปภาพทั่วไป'
+    );
+    if ($type) {
+        return $types[$type];
+    }
+    return $types;
+}
+
 ?>
