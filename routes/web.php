@@ -34,6 +34,9 @@ Route::get('/หมวดหมู่/{cate_slug}/{sub_slug}', 'ArticleControlle
 Route::get('/posts', 'ArticleController@index');
 Route::get('/posts/{post_uid}', 'ArticleController@show');
 
+Route::get('/services', 'ServiceController@index');
+Route::get('/services/{post_uid}', 'ServiceController@show');
+
 
 // --------------------------------------- admin route ---------------------------------------//
 Route::get('/administrator', 'AdminController@index');

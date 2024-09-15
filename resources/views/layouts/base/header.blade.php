@@ -31,6 +31,7 @@
                                 </li>
                             @endforeach
                             <li><a href="{{url('events')}}">กิจกรรม</a></li>
+                            <li><a href="{{url('services?service_type=service_unit')}}">หน่วยบริการ</a></li>
                             <li class="menu-has-child">
                                 <a href="{{url('about/history')}}">เกี่ยวกับเรา</a>
                                 <ul class="submenu">
