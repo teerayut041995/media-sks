@@ -74,10 +74,11 @@
                 @foreach($banners as $banner)
                     <div class="swiper-slide">
                         {{--                    data-background="{{url('images/banner/f2ee6827c62694d0449ca518ea3ea2aa.jpg')}}"--}}
+                        {{--                        <a href="{{$banner->banner_first_link}}" target="_blank">--}}
                         <div class="h6_single-banner bg-default">
                             <img src="{{url('images/banner', $banner->banner_file_name)}}"
-                                 style="width: 100%; position: relative; padding-top: 0px;"
-                                 alt="{{$banner->banner_name}}">
+                                 style="width: 100%; position: relative; padding-top: 0px; cursor: pointer;"
+                                 alt="{{$banner->banner_name}}" class="click-banner-link" data-link="{{$banner->banner_first_link}}">
                             <div class="container">
                                 <div class="row align-items-center">
                                     <div class="col-xxl-7 col-xl-8">
@@ -90,28 +91,38 @@
                                                data-delay="0.7s">
                                                 {{$banner->banner_description}}
                                             </p>
-                                            <div class="h6_banner-content-btn" data-animation="fadeInUp"
-                                                 data-delay="0.7s">
-                                                @if($banner->banner_first_link)
-                                                    <a href="{{$banner->banner_first_link}}" target="_blank"
-                                                       class="header-btn theme-btn theme-btn-medium theme-btn-banner-6"
-                                                       data-animation="fadeInUp"
-                                                       data-delay="0.9s">{{$banner->banner_first_link_text}}<i
-                                                                class="fa-light fa-arrow-up-right"></i></a>
-                                                @endif
-                                                @if($banner->banner_second_link)
-                                                    <a href="{{$banner->banner_second_link}}" target="_blank"
-                                                       class="header-btn theme-btn theme-btn-medium theme-btn-banner-6"
-                                                       data-animation="fadeInUp"
-                                                       data-delay="0.9s">{{$banner->banner_second_link_text}}<i
-                                                                class="fa-light fa-arrow-up-right"></i></a>
-                                                @endif
-                                            </div>
+{{--                                            <p><br></p>--}}
+{{--                                            <p><br></p>--}}
+{{--                                            <p><br></p>--}}
+{{--                                            <p><br></p>--}}
+{{--                                            <p><br></p>--}}
+{{--                                            <p><br></p>--}}
+{{--                                            <p><br></p>--}}
+{{--                                            <p><br></p>--}}
+{{--                                            <div class="h6_banner-content-btn" data-animation="fadeInUp"--}}
+{{--                                                 data-delay="0.7s" align="center">--}}
+{{--                                                @if($banner->banner_first_link)--}}
+{{--                                                    <a href="{{$banner->banner_first_link}}" target="_blank"--}}
+{{--                                                       class="header-btn theme-btn theme-btn-medium theme-btn-banner-6"--}}
+{{--                                                       data-animation="fadeInUp" style="margin-left: 150px;"--}}
+{{--                                                       data-delay="0.9s">{{$banner->banner_first_link_text}}<i--}}
+{{--                                                                class="fa-light fa-arrow-up-right"></i></a>--}}
+{{--                                                @endif--}}
+{{--                                                @if($banner->banner_second_link)--}}
+{{--                                                    <a href="{{$banner->banner_second_link}}" target="_blank"--}}
+{{--                                                       class="header-btn theme-btn theme-btn-medium theme-btn-banner-6"--}}
+{{--                                                       data-animation="fadeInUp"--}}
+{{--                                                       data-delay="0.9s">{{$banner->banner_second_link_text}}<i--}}
+{{--                                                                class="fa-light fa-arrow-up-right"></i></a>--}}
+{{--                                                @endif--}}
+{{--                                            </div>--}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+                        {{--                        </a>--}}
                     </div>
                 @endforeach
             </div>
@@ -451,5 +462,12 @@
 @endsection
 
 @section('script')
-
+<script>
+    $(document).on('click', '.click-banner-link', function () {
+        const link = $(this).attr('data-link');
+        if (link) {
+            window.open(link, '_blank');
+        }
+    });
+</script>
 @endsection

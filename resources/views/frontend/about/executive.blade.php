@@ -26,10 +26,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-content" style="color: white;">
-                        <h2 class="breadcrumb-title" style="color: white;">ช่องทางการติดต่อ</h2>
+                        <h2 class="breadcrumb-title" style="color: white;">ฝ่ายบริหาร</h2>
                         <div class="breadcrumb-list">
                             <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>
-                            <span style="color: white;">ช่องทางการติดต่อ</span>
+                            <span style="color: white;">ฝ่ายบริหาร</span>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="col-md-2">
                         <div class="h9_teacher-item mb-30">
                             <div class="h9_teacher-img">
-                                <img src="{{url("images/home/executive/director.jpg")}}" alt="">
+                                <img src="{{url("images/home/executive/director-3.jpg")}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -57,33 +57,83 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-area-9 text-center mb-40">
-                        <h3 class=" mb-0">นายเจษฎา เวียงพล</h3>
+                        <h3 class=" mb-0">นางสาวคุณาพร บัวพันธ์</h3>
                         <span class="section-subtitle">ผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</span>
 
                     </div>
                 </div>
             </div>
-            <div class="teacher-active-9">
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-2">
-                        <div class="h9_teacher-item mb-30">
-                            <div class="h9_teacher-img">
-                                <img src="{{url("images/home/executive/director-2.jpg")}}" alt="">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="teacher-active-9">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="h9_teacher-item mb-30">
+                                    <div class="h9_teacher-img">
+                                        <img src="{{url("images/home/executive/director-1.jpg")}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-area-9 text-center mb-40">
+                                <h3 class=" mb-0">นายไพโรจน์ ไพรเขียว</h3>
+                                <span class="section-subtitle">รองผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5"></div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-area-9 text-center mb-40">
-                        <h3 class=" mb-0">นายไพโรจน์ ไพรเขียว</h3>
-                        <span class="section-subtitle">รองผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</span>
+                <div class="col-md-6">
+                    <div class="teacher-active-9">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="h9_teacher-item mb-30">
+                                    <div class="h9_teacher-img">
+                                        <img src="{{url("images/home/executive/director-2-1.jpg")}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-area-9 text-center mb-40">
+                                <h3 class=" mb-0">นางพิกุล หินวิเศษ</h3>
+                                <span class="section-subtitle">รองผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+{{--            <div class="teacher-active-9">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-5"></div>--}}
+{{--                    <div class="col-md-2">--}}
+{{--                        <div class="h9_teacher-item mb-30">--}}
+{{--                            <div class="h9_teacher-img">--}}
+{{--                                <img src="{{url("images/home/executive/director-2.jpg")}}" alt="">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-5"></div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12">--}}
+{{--                    <div class="section-area-9 text-center mb-40">--}}
+{{--                        <h3 class=" mb-0">นายไพโรจน์ ไพรเขียว</h3>--}}
+{{--                        <span class="section-subtitle">รองผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</span>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
         </div>
     </section>
     <!-- teacher area end -->
@@ -142,10 +192,10 @@
                             <img src="{{url("images/home/executive/team-lead-1.jpg")}}" alt="">
                         </div>
                         <div class="h9_teacher-content" style="text-align: center;">
-                            <h5 class="h2_teacher-content-titlee">
-                                นางพิกุล หินวิเศษ
+                            <h5 class="h2_teacher-content-title" style="font-size: 16px;">
+                                นางสาวลลิดา ศรีมหาไชย
                             </h5>
-                            <span>หัวหน้ากลุ่มบริหารงานวิชาการ</span>
+                            <span>หัวหน้าฝ่ายบริหารวิชาการ</span>
                         </div>
 {{--                        <div class="h2_teacher-content">--}}
 {{--                            <h5 class="h2_teacher-content-title">--}}
@@ -161,10 +211,10 @@
                             <img src="{{url("images/home/executive/team-lead-2.jpg")}}" alt="">
                         </div>
                         <div class="h9_teacher-content" style="text-align: center;">
-                            <h5 class="h2_teacher-content-titlee">
+                            <h5 class="h2_teacher-content-title">
                                 นางสาวศรัญญา ขานหยู
                             </h5>
-                            <span>หัวหน้ากลุ่มบริหารงานแผนงานและงบประมาณ</span>
+                            <span>หัวหน้าฝ่ายบริหารงบประมาณ</span>
                         </div>
 {{--                        <div class="h2_teacher-content">--}}
 {{--                            <h5 class="h2_teacher-content-title">--}}
@@ -177,39 +227,39 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="h2_teacher-item mb-30">
                         <div class="h2_teacher-img">
-                            <img src="{{url("images/home/executive/team-lead-3.jpg")}}" alt="">
+                            <img src="{{url("images/home/executive/team-lead-4-1.jpg")}}" alt="">
                         </div>
                         <div class="h9_teacher-content" style="text-align: center;">
-                            <h6 class="h2_teacher-content-titlee">
-                                นางปนัดดา อามาตย์สมบัติ
-                            </h6>
-                            <span>หัวหน้ากลุ่มบริหารงานบุคคล</span>
+                            <h5 class="h2_teacher-content-titlee">
+                                นางเบญจวรรณ เวียงพล
+                            </h5>
+                            <span>หัวหน้าฝ่ายบริหารทั่วไป</span>
                         </div>
-{{--                        <div class="h2_teacher-content">--}}
-{{--                            <h5 class="h2_teacher-content-title">--}}
-{{--                                นางปนัดดา อามาตย์สมบัติ--}}
-{{--                            </h5>--}}
-{{--                            <span>หัวหน้ากลุ่มบริหารงานบุคคล</span>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="h2_teacher-content">--}}
+                        {{--                            <h5 class="h2_teacher-content-title">--}}
+                        {{--                               นายบัญชา ขัณฑ์ชลา--}}
+                        {{--                            </h5>--}}
+                        {{--                            <span>หัวหน้ากลุ่มบริหารงานทั่วไป</span>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="h2_teacher-item mb-30">
                         <div class="h2_teacher-img">
-                            <img src="{{url("images/home/executive/team-lead-4.jpg")}}" alt="">
+                            <img src="{{url("images/home/executive/team-lead-3.jpg")}}" alt="">
                         </div>
                         <div class="h9_teacher-content" style="text-align: center;">
-                            <h5 class="h2_teacher-content-titlee">
-                                นายบัญชา ขัณฑ์ชลา
-                            </h5>
-                            <span>หัวหน้ากลุ่มบริหารงานทั่วไป</span>
+                            <h6 class="h2_teacher-content-title">
+                                นางปนัดดา อามาตย์สมบัติ
+                            </h6>
+                            <span style="font-size: 10px;">หัวหน้าฝ่ายบริหารงานบุคคล <br>และหัวหน้าฝ่ายบริหารงานหน่วยบริการ</span>
                         </div>
-{{--                        <div class="h2_teacher-content">--}}
-{{--                            <h5 class="h2_teacher-content-title">--}}
-{{--                               นายบัญชา ขัณฑ์ชลา--}}
-{{--                            </h5>--}}
-{{--                            <span>หัวหน้ากลุ่มบริหารงานทั่วไป</span>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="h2_teacher-content">--}}
+                        {{--                            <h5 class="h2_teacher-content-title">--}}
+                        {{--                                นางปนัดดา อามาตย์สมบัติ--}}
+                        {{--                            </h5>--}}
+                        {{--                            <span>หัวหน้ากลุ่มบริหารงานบุคคล</span>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
 
