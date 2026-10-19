@@ -1,114 +1,87 @@
-@extends('layouts.base.master')
-
-@section('seo')
-    <title>{{$event->event_name}}</title>
-    <meta name="description" content="{{$event->event_description}}">
-    <meta name="keywords"
-          content="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ, {{$event->event_name}}, CAPER, คูปองการศึกษา">
-    <meta property="og:url"
-          content='{{url("events/$event->uid")}}'/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="{{$event->event_name}}"/>
-    <meta property="og:description" content="{{$event->event_description}}"/>
-    <meta property="og:image" content='{{url("images/image_event/$event->event_image")}}'/>
-@endsection
-
+@extends('layouts.public')
+@section('title', e($event->event_name))
+@section('description', e($eventMetaDescription))
 @section('content')
-    <!-- breadcrumb area start -->
-    <section class="breadcrumb-area bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">
-        <img src="{{url("template/user-panel/assets/img/breadcrumb/shape-1.png")}}" alt="" class="breadcrumb-shape">
+@php
+    $eventHome = $eventPreview ? route('preview.home') : url('/');
+    $eventList = $eventPreview ? route('preview.events') : url('/events');
+    $mediaUrl = function ($folder, $filename) use ($eventPreview) {
+        if (!$filename) return null;
+        $path = $folder.'/'.basename($filename);
+        return ($eventPreview || !is_file(public_path($path))) ? 'https://sks.go.th/'.$path : asset($path);
+    };
+    $mainImageUrl = $mediaUrl('images/image_event', $event->event_image);
+    $galleryImages = $images->filter(function ($image) { return !empty($image->image_name); })->values();
+    $rawDescription = preg_replace('~<(script|style)\b[^>]*>.*?</\1>~is', '', (string) $event->event_description);
+    $rawDescription = preg_replace('~<br\s*/?>~i', "\n", $rawDescription);
+    $rawDescription = preg_replace('~</(?:p|div|li|h[1-6])\s*>~i', "\n\n", $rawDescription);
+    $description = trim(html_entity_decode(strip_tags($rawDescription), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+    $description = preg_replace("/\n{3,}/", "\n\n", $description);
+    $eventDate = $event->event_date ? createDateThai($event->event_date) : null;
+    $published = $event->created_at ? \Carbon\Carbon::parse($event->created_at) : null;
+@endphp
+<main id="main" tabindex="-1" class="event-detail-page">
+    <section class="event-detail-introduction" aria-labelledby="event-detail-title">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content" style="color: white;">
-                        <h2 class="breadcrumb-title" style="color: white;">{{$event->event_name}}</h2>
-{{--                        <div class="breadcrumb-list">--}}
-{{--                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>--}}
-{{--                            <a href='{{url("events")}}' style="color: white;">กิจกรรม</a>--}}
-{{--                            <span style="color: white;">{{$event->event_name}}</span>--}}
-{{--                        </div>--}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb area end -->
-
-
-    <!-- blog details area start -->
-    <section class="event_details-area pt-60 pb-80">
-        <div class="container">
-            <div class="event_details-img">
-                <img src='{{url("images/image_event/$event->event_image")}}' alt="{{$event->event_name}}"
-                     style="border-radius: 25px;">
-            </div>
-            <div class="row">
-                <div class="col-xl-8 col-lg-8">
-                    <div class="event_details-wrap mb-55">
-                        <div class="event_details-content">
-                            <h3 class="event_details-content-title">{{$event->event_name}}</h3>
-                            {!! $event->event_description !!}
-                        </div>
-                    </div>
-
-                    <div class="innerPage_gallery-wrap">
-                        <div class="row">
-                            @foreach($images as $image)
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="innerPage_gallery-item mb-30">
-                                        <div class="innerPage_gallery-img">
-                                            <img src='{{url("images/image_event/more_image/$image->image_name")}}' alt="{{$event->event_name}}">
-                                        </div>
-                                        <div class="innerPage_gallery-content">
-                                            <a href='{{url("images/image_event/more_image/$image->image_name")}}' class="popup-image"><i
-                                                        class="fa-thin fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-{{--                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                                <div class="innerPage_gallery-item mb-30">--}}
-{{--                                    <div class="innerPage_gallery-img">--}}
-{{--                                        <img src="{{url("template/user-panel/assets/img/gallery/innerPage/1.jpg")}}" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="innerPage_gallery-content">--}}
-{{--                                        <a href="{{url("template/user-panel/assets/img/gallery/innerPage/1.jpg")}}" class="popup-image"><i--}}
-{{--                                                    class="fa-thin fa-plus"></i></a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                                <div class="innerPage_gallery-item mb-30">--}}
-{{--                                    <div class="innerPage_gallery-img">--}}
-{{--                                        <img src="{{url("template/user-panel/assets/img/gallery/innerPage/2.jpg")}}" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="innerPage_gallery-content">--}}
-{{--                                        <a href="{{url("template/user-panel/assets/img/gallery/innerPage/2.jpg")}}" class="popup-image"><i--}}
-{{--                                                    class="fa-thin fa-plus"></i></a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                                <div class="innerPage_gallery-item mb-30">--}}
-{{--                                    <div class="innerPage_gallery-img">--}}
-{{--                                        <img src="{{url("template/user-panel/assets/img/gallery/innerPage/3.jpg")}}" alt="">--}}
-{{--                                    </div>--}}
-{{--                                    <div class="innerPage_gallery-content">--}}
-{{--                                        <a href="{{url("template/user-panel/assets/img/gallery/innerPage/3.jpg")}}" class="popup-image"><i--}}
-{{--                                                    class="fa-thin fa-plus"></i></a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-xl-4 col-lg-4">
-                    @include('frontend.components.side-content-event-detail')
+            <nav class="breadcrumbs" aria-label="เส้นทางนำทาง"><a href="{{ $eventHome }}">หน้าหลัก</a><span aria-hidden="true">/</span><a href="{{ $eventList }}">กิจกรรม</a><span aria-hidden="true">/</span><span aria-current="page">รายละเอียดกิจกรรม</span></nav>
+            <div class="event-detail-heading">
+                <p class="eyebrow">ภาพกิจกรรมจากศูนย์</p>
+                <h1 id="event-detail-title">{{ $event->event_name }}</h1>
+                <div class="event-detail-meta" aria-label="ข้อมูลกิจกรรม">
+                    @if($eventDate)<div><span>วันที่จัดกิจกรรม</span><strong>{{ $eventDate }}</strong></div>@endif
+                    @if($event->event_location)<div><span>สถานที่</span><strong>{{ $event->event_location }}</strong></div>@endif
+                    @if($published)<div><span>เผยแพร่เมื่อ</span><strong><time datetime="{{ $published->toDateString() }}">{{ formatDateThaiBirthday($event->created_at) }}</time></strong></div>@endif
+                    @if($event->name)<div><span>เผยแพร่โดย</span><strong>{{ $event->name }}</strong></div>@endif
                 </div>
             </div>
         </div>
     </section>
 
+    @if($mainImageUrl)
+        <div class="event-detail-cover-wrap"><div class="container"><figure class="event-detail-cover"><img src="{{ $mainImageUrl }}" width="1290" height="726" alt="ภาพหลักของกิจกรรม {{ $event->event_name }}" decoding="async" data-image-fallback><figcaption class="image-fallback" hidden>ภาพหลักของกิจกรรม</figcaption></figure></div></div>
+    @endif
 
+    <section class="event-detail-story" aria-labelledby="event-story-title">
+        <div class="container event-detail-story-layout">
+            <article class="event-detail-story-content">
+                <p class="eyebrow">รายละเอียดกิจกรรม</p>
+                <h2 id="event-story-title">เรื่องราวของกิจกรรม</h2>
+                @if($description)<p class="event-detail-description">{{ $description }}</p>@else<p class="event-detail-description">ติดตามภาพบรรยากาศของกิจกรรมได้ด้านล่าง</p>@endif
+            </article>
+            <aside class="event-detail-guide" aria-label="สำรวจหน้านี้">
+                <span class="event-detail-guide-label">ในหน้านี้</span>
+                @if($galleryImages->isNotEmpty())<a href="#event-gallery">ชมภาพกิจกรรม <span>{{ $galleryImages->count() }} ภาพ</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>@endif
+                <a href="{{ $eventList }}">ดูกิจกรรมทั้งหมด <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                @if($views !== null)<p>เข้าชม {{ number_format($views) }} ครั้ง</p>@endif
+            </aside>
+        </div>
+    </section>
+
+    @if($galleryImages->isNotEmpty())
+        <section class="event-detail-gallery" id="event-gallery" tabindex="-1" aria-labelledby="event-gallery-title">
+            <div class="container">
+                <div class="event-detail-section-heading"><div><p class="eyebrow">บรรยากาศและความทรงจำ</p><h2 id="event-gallery-title">ภาพกิจกรรม</h2></div><span>{{ $galleryImages->count() }} ภาพ</span></div>
+                <div class="event-detail-gallery-grid">
+                    @foreach($galleryImages as $image)
+                        @php $galleryUrl = $mediaUrl('images/image_event/more_image', $image->image_name); @endphp
+                        <figure class="event-detail-photo">
+                            <a href="{{ $galleryUrl }}" target="_blank" rel="noopener" data-event-gallery="{{ $loop->index }}" aria-label="ขยายภาพกิจกรรมลำดับที่ {{ $loop->iteration }} จาก {{ $galleryImages->count() }}">
+                                <img src="{{ $galleryUrl }}" width="2048" height="1365" alt="ภาพกิจกรรม {{ $loop->iteration }} จาก {{ $galleryImages->count() }}: {{ $event->event_name }}" loading="lazy" decoding="async" data-image-fallback><span class="image-fallback" hidden>ภาพกิจกรรม {{ $loop->iteration }}</span>
+                                <span class="event-detail-photo-index" aria-hidden="true">{{ sprintf('%02d', $loop->iteration) }}</span>
+                            </a>
+                        </figure>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <dialog class="event-gallery-dialog" id="event-gallery-dialog" aria-label="ดูภาพกิจกรรมขนาดเต็ม">
+            <div class="event-gallery-dialog-inner">
+                <div class="event-gallery-dialog-toolbar"><span id="event-gallery-position" aria-live="polite"></span><button type="button" class="event-gallery-close" data-event-gallery-close aria-label="ปิดภาพขนาดเต็ม"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+                <div class="event-gallery-dialog-stage"><button type="button" class="event-gallery-previous" data-event-gallery-previous aria-label="ภาพก่อนหน้า"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><img id="event-gallery-large-image" alt=""><button type="button" class="event-gallery-next" data-event-gallery-next aria-label="ภาพถัดไป"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+            </div>
+        </dialog>
+    @endif
+
+    <div class="container event-detail-back"><a href="{{ $eventList }}"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>กลับไปดูกิจกรรมทั้งหมด</a></div>
+</main>
 @endsection

@@ -1,0 +1,2 @@
+@php($aboutLinkBase = $aboutPreview ? url('/preview/about') : url('/about'))
+<nav class="about-page-navigation" aria-label="เกี่ยวกับศูนย์"><div class="container"><a href="{{ $aboutLinkBase.'/history' }}" @if($aboutPage === 'history') aria-current="page" @endif>ประวัติความเป็นมา</a><a href="{{ $aboutLinkBase.'/executive' }}" @if($aboutPage === 'executive') aria-current="page" @endif>ฝ่ายบริหาร</a></div></nav>

@@ -1,0 +1,58 @@
+{
+  "service": {
+    "uid": "8793671705672554",
+    "service_name": "หน่วยบริการร่องคำ",
+    "service_type": "service_unit",
+    "service_description": "หน่วยบริการร่องคำ ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ ตั้งอยู่ที่ โรงเรียนกุดลิงวิทยาคม หมู่ 3 ถนน ราษฎร์รังสรรค์ ตำบล ร่องคำ อำเภอ ร่องคำ จังหวัด กาฬสินธุ์ รหัสไปรษณีย์ 46210 จัดและส่งเสริม สนับสนุนการศึกษาในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม (Early Intervention :EI) และเตรียมความพร้อมของเด็กพิการที่หน่วยบริการของศูนย์การศึกษาพิเศษ รวมทั้งที่บ้านและชุมชน เพื่อเข้าสู่ศูนย์พัฒนาเด็กเล็กโรงเรียนอนุบาล โรงเรียนเรียนรวม โรงเรียนเฉพาะความพิการและหน่วยงานที่เกี่ยวข้อง โดยให้บริการนักเรียนที่มีความบกพร่องทางการศึกษาทั้ง 9 ประเภท ตั้งอายุแรกเกิด หรือพบความพิการ จนถึงอายุ 18 ปี ในเขตพื้นที่อำเภอร่องคำ จังหวัดกาฬสินธุ์",
+    "service_mission": "1. จัดและส่งเสริม สนับสนุนการศึกษาในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม (Early Intervention :EI) และเตรียมความพร้อมของเด็กพิการที่หน่วยบริการของศูนย์การศึกษาพิเศษ รวมทั้งที่บ้านและชุมชน เพื่อเข้าสู่ศูนย์พัฒนาเด็กเล็กโรงเรียนอนุบาล โรงเรียนเรียนรวม โรงเรียนเฉพาะความพิการและหน่วยงานที่เกี่ยวข้อง\n2. ส่งเสริม สนับสนุนการจัดทำแผนการจัดการศึกษาเฉพาะบุคคล (Individualized Education Program : IEP) สิ่งอำนวยความสะดวก สื่อ บริการ และความช่วยเหลืออื่นใดทางการศึกษาสำหรับเด็กพิการ\n3. บริการช่วงเชื่อมต่อสำหรับเด็กพิการ (Transitional Services)\n4. ให้บริการฟื้นฟูสมรรถภาพเด็กพิการโดยครอบครัวและชุมชนด้วยกระบวนการทางการศึกษา\n5. เป็นศูนย์ข้อมูลสารสนเทศด้านการศึกษาสำหรับเด็กพิการในพื้นที่บริการ\n6. ส่งเสริม สนับสนุนการจัดการเรียนรวม และประสานงานการจัดการศึกษาสำหรับเด็กพิการ\n7. ภาระหน้าที่อื่นตามที่ได้รับมอบหมาย",
+    "service_learning_activity": "จัดกิจกรรมการเรียนการสอนตามแนวทางการจัดการศึกษาแบบวอลดอร์ฟ ตามขั้นตอนดังนี้\n- รับนักเรียนตอนเช้า\n- เล่นอิสระ\n- สวดมนต์ไว้พระ แผ่เมตตา นั่งสมาธิ\n- กิจกรรมวงกลม\n- เล่าเรื่องตามหน่วยการเรียนรู้\n- รับประทานอาหารว่าง\n- กิจกรรมครูพาทำ\n- เล่านิทาน\n- รับประทานอาหารกลางวัน\n- ส่งนักเรียนกลับบ้าน",
+    "service_address": "โรงเรียนกุดลิงวิทยาคม หมู่ 3 ถนน ราษฎร์รังสรรค์ ตำบล/แขวง ร่องคำ อำเภอ/เขต ร่องคำ จังหวัด กาฬสินธุ์ รหัสไปรษณีย์ 46210",
+    "service_contact_phone_number": "0872310353",
+    "service_contact_name": "นางสาวกาญจนาพร ศรีประทุม (หัวหน้าหน่วยบริการ)",
+    "service_embed_map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4089.29515676464!2d103.750428!3d16.273102999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDE2JzIzLjIiTiAxMDPCsDQ1JzAxLjUiRQ!5e1!3m2!1sth!2sth!4v1726386715564!5m2!1sth!2sth\"></iframe>"
+  },
+  "images": [
+    {
+      "service_image_type": "banner",
+      "service_image_file_name": "banner-a16591740daaa1ca38193c77645e54c1.png",
+      "service_image_name": "",
+      "service_image_description": ""
+    },
+    {
+      "service_image_type": "preview_1",
+      "service_image_file_name": "general-25cf57bdea34e8268082391c658f2389.png",
+      "service_image_name": "",
+      "service_image_description": ""
+    },
+    {
+      "service_image_type": "preview_2",
+      "service_image_file_name": "preview_2-09a0e0ef18260c1410c761f3ca4768e2.png",
+      "service_image_name": "",
+      "service_image_description": ""
+    },
+    {
+      "service_image_type": "general",
+      "service_image_file_name": "general-6f20c6e0392904da9402fc1f07f291bf.jpg",
+      "service_image_name": "กิจกรรมสวดมนไหว้พระ",
+      "service_image_description": ""
+    },
+    {
+      "service_image_type": "general",
+      "service_image_file_name": "general-a868fa73858e0b73c7015fca8c18a809.jpg",
+      "service_image_name": "กิจกรรมเคลื่อนไหว",
+      "service_image_description": ""
+    },
+    {
+      "service_image_type": "general",
+      "service_image_file_name": "general-3ec99cd5048670a721b8a3c95ee85bc4.jpg",
+      "service_image_name": "กิจกรรมเล่าหน่วยประสบการณ์เรียนรู้",
+      "service_image_description": ""
+    },
+    {
+      "service_image_type": "general",
+      "service_image_file_name": "general-8e15415b5a1f563cdbfbf6fd2ee5cf94.jpg",
+      "service_image_name": "กิจกรรมครูพาทำ",
+      "service_image_description": ""
+    }
+  ]
+}

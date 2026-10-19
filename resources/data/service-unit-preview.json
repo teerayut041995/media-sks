@@ -1,0 +1,14 @@
+[
+  {
+    "uid": "1219441341152823",
+    "service_name": "หน่วยบริการเมือง",
+    "service_type": "service_unit",
+    "service_image_file_name": "banner-12a952815a598136ef9569cd5355f571.png"
+  },
+  {
+    "uid": "8793671705672554",
+    "service_name": "หน่วยบริการร่องคำ",
+    "service_type": "service_unit",
+    "service_image_file_name": "banner-a16591740daaa1ca38193c77645e54c1.png"
+  }
+]

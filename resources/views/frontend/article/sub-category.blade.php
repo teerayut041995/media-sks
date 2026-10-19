@@ -31,6 +31,10 @@
 @endsection
 
 
+@section('style')
+    <link rel="stylesheet" href="{{ asset('css/legacy-post-images.css') }}">
+@endsection
+
 @section('content')
     <!-- breadcrumb area start -->
     <section class="breadcrumb-area bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">

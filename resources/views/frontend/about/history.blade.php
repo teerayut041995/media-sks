@@ -1,266 +1,33 @@
-@extends('layouts.base.master')
-
-@section('seo')
-    <title>ประวัติความเป็นมา | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</title>
-    <meta name="description"
-          content="ประวัติความเป็นมา | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์">
-
-    <meta name="keywords"
-          content="ประวัติความเป็นมา, ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, ศูนย์การศึกษาพิเศษ, สำนักบริหารงานการศึกษาพิเศษ, บริการช่วยเหลือระยะแรกเริ่ม, การศึกษาพิเศษ">
-
-    <meta property="og:url"
-          content='{{url("")}}'/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="ประวัติความเป็นมา | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
-    <meta property="og:description"
-          content="ประวัติความเป็นมา ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}" />
-    <link rel="canonical" href="{{url('')}}"/>
-@endsection
-
+@extends('layouts.public')
+@section('title', 'ประวัติความเป็นมา')
+@section('description', 'ประวัติความเป็นมา วิสัยทัศน์ พันธกิจ และบทบาทหน้าที่ของศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ ก่อตั้งวันที่ 31 กรกฎาคม พ.ศ. 2543')
 @section('content')
-
-    <!-- breadcrumb area start -->
-    <section class="breadcrumb-area bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">
-        <img src="{{url("template/user-panel/assets/img/breadcrumb/shape-1.png")}}" alt="" class="breadcrumb-shape">
+<main id="main" tabindex="-1" class="about-page history-page">
+    @include('frontend.about.partials.page-navigation')
+    <section class="about-introduction">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content" style="color: white;">
-                        <h2 class="breadcrumb-title" style="color: white;">ประวัติความเป็นมา</h2>
-                        <div class="breadcrumb-list">
-                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>
-                            <span style="color: white;">ประวัติความเป็นมา</span>
-                        </div>
-                    </div>
+            <nav class="breadcrumbs" aria-label="เส้นทางนำทาง"><a href="{{ $aboutPreview ? route('preview.home') : url('/') }}">หน้าหลัก</a><span aria-hidden="true">/</span><span>เกี่ยวกับเรา</span><span aria-hidden="true">/</span><span aria-current="page">ประวัติความเป็นมา</span></nav>
+            <div class="history-intro-grid">
+                <div class="history-intro-copy"><p class="eyebrow">รู้จักศูนย์ของเรา</p><h1>ประวัติความเป็นมา</h1><p class="about-lead">จากจุดเริ่มต้นของศูนย์<br><span>สู่โอกาสทางการศึกษาที่เท่าเทียม</span></p><p class="about-intro-description">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ จัดและส่งเสริมการศึกษาเพื่อเด็กพิการ ให้บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเข้าสู่การศึกษาอย่างเหมาะสม</p>
+                    <dl class="about-facts"><div><dt>ก่อตั้งเมื่อ</dt><dd><time datetime="2000-07-31">31 กรกฎาคม 2543</time></dd></div><div><dt>พื้นที่ของศูนย์</dt><dd>7 ไร่ 3 งาน 80 ตารางวา</dd></div></dl>
                 </div>
+                <figure class="history-hero-image"><img src="{{ asset('images/kalasin1.jpg') }}" width="2048" height="1536" alt="อาคารและพื้นที่ของศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์" decoding="async" fetchpriority="high"><figcaption><span>พื้นที่แห่งการเรียนรู้</span><strong>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</strong></figcaption></figure>
             </div>
         </div>
     </section>
-    <!-- breadcrumb area end -->
-
-    <!-- about area start -->
-    <section class="about-area pt-60 pb-20">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="about-img">
-                        <img src="{{url("images/kalasin1.jpg")}}" alt="">
-                        {{--                        <div class="about-img-meta">--}}
-                        {{--                            <span><i class="fa-solid fa-star"></i>4.5 (3.4k Reviews)</span>--}}
-                        {{--                            <h5>Congratulations</h5>--}}
-                        {{--                        </div>--}}
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-10">
-                    <div class="about-content">
-                        <div class="section-area">
-                            <span class="section-subtitle">เกี่ยวกับสถานศึกษา</span>
-                            <h2 class="section-title mb-15">ศูนย์การศึกษาพิเศษ <br>ประจำจังหวัดกาฬสินธุ์</h2>
-                            <p class="section-text">
-                                ศูนย์การศึกษาพิเศษ ประจังหวัดกาฬสินธุ์ สังกัดสำนักบริหารงานการศึกษาพิเศษ
-                                <br>สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน กระทรวงศึกษาธิการ
-                                <br>ได้รับอนุมัติให้จัดตั้งเมื่อวันที่ 31 กรกฎาคม พ.ศ. 2543
-                                <br>ศูนย์การศึกษาพิเศษก่อตั้งครั้งแรกอาศัยตั้งสำนักงาน ณ โรงเรียนศึกษาพิเศษกาฬสินธุ์
-                                <br>ปัจจุบันเปลี่ยนเป็น โรงเรียนกาฬสินธุ์ปัญญานุกูล และได้ย้ายสำนักงานอาคาร
-                                <br>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ มาตั้งอยู่ เลขที่ 400 ถนนถีนานนท์
-                                <br>หมู่ที่ 1 ตำบลยางตลาด อำเภอยางตลาด จังหวัดกาฬสินธุ์ มีพื้นที่ จำนวน 7 ไร่ 3 งาน 80
-                                ตารางวา
-                                <br>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการ
-                                <br>ในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อม
-                                <br>เพื่อส่งต่อเด็กพิการเข้าเรียนร่วม
-                                กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ <br>ทุกประเภทในจังหวัดกาฬสินธุ์
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- about area end -->
-
-    <!-- blog details area start -->
-    <section class="blog_details-area pt-20 pb-20">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-12">
-                    <blockquote class="blog_details-quote">
-                        <h3>วิสัยทัศน์</h3>
-                        <p>“ศูนย์การศึกษาพิเศษประจำ จังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่มีมาตรฐาน ก้าวทันเทคโนโลยี
-                            พัฒนาคุณภาพชีวิตเด็กพิการแบบองค์รวม <br>ตามแนวทางปรัชญาเศรษฐกิจพอเพียง และมนุษยปรัชญา
-                            ให้เป็นคนดีและมีความสุข”</p>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- banner area start -->
-    <section class="h5_banner-area">
-        <div class="h5_single-banner">
-            <div class="h5_banner-bg w_img d-none d-lg-block">
-                <img src="{{url("images/home/present/sks-present-3.JPG")}}" alt="">
-            </div>
-            <div class="container">
-                <div class="row justify-content-end">
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div class="h2_banner-content h5_banner-content">
-                            <div class="section-area-2 mb-45 ">
-                                <h3>พันธกิจ</h3>
-                                {{--                                <h1 class="section-title"><span>พันธกิจ <img src="{{url("template/user-panel/assets/img/banner/2/line.png")}}" alt=""></span></h1>--}}
-                                <ul class="about-content-list">
-                                    <li>
-                                        1. ส่งเสริมสนับสนุน และสร้างโอกาสความเสมอภาค
-                                        ลดความเหลื่อมล้ำให้เด็กพิการและเด็กด้อยโอกาส
-                                        ได้รับบริการทางการศึกษาด้วยระบบและรูปแบบการจัดการศึกษาที่หลากหลาย
-                                    </li>
-                                    <li>
-                                        2. ส่งเสริมสนับสนุนให้สถานศึกษาจัดการศึกษาเพื่อให้ผู้เรียนมีคุณภาพ
-                                        สมรรถนะและทักษะที่จำเป็นตามหลักสูตรสถานศึกษา
-                                    </li>
-                                    <li>
-                                        3. ส่งเสริมสนับสนุนให้หน่วยงาน
-                                        และสถานศึกษามีความปลอดภัยจากภัยพิบัติและภัยคุกคามทุกรูปแบบ
-                                    </li>
-                                    <li>
-                                        4. ส่งเสริมสนับสนุนให้หน่วยงาน และสถานศึกษานำหลักธรรมาภิบาล
-                                        และเทคโนโลยีดิจิทัลมาใช้ในการบริหารจัดการ
-                                    </li>
-                                    <li>5. ส่งเสริมสนับสนุนให้หน่วยงาน และสถานศึกษาน้อมนำหลักปรัชญาของเศรษฐกิจพอเพียง
-                                        มาเป็นแนวทางในการจัดการศึกษา
-                                    </li>
-                                    <li>
-                                        6. ส่งเสริมและพัฒนาผู้บริหาร สถานศึกษาครูและบุคลากรทางการศึกษา
-                                        รวมทั้งบุคลากรสังกัดสำนักบริหารงานการศึกษาพิเศษ
-                                        ให้มีสมรรถนะตามมาตรฐานตำแหน่งและ/หรือมาตรฐานวิชาชีพ
-                                    </li>
-                                </ul>
-                                <p></p>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- banner area end -->
-
-
-
-    <!-- feature area start -->
-    <section class="h5_feature-area">
-        <div class="h5_feature-wrapper">
-
-            <div class="h5_feature-item first_item">
-                <div class="h5_feature-inner">
-                    <h3 style="font-style: italic;">อัตลักษณ์</h3>
-                    <p style="font-size: 20px; font-style: italic; color: #1E1E1E; margin-bottom: 15px;">
-                        “นักเรียนศูนย์การศึกษาพิเศษประจำจังหวัดกาฬสินธุ์ มีความสุข สนุก ร่งเริง“
-                    </p>
-
-                </div>
-            </div>
-            <div class="h5_feature-item second_item">
-                <div class="h5_feature-inner">
-                    {{--                    <span>02</span>--}}
-                    <h3 style="font-style: italic;">เอกลักษณ์</h3>
-                    <p style="font-size: 20px; font-style: italic; color: #1E1E1E; margin-bottom: 15px;">“สถานศึกษาแกนนำ
-                        ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ“</p>
-                </div>
-            </div>
-            <div class="h5_feature-item third_item">
-                {{--                <div class="h5_feature-inner">--}}
-                {{--                    <h3>อัตลักษณ์</h3>--}}
-                {{--                    <p>นักเรียนศูนย์การศึกษาพิเศษประจำจังหวัดกาฬสินธุ์ มีความสุข สนุก ร่งเริง--}}
-                {{--                    </p>--}}
-
-                {{--                    <h3>เอกลักษณ์</h3>--}}
-                {{--                    <p>สถานศึกษาแกนนำ ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ</p>--}}
-                {{--                </div>--}}
-                <img src="{{url("images/home/present/sks-present-4.JPG")}}" alt="">
-            </div>
-        </div>
-    </section>
-    <!-- feature area end -->
-
-    <!-- about area start -->
-    <section class="h6_about-area pt-60 pb-60 fix">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="h6_about-img w_img">
-                        <img src="{{url("images/home/present/sks-present-5.JPG")}}" alt="ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์">
-                        <div class="h6_about-img-content">
-                            <h2>2543</h2>
-                            <span>ก่อตั้งเมื่อปี</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="h6_about-content ml-30 mb-30 mb-md-0 pb-30">
-                        <h3 class="h6_about-content-title">บทบาทหน้าที่</h3>
-                        <div class="about-content-list">
-                            <ul>
-
-                                <li>
-                                    จัดและส่งเสริม สนับสนุนการศึกษาในลักษณะศูนย์บริการให้ความช่วยเหลือระยะแรกเริ่ม
-                                    (Early Intervention : EI)
-                                    และเตรียมความพร้อมของคนพิการเพื่อเข้าศูนย์พัฒนาเด็กเล็กโรงเรียนอนุบาล
-                                    โรงเรียนเรียนร่วม โรงเรียนเฉพาะความพิการ
-                                    ศูนย์การเรียนเฉพาะความพิการและหน่วยงานที่เกี่ยวข้อง เป็นต้น
-                                </li>
-                                <li>
-                                    พัฒนาและฝึกอบรมผู้ดูแลคนพิการ บุคลากรที่จัดการศึกษาสำหรับคนพิการ
-                                </li>
-                                <li>
-                                    จัดระบบบริการและส่งเสริม สนับสนุนการจัดทำแผนการจัดการศึกษาเฉพาะบุคคล (Individualized
-                                    Education Program : IEP) สิ่งอำนวยความสะดวก สื่อ บริการ
-                                    และความช่วยเหลืออื่นใดทางการศึกษาสำหรับคนพิการ
-                                </li>
-                                <li>จัดระบบบริการช่วงเชื่อมต่อสำหรับคนพิการ (Transitional Services)</li>
-                                <li>ให้บริการฟื้นฟูสมรรถภาพคนพิการโดยครอบครัวและชุมชนด้วยกระบวนทางการศึกษา</li>
-                                <li>เป็นศูนย์ข้อมูล รวมทั้งจัดระบบสารสนเทศด้านการศึกษาสำหรับคนพิการในจังหวัด</li>
-                                <li>จัดระบบสนับสนุนการเรียนร่วมและประสานงานการจัดการศึกษาสำหรับคนพิการในจังหวัด</li>
-                                <li>ภาระหน้าที่อื่นตามที่กฎหมายกำหนด</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="about-text-wrap mb-15">
-            <div class="about-text-ticker" id="about-text-ticker">
-                <h1 class="h6_about-bottom-title">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</h1>
-            </div>
-        </div>
-    </section>
-    <!-- about area end -->
-
-    <!-- cta area start -->
-    <div class="cta-area">
-        <div class="container">
-            <div class="cta-wrapper">
-                <div class="row align-items-center">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="cta-content mb-30 mb-lg-0">
-                            <span class="cta-subtitle">Social Media</span>
-                            <h2 class="cta-title">ติดตามข่าวสารผ่านช่องทางออนไลน์ได้ที่</h2>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="cta-button">
-                            <a href='{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}' target="_blank" class="cta-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container about-content-layout">
+        <aside class="page-contents"><nav aria-label="เนื้อหาในหน้านี้"><p>ในหน้านี้</p><a href="#our-history">จุดเริ่มต้นของศูนย์</a><a href="#vision">วิสัยทัศน์</a><a href="#mission">พันธกิจ</a><a href="#identity">อัตลักษณ์และเอกลักษณ์</a><a href="#responsibilities">บทบาทหน้าที่</a></nav></aside>
+        <div class="history-sections">
+            <section class="about-reading-section" id="our-history" tabindex="-1" aria-labelledby="history-title"><p class="eyebrow">จากวันแรกถึงวันนี้</p><h2 id="history-title">จุดเริ่มต้นของศูนย์</h2><p>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ สังกัดสำนักบริหารงานการศึกษาพิเศษ สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน กระทรวงศึกษาธิการ ได้รับอนุมัติให้จัดตั้งเมื่อวันที่ 31 กรกฎาคม พ.ศ. 2543</p>
+                <ol class="history-timeline" role="list"><li><span class="timeline-period">พ.ศ. 2543</span><h3>เริ่มต้นการจัดตั้งศูนย์</h3><p>ศูนย์การศึกษาพิเศษก่อตั้งครั้งแรกอาศัยตั้งสำนักงาน ณ โรงเรียนศึกษาพิเศษกาฬสินธุ์ ปัจจุบันเปลี่ยนเป็นโรงเรียนกาฬสินธุ์ปัญญานุกูล</p></li><li><span class="timeline-period">ปัจจุบัน</span><h3>พื้นที่แห่งการเรียนรู้ที่ยางตลาด</h3><p>ได้ย้ายสำนักงานอาคารศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ มาตั้งอยู่เลขที่ 400 ถนนถีนานนท์ หมู่ที่ 1 ตำบลยางตลาด อำเภอยางตลาด จังหวัดกาฬสินธุ์ มีพื้นที่จำนวน 7 ไร่ 3 งาน 80 ตารางวา</p></li></ol>
+                <p>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการ ในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อม เพื่อส่งต่อเด็กพิการเข้าเรียนร่วมกับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์</p>
+            </section>
+            <section class="vision-panel" id="vision" tabindex="-1" aria-labelledby="vision-title"><p class="eyebrow">ทิศทางของเรา</p><h2 id="vision-title">วิสัยทัศน์</h2><blockquote>“ศูนย์การศึกษาพิเศษประจำจังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่มีมาตรฐาน ก้าวทันเทคโนโลยี พัฒนาคุณภาพชีวิตเด็กพิการแบบองค์รวม ตามแนวทางปรัชญาเศรษฐกิจพอเพียง และมนุษยปรัชญา ให้เป็นคนดีและมีความสุข”</blockquote></section>
+            <section class="about-reading-section" id="mission" tabindex="-1" aria-labelledby="mission-title"><p class="eyebrow">สิ่งที่เรามุ่งมั่น</p><h2 id="mission-title">พันธกิจ</h2><ol class="mission-list" role="list">@foreach($about['missions'] as $mission)<li><span class="list-number" aria-hidden="true">{{ sprintf('%02d', $loop->iteration) }}</span><p>{{ $mission }}</p></li>@endforeach</ol></section>
+            <section class="identity-grid" id="identity" tabindex="-1" aria-label="อัตลักษณ์และเอกลักษณ์"><div><span class="identity-line" aria-hidden="true"></span><h2>อัตลักษณ์</h2><p>“นักเรียนศูนย์การศึกษาพิเศษประจำจังหวัดกาฬสินธุ์ มีความสุข สนุก ร่าเริง”</p></div><div><span class="identity-line" aria-hidden="true"></span><h2>เอกลักษณ์</h2><p>“สถานศึกษาแกนนำ ที่นำสื่อและเทคโนโลยีทางการศึกษาเพื่อพัฒนากระบวนการจัดการเรียนรู้ที่มีคุณภาพ”</p></div></section>
+            <section class="about-reading-section" id="responsibilities" tabindex="-1" aria-labelledby="responsibilities-title"><p class="eyebrow">การศึกษาเพื่อทุกโอกาส</p><h2 id="responsibilities-title">บทบาทหน้าที่</h2><ol class="responsibility-list">@foreach($about['responsibilities'] as $responsibility)<li>{{ $responsibility }}</li>@endforeach</ol></section>
+            <div class="about-next-page"><div><p class="eyebrow">รู้จักศูนย์ให้มากขึ้น</p><h2>ผู้บริหารและหัวหน้ากลุ่มงาน</h2></div><a class="button button-primary" href="{{ $aboutPreview ? route('preview.about', ['page' => 'executive']) : url('/about/executive') }}">รู้จักฝ่ายบริหาร <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
         </div>
     </div>
-    <!-- cta area end -->
-
+</main>
 @endsection

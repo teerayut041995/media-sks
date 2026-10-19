@@ -16,12 +16,12 @@
 // });
 
 Route::get('/', 'HomeController@index');
-Route::get('/article/{slug}', 'HomeController@post_detail');
+Route::get('/article/{slug}', 'LegacyPublicController@post_detail');
 Route::get('/live', 'LiveController@index');
 Route::get('/watch/{id}', 'LiveController@watch');
-Route::get('/กิจกรรม', 'HomeController@event');
-Route::get('/กิจกรรม/{slug}', 'HomeController@event_detail');
-Route::get('/about', 'HomeController@about');
+Route::get('/กิจกรรม', 'LegacyPublicController@event');
+Route::get('/กิจกรรม/{slug}', 'LegacyPublicController@event_detail');
+Route::get('/about', 'LegacyPublicController@about');
 Route::get('/about/history', 'AboutController@history');
 Route::get('/about/executive', 'AboutController@executive');
 Route::get('/contact', 'AboutController@contact');

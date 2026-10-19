@@ -59,12 +59,7 @@ return [
      *    'method' => array('Str','slug'),
      */
 
-    'method' => function ($string, $separator) {
-        $string = preg_replace('/[^a-z0-9ก-๙เแ]/i', '-', $string);
-        $string = preg_replace('/-+/', '-', $string);
-        $string = preg_replace('/-$|^-/', '', $string);
-        return $string;
-    },
+    'method' => [\App\Support\ThaiSlugger::class, 'slug'],
 
     /**
      * Separator to use when generating slugs.  Defaults to a hyphen.

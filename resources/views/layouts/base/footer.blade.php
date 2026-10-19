@@ -11,9 +11,9 @@
                     </p>
                     <div class="footer-social">
                         <ul>
-                            <li><a href='{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}' target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href='{{url(env('SOCIAL_CONTACT_YOUTUBE'))}}' target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                            <li><a href='{{url(env('SOCIAL_CONTACT_WEBSITE'))}}'><i class="fa-brands fa fa-dribbble"></i></a></li>
+                            <li><a href='{{url(config('public.facebook'))}}' target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href='{{url(config('public.youtube'))}}' target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href='{{url(config('public.website'))}}'><i class="fa-brands fa fa-dribbble"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,9 +39,9 @@
                     <div class="footer-widget-list" style="color: white;">
                         <ul>
                             <li>เว็บไซต์ : <a href="{{url('/')}}">www.sks.go.th</a></li>
-                            <li>เบอร์โทร : <a href="#">{{env('CONTACT_PHONE_NUMBER')}}</a></li>
-                            <li>อีเมล : <a href="#">{{env('CONTACT_EMAIL')}}</a></li>
-                            <li>FACEBOOK : <a href="{{env('SOCIAL_CONTACT_FACEBOOK')}}" target="_blank">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</a></li>
+                            <li>เบอร์โทร : <a href="#">{{config('public.contact_phone')}}</a></li>
+                            <li>อีเมล : <a href="#">{{config('public.contact_email')}}</a></li>
+                            <li>FACEBOOK : <a href="{{config('public.facebook')}}" target="_blank">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</a></li>
 {{--                            <li><a href="#">Finance & Accounting</a></li>--}}
 {{--                            <li><a href="#">IT & Software</a></li>--}}
 {{--                            <li><a href="#">Sales Marketing</a></li>--}}

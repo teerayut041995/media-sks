@@ -1,141 +1,52 @@
-@extends('layouts.base.master')
-
-@section('seo')
-    <title>ช่องทางการติดต่อ | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</title>
-    <meta name="description"
-          content="ช่องทางการติดต่อ | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์">
-    <meta name="keywords"
-          content="ช่องทางการติดต่อ, ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, ศูนย์การศึกษาพิเศษ, สำนักบริหารงานการศึกษาพิเศษ, บริการช่วยเหลือระยะแรกเริ่ม, การศึกษาพิเศษ">
-
-    <meta property="og:url"
-          content='{{url("")}}'/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="ช่องทางการติดต่อ | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
-    <meta property="og:description"
-          content="ช่องทางการติดต่อ ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์เป็นสถานศึกษาที่จัดการศึกษาเพื่อเด็กพิการในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม ฟื้นฟูสมรรถภาพ และเตรียมความพร้อมเพื่อส่งต่อเด็กพิการเข้าเรียนร่วม กับนักเรียนในโรงเรียนปกติหรือโรงเรียนเฉพาะความพิการ ทุกประเภทในจังหวัดกาฬสินธุ์"/>
-    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}" />
-    <link rel="canonical" href="{{url('')}}"/>
-@endsection
-
+@extends('layouts.public')
+@php
+    $publicHome = $aboutPreview ? route('preview.home') : url('/');
+    $publicPhone = config('public.contact_phone') ?: '043-840-099';
+    $publicEmail = config('public.contact_email') ?: 'ksped400@gmail.com';
+    $publicFacebook = config('public.facebook') ?: 'https://www.facebook.com/61561301892392/';
+    $publicYoutube = config('public.youtube') ?: 'https://www.youtube.com/@user-kr2wd7br8w';
+@endphp
+@section('title', 'ช่องทางการติดต่อ')
+@section('description', 'ที่อยู่ เบอร์โทรศัพท์ อีเมล แผนที่ และช่องทางติดตามศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ อำเภอยางตลาด จังหวัดกาฬสินธุ์')
 @section('content')
-
-    <!-- breadcrumb area start -->
-    <section class="breadcrumb-area bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">
-        <img src="{{url("template/user-panel/assets/img/breadcrumb/shape-1.png")}}" alt="" class="breadcrumb-shape">
+<main id="main" tabindex="-1" class="contact-page">
+    <section class="contact-introduction" aria-labelledby="contact-heading">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content" style="color: white;">
-                        <h2 class="breadcrumb-title" style="color: white;">ช่องทางการติดต่อ</h2>
-                        <div class="breadcrumb-list">
-                            <a href="{{url('/')}}" style="color: white;">หน้าหลัก</a>
-                            <span style="color: white;">ช่องทางการติดต่อ</span>
-                        </div>
+            <nav class="breadcrumbs" aria-label="เส้นทางนำทาง"><a href="{{ $publicHome }}">หน้าหลัก</a><span aria-hidden="true">/</span><span aria-current="page">ช่องทางการติดต่อ</span></nav>
+            <div class="contact-intro-grid">
+                <div class="contact-intro-copy">
+                    <p class="eyebrow">พร้อมให้ข้อมูลและประสานงาน</p>
+                    <h1 id="contact-heading">ช่องทางการติดต่อ</h1>
+                    <p class="contact-lead">พูดคุยกับศูนย์<br><span>เริ่มต้นได้จากที่นี่</span></p>
+                    <p class="contact-intro-description">ติดต่อศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เพื่อสอบถามข้อมูลการศึกษา การให้บริการ และการประสานงานกับศูนย์</p>
+                    <div class="contact-hero-actions">
+                        <a class="button button-primary" href="tel:{{ preg_replace('/[^0-9+]/', '', $publicPhone) }}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>โทร {{ $publicPhone }}</a>
+                        <a class="button button-outline" href="#location">ดูแผนที่และการเดินทาง <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                     </div>
                 </div>
+                <figure class="contact-hero-image"><img src="{{ asset('images/home/present/sks-present-1.JPG') }}" width="1280" height="689" alt="ทางเข้าสู่อาคารของศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์" decoding="async" fetchpriority="high"><figcaption>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</figcaption></figure>
             </div>
         </div>
     </section>
-    <!-- breadcrumb area end -->
 
-    <!-- contact area start -->
-    <section class="contact-area pt-120 pb-120">
+    <section class="contact-channels" aria-labelledby="channels-title">
         <div class="container">
-            <div class="contact-wrap">
-                <div class="row">
-                    <div class="col-xl-8 col-md-8">
-                        <div class="h5_event-img w_img">
-                            <img src="{{url("images/home/present/sks-present-1.JPG")}}" alt="">
-                        </div>
-{{--                        <div class="contact-content pr-80 mb-20">--}}
-{{--                            <h3 class="contact-title mb-25">Send Me Message</h3>--}}
-{{--                            <form action="#" class="contact-form">--}}
-{{--                                <div class="row">--}}
-{{--                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">--}}
-{{--                                        <div class="contact-form-input mb-30">--}}
-{{--                                            <input type="text" placeholder="Your Name">--}}
-{{--                                            <span class="inner-icon"><i class="fa-thin fa-user"></i></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">--}}
-{{--                                        <div class="contact-form-input mb-30">--}}
-{{--                                            <input type="email" placeholder="Email Address">--}}
-{{--                                            <span class="inner-icon"><i class="fa-thin fa-envelope"></i></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">--}}
-{{--                                        <div class="contact-form-input mb-30">--}}
-{{--                                            <input type="text" placeholder="Your Number">--}}
-{{--                                            <span class="inner-icon"><i class="fa-thin fa-phone-volume"></i></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 ">--}}
-{{--                                        <div class="contact-form-input">--}}
-{{--                                            <span class="inner-icon inner-icon-select"><i class="fa-thin fa-circle-exclamation"></i></span>--}}
-{{--                                            <select name="select" class="contact-form-list has-nice-select mb-30">--}}
-{{--                                                <option value="1">Select Subject</option>--}}
-{{--                                                <option value="2">Art & Design</option>--}}
-{{--                                                <option value="3">Graphic Design</option>--}}
-{{--                                                <option value="4">Web Design</option>--}}
-{{--                                                <option value="5">UX/UI Design</option>--}}
-{{--                                            </select>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="col-12">--}}
-{{--                                        <div class="contact-form-input mb-50 contact-form-textarea">--}}
-{{--                                            <textarea name="message" cols="30" rows="10" placeholder="Feel free to get in touch!"></textarea>--}}
-{{--                                            <span class="inner-icon"><i class="fa-thin fa-pen"></i></span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="col-12">--}}
-{{--                                        <div class="contact-form-submit mb-30">--}}
-{{--                                            <div class="contact-form-btn">--}}
-{{--                                                <a href="#" class="theme-btn contact-btn">Send Message</a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="contact-form-condition">--}}
-{{--                                                <label class="condition_label">I agree that my data is collected and stored.--}}
-{{--                                                    <input type="checkbox">--}}
-{{--                                                    <span class="check_mark"></span>--}}
-{{--                                                </label>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-                    </div>
-                    <div class="col-xl-4 col-md-4">
-                        <div class="contact-info ml-50 mb-20">
-                            <h3 class="contact-title mb-40">ช่องทางการติดต่อ</h3>
-                            <div class="contact-info-item">
-                                <span><i class="fa-thin fa-location-dot"></i>ที่อยู่</span>
-                                <p>เลขที่ 400 หมู่ 1 ถนนถีนานนท์ ตำบลยางตลาด อำเภอยางตลาด จังหวัดกาฬสินธุ์ 46120</p>
-                            </div>
-                            <div class="contact-info-item">
-                                <span><i class="fa-thin fa-mobile-notch"></i>เบอร์โทรศัพท์</span>
-                                <a href="tel:{{env('CONTACT_PHONE_NUMBER')}}">{{env('CONTACT_PHONE_NUMBER')}}</a>
-                            </div>
-                            <div class="contact-info-item">
-                                <span><i class="fa-thin fa-envelope"></i>อีเมล</span>
-                                <a href="mailto:{{env('CONTACT_EMAIL')}}">{{env('CONTACT_EMAIL')}}</a>
-                            </div>
-                            <div class="contact-social">
-                                <span>Social Media</span>
-                                <ul>
-                                    <li><a href='{{url(env('SOCIAL_CONTACT_FACEBOOK'))}}' target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href='{{url(env('SOCIAL_CONTACT_YOUTUBE'))}}' target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href='{{url(env('SOCIAL_CONTACT_WEBSITE'))}}' target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="contact-section-heading"><div><p class="eyebrow">ติดต่อได้โดยตรง</p><h2 id="channels-title">เลือกช่องทางที่สะดวก</h2></div><p>เบอร์โทรศัพท์ อีเมล และที่ตั้งของศูนย์</p></div>
+            <div class="contact-card-grid">
+                <article class="contact-card"><div class="contact-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></div><h3>โทรศัพท์</h3><p>สอบถามข้อมูลและประสานงานกับศูนย์</p><a class="contact-card-value" href="tel:{{ preg_replace('/[^0-9+]/', '', $publicPhone) }}">{{ $publicPhone }}</a><a class="contact-card-action" href="tel:{{ preg_replace('/[^0-9+]/', '', $publicPhone) }}">โทรติดต่อ <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+                <article class="contact-card"><div class="contact-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></div><h3>อีเมล</h3><p>ส่งรายละเอียดหรือเอกสารถึงศูนย์</p><a class="contact-card-value" href="mailto:{{ $publicEmail }}">{{ $publicEmail }}</a><a class="contact-card-action" href="mailto:{{ $publicEmail }}">เขียนอีเมล <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+                <article class="contact-card"><div class="contact-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></div><h3>ที่ตั้งศูนย์</h3><p class="contact-card-address">เลขที่ 400 หมู่ 1 ถนนถีนานนท์<br>ตำบลยางตลาด อำเภอยางตลาด<br>จังหวัดกาฬสินธุ์ 46120</p><a class="contact-card-action" href="#location">ดูแผนที่ <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
             </div>
         </div>
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15309.791173811087!2d103.3744296!3d16.4020688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3122b7e5ad27e431%3A0x991e000a770c950e!2z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4Lip4Lib4Lij4Liw4LiI4Liz4LiI4Lix4LiH4Lir4Lin4Lix4LiU4LiB4Liy4Lis4Liq4Li04LiZ4LiY4Li44LmM!5e0!3m2!1sth!2sth!4v1710125654288!5m2!1sth!2sth" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-{{--            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d147120.012062842!2d13.706000467398074!3d51.075159941942076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1senveto!5e0!3m2!1sen!2sbd!4v1680961754336!5m2!1sen!2sbd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
+    </section>
+
+    <section class="contact-location" id="location" tabindex="-1" aria-labelledby="location-title">
+        <div class="container contact-location-grid">
+            <div class="contact-location-copy"><p class="eyebrow">แวะมาพบเรา</p><h2 id="location-title">ศูนย์อยู่ที่ยางตลาด<br>จังหวัดกาฬสินธุ์</h2><address>ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์<br>เลขที่ 400 หมู่ 1 ถนนถีนานนท์<br>ตำบลยางตลาด อำเภอยางตลาด<br>จังหวัดกาฬสินธุ์ 46120</address><a class="button button-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=16.4020688%2C103.3744296" target="_blank" rel="noopener noreferrer">เปิดเส้นทางใน Google Maps <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a><p class="contact-map-note">ลิงก์แผนที่จะเปิดในหน้าต่างใหม่</p></div>
+            <div class="contact-map-frame"><iframe title="แผนที่ตั้งศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15309.791173811087!2d103.3744296!3d16.4020688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3122b7e5ad27e431%3A0x991e000a770c950e!2z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4Lip4Lib4Lij4Liw4LiI4Liz4LiI4Lix4LiH4Lir4Lin4Lix4LiU4LiB4Liy4Lis4Liq4Li04LiZ4LiY4Li44LmM!5e0!3m2!1sth!2sth!4v1710125654288!5m2!1sth!2sth" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </div>
     </section>
-    <!-- contact area end -->
+
+    <section class="contact-social-section" aria-labelledby="social-title"><div class="container contact-social-inner"><div><p class="eyebrow">ติดตามความเคลื่อนไหว</p><h2 id="social-title">ข่าวสารจากศูนย์</h2><p>ติดตามข่าวและกิจกรรมผ่านช่องทางออนไลน์ของศูนย์</p></div><div class="contact-social-links"><a href="{{ $publicFacebook }}" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg>Facebook <svg class="icon contact-social-arrow" aria-hidden="true"><use href="#i-diagonal"/></svg></a><a href="{{ $publicYoutube }}" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube <svg class="icon contact-social-arrow" aria-hidden="true"><use href="#i-diagonal"/></svg></a><a href="{{ $publicHome }}"><svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg>เว็บไซต์หลัก <svg class="icon contact-social-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></section>
+</main>
 @endsection

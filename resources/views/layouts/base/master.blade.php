@@ -119,21 +119,21 @@
             <div class="row">
                 <div class="col-lg-8 col-md-9">
                     <ul class="h7_header-top-list">
-                        <li><a href="tel:{{env('CONTACT_PHONE_NUMBER', '')}}"><i
-                                        class="fa-light fa-phone"></i>{{env('CONTACT_PHONE_NUMBER', '')}}</a></li>
+                        <li><a href="tel:{{config('public.contact_phone')}}"><i
+                                        class="fa-light fa-phone"></i>{{config('public.contact_phone')}}</a></li>
                         <li><a href="javascript:void(0)"><i
-                                        class="fa-light fa-envelope"></i>{{env('CONTACT_EMAIL', '')}}</a></li>
+                                        class="fa-light fa-envelope"></i>{{config('public.contact_email')}}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-3">
                     <div class="h7_header-top-social">
                         <ul>
-                            {{--                            <li><a href="{{env('SOCIAL_CONTACT_WEBSITE', '')}}"><i class="fa-brands fa-globe"></i></a></li>--}}
-                            <li><a href="{{env('SOCIAL_CONTACT_FACEBOOK', '')}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            {{--                            <li><a href="{{config('public.website')}}"><i class="fa-brands fa-globe"></i></a></li>--}}
+                            <li><a href="{{config('public.facebook')}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                             </li>
-                            <li><a href="{{env('SOCIAL_CONTACT_WEBSITE', '')}}" target="_blank"><i
+                            <li><a href="{{config('public.website')}}" target="_blank"><i
                                             class="fa-brands fa fa-dribbble"></i></a></li>
-                            <li><a href="{{env('SOCIAL_CONTACT_YOUTUBE', '')}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                            <li><a href="{{config('public.youtube')}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>

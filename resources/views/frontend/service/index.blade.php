@@ -1,135 +1,64 @@
-@extends('layouts.base.master')
-
-@section('seo')
-    <title>{{findServiceType($request->service_type)}} | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</title>
-    <meta name="description"
-          content="{{findServiceType($request->service_type)}} ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ จัดและส่งเสริม  สนับสนุนการศึกษาในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม (Early Intervention :EI) และเตรียมความพร้อมของเด็กพิการที่หน่วยบริการของศูนย์การศึกษาพิเศษ รวมทั้งที่บ้านและชุมชน  เพื่อเข้าสู่ศูนย์พัฒนาเด็กเล็กโรงเรียนอนุบาล โรงเรียนเรียนรวม  โรงเรียนเฉพาะความพิการและหน่วยงานที่เกี่ยวข้อง">
-
-    <meta name="keywords"
-          content="{{findServiceType($request->service_type)}}, {{findServiceType($request->service_type)}} ศูนย์การศึกษาพิเศษ, {{findServiceType($request->service_type)}} ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์, สำนักบริหารงานการศึกษาพิเศษ, บริการช่วยเหลือระยะแรกเริ่ม, การศึกษาพิเศษ">
-
-    <meta property="og:url"
-          content="{{url('services?service_type=service_unit')}}"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title"
-          content="{{findServiceType($request->service_type)}} | ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์"/>
-    <meta property="og:description"
-          content="{{findServiceType($request->service_type)}} ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ จัดและส่งเสริม  สนับสนุนการศึกษาในลักษณะศูนย์บริการช่วยเหลือระยะแรกเริ่ม (Early Intervention :EI) และเตรียมความพร้อมของเด็กพิการที่หน่วยบริการของศูนย์การศึกษาพิเศษ รวมทั้งที่บ้านและชุมชน  เพื่อเข้าสู่ศูนย์พัฒนาเด็กเล็กโรงเรียนอนุบาล โรงเรียนเรียนรวม  โรงเรียนเฉพาะความพิการและหน่วยงานที่เกี่ยวข้อง"/>
-    <meta property="og:image" content="{{url("images/logo", env('OG_IMAGE', ''))}}"/>
-    <link rel="canonical" href="{{url('')}}"/>
-@endsection
-
-@section('style')
-    <style>
-        .section-subtitle-manual {
-            font-size: 25px;
-            font-family: 'Chakra Petch';
-            color: #1E1E1E;
-            text-align: center;
-            line-height: 2.0;
-        }
-
-        @media (max-width: 767px) {
-            .section-subtitle-manual {
-                font-size: 20px;
-                font-family: 'Chakra Petch';
-                color: #1E1E1E;
-                text-align: center;
-                line-height: 1.7;
-            }
-        }
-
-        @media only screen and (min-width: 576px) and (max-width: 767px) {
-            .section-subtitle-manual {
-                font-size: 25px;
-                font-family: 'Chakra Petch';
-                color: #1E1E1E;
-                text-align: center;
-                line-height: 1.7;
-            }
-        }
-
-        .subtitle-manual {
-            font-size: 18px;
-            font-family: 'Chakra Petch';
-            /*font-weight: bold;*/
-            color: #1E1E1E;
-            text-align: left;
-            line-height: 2.0;
-        }
-
-    </style>
-@endsection
-
+@extends('layouts.public')
+@section('title', $serviceTitle)
+@section('description', $serviceTitle.' ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ เลือกดูข้อมูลและรายละเอียดการให้บริการแต่ละแห่ง')
 @section('content')
-    <!-- breadcrumb area start -->
-    <section class="breadcrumb-area bg-default" data-background="{{url("images/home/kalasin-3.jpg")}}">
-        <img src="{{url("template/user-panel/assets/img/breadcrumb/shape-1.png")}}" alt="" class="breadcrumb-shape">
+@php
+    $serviceHome = $servicePreview ? route('preview.home') : url('/');
+    $serviceDetailBase = $servicePreview ? 'https://sks.go.th/services' : url('/services');
+    $serviceCount = $services->count();
+@endphp
+<main id="main" tabindex="-1" class="service-list-page">
+    <section class="service-list-introduction" aria-labelledby="service-list-title">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb-content" style="color: white;">
-                        <h2 class="breadcrumb-title"
-                            style="color: white;">{{findServiceType($request->service_type)}}</h2>
-                        <div class="breadcrumb-list">
-                            <a href='{{url("/")}}' style="color: white;">หน้าหลัก</a>
-                            <span style="color: white;">{{findServiceType($request->service_type)}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb area end -->
-
-
-    <!-- blog details area start -->
-    <section class="blog_details-area pt-80 pb-80">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-12 col-lg-12 col-md-12">
-                    <div class="section-area-8 mb-20">
-                        <h2 class="section-title mb-0">{{findServiceType($request->service_type)}}</h2>
-                        <span class="section-subtitle">{{env('SCHOOL_NAME', '')}}</span>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12 col-lg-12">
-                    @if (count($services) > 0)
-                        <div class="row">
-                            @foreach($services as $service)
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="h2_blog-item mb-30">
-                                        <div class="h2_blog-img">
-                                            <a href='{{url("services/$service->uid")}}'><img
-                                                        src='{{url("images/service/thumbnail/$service->service_image_file_name")}}'
-                                                        alt="{{$service->service_name}}"></a>
-                                        </div>
-                                        <div class="h2_blog-content">
-                                            <h4 class="set-font-thai"><a
-                                                        href='{{url("services/$service->uid")}}'>{{$service->service_name}}</a>
-                                            </h4>
-                                            <div align="right">
-                                                <a href='{{url("services/$service->uid")}}'
-                                                   class="theme-btn blog-btn t-theme-btn set-font-thai">ดูข้อมูล</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+            <nav class="breadcrumbs" aria-label="เส้นทางนำทาง"><a href="{{ $serviceHome }}">หน้าหลัก</a><span aria-hidden="true">/</span><span aria-current="page">{{ $serviceTitle }}</span></nav>
+            <div class="service-list-hero">
+                <div class="service-list-intro-copy">
+                    <p class="eyebrow">บริการจากศูนย์การศึกษาพิเศษ</p>
+                    <h1 id="service-list-title">{{ $serviceTitle }}</h1>
+                    @if($serviceType === 'service_unit')
+                        <p class="service-list-lead">การเรียนรู้และการช่วยเหลือ<br><span>เข้าถึงได้ใกล้ชุมชน</span></p>
+                        <p class="service-list-description">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์ จัดและส่งเสริมการช่วยเหลือระยะแรกเริ่ม การเตรียมความพร้อม และการส่งต่อทางการศึกษา ผ่านหน่วยบริการของศูนย์</p>
                     @else
-                        <div class="row">
-                            <div class="col-md-12" align="center">
-                                <h2 class="breadcrumb-title">ไม่พบบทความในหมวดหมู่นี้</h2>
-                            </div>
-                        </div>
+                        <p class="service-list-lead">สำรวจข้อมูล<br><span>{{ $serviceTitle }}ของศูนย์</span></p>
+                        <p class="service-list-description">เลือกดูรายละเอียดการให้บริการและกิจกรรมจากศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</p>
                     @endif
+                    <a class="service-list-jump" href="#service-list-results">ดูรายการ{{ $serviceTitle }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                 </div>
+                <aside class="service-list-summary" aria-label="จำนวนรายการ{{ $serviceTitle }}"><span class="service-list-count">{{ sprintf('%02d', $serviceCount) }}</span><div><p>{{ $serviceTitle }}ที่มีข้อมูล</p><span class="service-list-summary-line" aria-hidden="true"></span><p class="service-list-summary-detail">เลือกดูแต่ละแห่งเพื่ออ่านรายละเอียดเพิ่มเติม</p></div></aside>
             </div>
         </div>
     </section>
+
+    <section class="service-list-results" id="service-list-results" tabindex="-1" aria-labelledby="service-results-title">
+        <div class="container">
+            <div class="service-list-section-heading"><div><p class="eyebrow">สำรวจข้อมูล</p><h2 id="service-results-title">เลือกดู{{ $serviceTitle }}</h2></div><span class="service-list-total">{{ $serviceCount }} รายการ</span></div>
+            @if($serviceCount > 0)
+                <div class="service-list-grid">
+                    @foreach($services as $service)
+                        @php
+                            $serviceUrl = $serviceDetailBase.'/'.$service->uid;
+                            $imageName = $service->service_image_file_name;
+                            $localImagePath = $imageName ? 'images/service/thumbnail/'.$imageName : null;
+                            $imageUrl = $imageName ? (($servicePreview || !is_file(public_path($localImagePath)))
+                                ? 'https://sks.go.th/'.$localImagePath : asset($localImagePath)) : null;
+                        @endphp
+                        <article class="service-list-card">
+                            <a class="service-list-media" href="{{ $serviceUrl }}" aria-label="ดูข้อมูล{{ $service->service_name }}">
+                                @if($imageUrl)
+                                    <img src="{{ $imageUrl }}" width="630" height="315" alt="ภาพประชาสัมพันธ์{{ $service->service_name }}" loading="lazy" decoding="async" data-image-fallback>
+                                    <span class="image-fallback" hidden>{{ $service->service_name }}</span>
+                                @else
+                                    <span class="service-list-image-placeholder"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>{{ $service->service_name }}</span></span>
+                                @endif
+                            </a>
+                            <div class="service-list-card-body"><span class="service-list-index">{{ sprintf('%02d', $loop->iteration) }} / {{ sprintf('%02d', $serviceCount) }}</span><h3><a href="{{ $serviceUrl }}">{{ $service->service_name }}</a></h3><a class="service-list-card-link" href="{{ $serviceUrl }}">ดูข้อมูล{{ $service->service_name }} <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+                        </article>
+                    @endforeach
+                </div>
+            @else
+                <div class="service-list-empty"><h3>ยังไม่มีข้อมูล{{ $serviceTitle }}</h3><p>โปรดกลับมาตรวจสอบอีกครั้ง หรือสอบถามศูนย์โดยตรง</p><a class="button button-outline" href="{{ $servicePreview ? route('preview.contact') : url('/contact') }}">ช่องทางการติดต่อ <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            @endif
+        </div>
+    </section>
+</main>
 @endsection

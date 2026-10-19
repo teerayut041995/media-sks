@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapPreviewRoutes();
     }
 
     /**
@@ -69,5 +69,14 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Read-only design previews do not need session or database middleware.
+     */
+    protected function mapPreviewRoutes()
+    {
+        Route::namespace($this->namespace)
+             ->group(base_path('routes/preview.php'));
     }
 }
