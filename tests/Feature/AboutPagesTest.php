@@ -47,11 +47,18 @@ class AboutPagesTest extends TestCase
         $this->menuController();
         $response = $this->get('/about/executive');
         $response->assertStatus(200)->assertViewIs('frontend.about.executive')
-            ->assertSee('หมวดจากฐานข้อมูล')->assertDontSee('noindex')->assertDontSee('/preview/about/');
-        $original = json_decode(file_get_contents(base_path('docs/about-redesign-2026-10-16/original-content.json')), true);
-        foreach ($original['leaders'] as $person) {
+            ->assertSee('หมวดจากฐานข้อมูล')->assertSee('คณะผู้บริหาร')
+            ->assertDontSee('noindex')->assertDontSee('/preview/about/');
+        $current = json_decode(file_get_contents(resource_path('data/about-pages.json')), true);
+        $this->assertCount(7, $current['leaders']);
+        foreach ($current['leaders'] as $person) {
+            $image = public_path('images/home/executive/'.$person['image']);
+            $this->assertFileExists($image);
+            $this->assertSame([$person['width'], $person['height']], array_slice(getimagesize($image), 0, 2));
             $response->assertSee($person['name'])->assertSee($person['role'])->assertSee($person['image']);
         }
+        $nav = substr($response->getContent(), strpos($response->getContent(), '<nav class="main-nav"'));
+        $this->assertLessThan(strpos($nav, 'nav-post-category'), strpos($nav, 'id="about-submenu"'));
         $this->assertSame(1, substr_count($response->getContent(), 'class="director-card"'));
         $this->assertSame(6, substr_count($response->getContent(), 'class="person-card"'));
         $this->assertStringContainsString('rel="canonical" href="'.url('/about/executive').'"', $response->getContent());

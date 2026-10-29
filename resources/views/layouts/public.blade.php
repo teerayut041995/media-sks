@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/home-preview.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/about-pages.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/about-pages.css') }}?v={{ filemtime(public_path('css/about-pages.css')) }}">
     <link rel="stylesheet" href="{{ asset('css/public-navigation.css') }}?v={{ filemtime(public_path('css/public-navigation.css')) }}">
     @if($aboutPage === 'contact')<link rel="stylesheet" href="{{ asset('css/contact-page.css') }}">@endif
     @if($aboutPage === 'services')<link rel="stylesheet" href="{{ asset('css/service-list.css') }}">@endif

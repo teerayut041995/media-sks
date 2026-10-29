@@ -22,9 +22,9 @@
         </button>
         <nav class="main-nav" id="main-nav" aria-label="เมนูหลัก">
             <a href="{{ route('preview.home') }}" @if(!isset($article)) aria-current="page" @endif>หน้าหลัก</a>
+            <div class="nav-disclosure"><button class="nav-trigger" type="button" aria-expanded="false" aria-controls="about-submenu" data-nav-disclosure>เกี่ยวกับเรา <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button><div class="nav-disclosure-panel" id="about-submenu" hidden><a href="{{ route('preview.about', ['page' => 'history']) }}">ประวัติความเป็นมา</a><a href="{{ route('preview.about', ['page' => 'executive']) }}">คณะผู้บริหาร</a></div></div>
             @include('layouts.public.category-navigation', ['navCategories' => json_decode(file_get_contents(resource_path('data/category-menu-preview.json')), true), 'navPostsBase' => route('preview.posts'), 'navCurrentCategory' => null, 'navCurrentSubcategory' => null])
             <a href="{{ route('preview.events') }}">กิจกรรม</a>
-            <div class="nav-disclosure"><button class="nav-trigger" type="button" aria-expanded="false" aria-controls="about-submenu" data-nav-disclosure>เกี่ยวกับเรา <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button><div class="nav-disclosure-panel" id="about-submenu" hidden><a href="{{ route('preview.about', ['page' => 'history']) }}">ประวัติความเป็นมา</a><a href="{{ route('preview.about', ['page' => 'executive']) }}">ฝ่ายบริหาร</a></div></div>
             <a href="{{ route('preview.services', ['service_type' => 'service_unit']) }}">หน่วยบริการ</a>
             <a href="{{ route('preview.contact') }}">ติดต่อ</a>
         </nav>

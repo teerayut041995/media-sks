@@ -1,10 +1,10 @@
 @extends('layouts.public')
-@section('title', 'ฝ่ายบริหาร')
+@section('title', 'คณะผู้บริหาร')
 @section('description', 'รายชื่อและตำแหน่งผู้อำนวยการ รองผู้อำนวยการ และหัวหน้ากลุ่มงานของศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์')
 @section('content')
 <main id="main" tabindex="-1" class="about-page executive-page">
     @include('frontend.about.partials.page-navigation')
-    <section class="executive-introduction"><div class="container"><nav class="breadcrumbs" aria-label="เส้นทางนำทาง"><a href="{{ $aboutPreview ? route('preview.home') : url('/') }}">หน้าหลัก</a><span aria-hidden="true">/</span><span>เกี่ยวกับเรา</span><span aria-hidden="true">/</span><span aria-current="page">ฝ่ายบริหาร</span></nav><div class="executive-intro-grid"><div><h1>ฝ่ายบริหาร</h1><p class="about-lead">ผู้บริหารและหัวหน้ากลุ่มงาน</p><p class="about-intro-description">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</p></div><nav class="executive-jump-links" aria-label="เลือกกลุ่มฝ่ายบริหาร"><a href="#director">ผู้อำนวยการ</a><a href="#deputies">รองผู้อำนวยการ</a><a href="#team-leads">หัวหน้ากลุ่มงาน</a></nav></div></div></section>
+    <section class="executive-introduction"><div class="container"><nav class="breadcrumbs" aria-label="เส้นทางนำทาง"><a href="{{ $aboutPreview ? route('preview.home') : url('/') }}">หน้าหลัก</a><span aria-hidden="true">/</span><span>เกี่ยวกับเรา</span><span aria-hidden="true">/</span><span aria-current="page">คณะผู้บริหาร</span></nav><div class="executive-intro-grid"><div><h1>คณะผู้บริหาร</h1><p class="about-lead">ผู้บริหารและหัวหน้ากลุ่มงาน</p><p class="about-intro-description">ศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์</p></div><nav class="executive-jump-links" aria-label="เลือกกลุ่มคณะผู้บริหาร"><a href="#director">ผู้อำนวยการ</a><a href="#deputies">รองผู้อำนวยการ</a><a href="#team-leads">หัวหน้ากลุ่มงาน</a></nav></div></div></section>
     <div class="container executive-content">
         <section id="director" tabindex="-1" class="leadership-section" aria-labelledby="director-title"><div class="leadership-section-heading"><span class="eyebrow">ผู้นำของศูนย์</span><h2 id="director-title">ผู้อำนวยการ</h2></div>
             @foreach($about['leaders'] as $person)

@@ -21,58 +21,58 @@
     {
       "name": "นางสาวคุณาพร บัวพันธ์",
       "role": "ผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์",
-      "image": "director-3.jpg",
+      "image": "director-1-2569.png",
       "group": "director",
-      "width": 918,
-      "height": 1447
+      "width": 999,
+      "height": 1575
     },
     {
       "name": "นายไพโรจน์ ไพรเขียว",
       "role": "รองผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์",
-      "image": "director-1.jpg",
+      "image": "deputy-director-1-2569.png",
       "group": "deputy",
-      "width": 1115,
-      "height": 1469
+      "width": 999,
+      "height": 1575
     },
     {
       "name": "นางพิกุล หินวิเศษ",
       "role": "รองผู้อำนวยการศูนย์การศึกษาพิเศษ ประจำจังหวัดกาฬสินธุ์",
-      "image": "director-2-1.jpg",
+      "image": "deputy-director-2-2569.png",
       "group": "deputy",
-      "width": 497,
-      "height": 628
+      "width": 999,
+      "height": 1575
     },
     {
       "name": "นางสาวลลิดา ศรีมหาไชย",
-      "role": "หัวหน้าฝ่ายบริหารวิชาการ",
-      "image": "team-lead-1.jpg",
+      "role": "หัวหน้ากลุ่มบริหารงานวิชาการ",
+      "image": "team-lead-1-2569.png",
       "group": "lead",
-      "width": 2400,
-      "height": 3000
+      "width": 999,
+      "height": 1575
     },
     {
       "name": "นางสาวศรัญญา ขานหยู",
-      "role": "หัวหน้าฝ่ายบริหารงบประมาณ",
-      "image": "team-lead-2.jpg",
+      "role": "หัวหน้ากลุ่มบริหารแผนงานและงบประมาณ",
+      "image": "team-lead-2-2569.png",
       "group": "lead",
-      "width": 498,
-      "height": 631
+      "width": 999,
+      "height": 1575
     },
     {
-      "name": "นางเบญจวรรณ เวียงพล",
-      "role": "หัวหน้าฝ่ายบริหารทั่วไป",
-      "image": "team-lead-4-1.jpg",
+      "name": "นายอรรควุฒิ  คัดทะจันทร์",
+      "role": "หัวหน้ากลุ่มบริหารงานทั่วไป",
+      "image": "team-lead-4-2569.png",
       "group": "lead",
-      "width": 750,
-      "height": 975
+      "width": 999,
+      "height": 1575
     },
     {
       "name": "นางปนัดดา อามาตย์สมบัติ",
-      "role": "หัวหน้าฝ่ายบริหารงานบุคคล และหัวหน้าฝ่ายบริหารงานหน่วยบริการ",
-      "image": "team-lead-3.jpg",
+      "role": "หัวหน้ากลุ่มบริหารงานบุคคล และหัวหน้ากลุ่มบริหารงานหน่วยบริการ",
+      "image": "team-lead-3-2569.png",
       "group": "lead",
-      "width": 1024,
-      "height": 1536
+      "width": 999,
+      "height": 1575
     }
   ]
 }

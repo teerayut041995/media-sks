@@ -5,12 +5,12 @@
     <button class="menu-toggle" type="button" aria-label="เมนู" aria-expanded="false" aria-controls="main-nav" id="menu-toggle"><svg class="icon menu-icon" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon close-icon" aria-hidden="true"><use href="#i-close"/></svg><span>เมนู</span></button>
     <nav class="main-nav" id="main-nav" aria-label="เมนูหลัก">
         <a href="{{ $publicHome }}">หน้าหลัก</a>
-        @include('layouts.public.category-navigation', ['navCategories' => $category_menu, 'navPostsBase' => $publicPosts, 'navCurrentCategory' => $category->uid ?? null, 'navCurrentSubcategory' => $sub_category->uid ?? null])
-        <a href="{{ $aboutPreview ? route('preview.events') : url('/events') }}" @if($aboutPage === 'events') aria-current="page" @endif>กิจกรรม</a>
         <div class="nav-disclosure">
             <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="about-submenu" data-nav-disclosure @if(in_array($aboutPage, ['history', 'executive'], true)) data-active="true" @endif>เกี่ยวกับเรา <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-            <div class="nav-disclosure-panel" id="about-submenu" hidden><a href="{{ $aboutBase.'/history' }}" @if($aboutPage === 'history') aria-current="page" @endif>ประวัติความเป็นมา</a><a href="{{ $aboutBase.'/executive' }}" @if($aboutPage === 'executive') aria-current="page" @endif>ฝ่ายบริหาร</a></div>
+            <div class="nav-disclosure-panel" id="about-submenu" hidden><a href="{{ $aboutBase.'/history' }}" @if($aboutPage === 'history') aria-current="page" @endif>ประวัติความเป็นมา</a><a href="{{ $aboutBase.'/executive' }}" @if($aboutPage === 'executive') aria-current="page" @endif>คณะผู้บริหาร</a></div>
         </div>
+        @include('layouts.public.category-navigation', ['navCategories' => $category_menu, 'navPostsBase' => $publicPosts, 'navCurrentCategory' => $category->uid ?? null, 'navCurrentSubcategory' => $sub_category->uid ?? null])
+        <a href="{{ $aboutPreview ? route('preview.events') : url('/events') }}" @if($aboutPage === 'events') aria-current="page" @endif>กิจกรรม</a>
         <a href="{{ $publicService }}" @if($aboutPage === 'services' && $serviceType === 'service_unit') aria-current="page" @endif>หน่วยบริการ</a>
         <a href="{{ $publicContact }}" @if($aboutPage === 'contact') aria-current="page" @endif>ติดต่อ</a>
     </nav>
